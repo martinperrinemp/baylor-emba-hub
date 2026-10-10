@@ -8,8 +8,9 @@ compatibility_date = "2026-10-10"
 [vars]
 INTAKE_ENABLED = "false"
 
-# Add the D1 DB binding *after* creating the database in Cloudflare.
-# Use the Cloudflare dashboard > Worker > Bindings > Add binding > D1 database,
-# variable name "DB", select database "baylor-emba-proposals".
-# If later managing bindings via this file, add the exact assigned database_id
-# then; never insert a placeholder database ID into an active configuration.
+# D1 is the private pending-proposals queue. This UUID is an identifier, not a secret.
+[[d1_databases]]
+binding = "DB"
+database_name = "baylor-emba-proposals"
+database_id = "45080b4f-fb83-4b04-ad93-5fba0c73a203"
+migrations_dir = "migrations"
