@@ -20,7 +20,7 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 
 ## Contribute
 
-- [Report a change or suggest a resource](../../issues/new/choose) using the guided issue form.
+- [Report a change or suggest a resource](../../issues/new?template=proposal.yml) using the guided form (no need to select a GitHub issue type).
 - [Change review process](docs/CHANGE-PROCESS.md) explains reports, duplicates, evidence, conflicts, overrides and later multi-reviewer access.
 - [AI assistant onboarding](docs/AGENT-ONBOARDING.md) explains freshness checks and how to use personal progress separately.
 - [Manual semester import guide](docs/SEMESTER-IMPORT.md) explains what material may be summarized for publication.
