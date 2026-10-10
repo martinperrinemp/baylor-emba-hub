@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "resources": [
+    {
+      "id": "baylor-powerpoint-templates",
+      "title": "Baylor-branded PowerPoint templates",
+      "category": "brand_asset",
+      "url": "https://baylor.app.box.com/s/v2g7zxvvgdzak3rr7c1q843en4cczbsq",
+      "description": "Link to Baylor-branded presentation templates supplied by a cohort member. Access, sharing permission, and current content have not been independently verified.",
+      "related_activities": [
+        "presentations",
+        "slides"
+      ],
+      "ai_tool": false,
+      "endorsement": "unknown",
+      "access": "not_verified",
+      "verification_status": "candidate_needs_review",
+      "last_verified_at": null,
+      "ai_use_warning": "Using an institutional template does not authorize generative AI creation of assessed content."
+    },
+    {
+      "id": "genspark-presentations",
+      "title": "Genspark",
+      "category": "ai_presentation_tool",
+      "url": null,
+      "description": "AI-powered presentation tool suggested by a cohort member; capabilities, cost, terms and exact URL not verified.",
+      "related_activities": [
+        "presentations",
+        "slides"
+      ],
+      "ai_tool": true,
+      "endorsement": "not_baylor_endorsed",
+      "access": "third_party",
+      "verification_status": "candidate_needs_review",
+      "last_verified_at": null,
+      "ai_use_warning": "Check specific assignment AI-use policies, academic integrity guidance, and external upload/privacy requirements before use."
+    }
+  ]
+}
