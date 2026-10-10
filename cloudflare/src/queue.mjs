@@ -9,6 +9,9 @@ async function clientFingerprint(request,env) {
  return [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,"0")).join("");
 }
 export async function submitProposal(env,request,payload) {
+ // Owner-controlled fail-closed emergency stop. Applies to REST AND MCP.
+ // No validation, rate-limit mutation, or D1 writes occur while paused.
+ if(env.INTAKE_ENABLED!=="true") return {ok:false,http_status:503,error:"Cohort submissions are temporarily paused by the hub owner. No approved data has changed."};
  const p=validateProposal(payload);
  if(!env.DB) throw new Error("D1 database binding DB missing");
  const fingerprint=await clientFingerprint(request,env);
