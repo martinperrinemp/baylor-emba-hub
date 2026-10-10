@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed change",
+  "type": "object",
+  "required": [
+    "proposal_id",
+    "assignment_id",
+    "field",
+    "proposed_value",
+    "source_type"
+  ],
+  "properties": {
+    "proposal_id": {
+      "type": "string"
+    },
+    "assignment_id": {
+      "type": "string"
+    },
+    "field": {
+      "enum": [
+        "presentation_at",
+        "submission_due_at",
+        "official_due_at",
+        "title",
+        "ai_use_rule",
+        "resource_link"
+      ]
+    },
+    "proposed_value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_type": {
+      "enum": [
+        "instructor_announcement",
+        "syllabus",
+        "canvas_manual_review",
+        "student_report",
+        "other"
+      ]
+    },
+    "source_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "submitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  }
+}
