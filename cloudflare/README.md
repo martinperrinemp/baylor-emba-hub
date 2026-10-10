@@ -28,17 +28,30 @@ Both MCP and REST submissions now have a fail-closed server-side switch, `INTAKE
 
 **Status:** Emergency stop guard implemented in code and under unit test. Scheduled private backups, R2 bucket, alerting, and live restore testing are not yet built or enabled.
 
-## Cloudflare owner setup
-You need to deploy the Worker to your own Cloudflare account. No Cloudflare connection is available to this chat, so deployments and live testing require your action.
+## Cloudflare owner setup: browser-first GitHub deployment
 
-1. Clone `baylor-emba-hub` to your PC and open a terminal in `cloudflare/`.
-2. Run `npm install`, then `npx wrangler login` to authorize Cloudflare.
-3. Run `npx wrangler d1 create baylor-emba-proposals`.
-4. Copy `wrangler.toml.example` to `wrangler.toml` and replace the placeholder database ID from step 3. **Do not commit secrets or a local .dev.vars file.**
-5. Run `npx wrangler d1 migrations apply DB --remote`.
-6. Generate **two independent random secrets** and set with `npx wrangler secret put SUBMISSION_TOKEN` (32+ characters), and `npx wrangler secret put RATE_LIMIT_SALT` (16+ characters).
-7. Run `npm test` and `npm run check`, then `npx wrangler deploy` **with intake disabled**.
-8. Complete the private backup deployment, first verified backup, and pause-switch test before enabling `INTAKE_ENABLED=true`. Open `https://YOUR-WORKER.workers.dev/health` and `https://YOUR-WORKER.workers.dev/openapi.json`; verify both respond. Test a fictional proposal in an isolated test queue.
+No repository download or local software is required for the initial deployment.
+
+**Stage 1: safe deployment, intake paused**
+1. In Cloudflare go to **Workers & Pages** → **Create application** → **Import a repository**.
+2. Connect GitHub if necessary, and select `martinperrinemp/baylor-emba-hub`.
+3. Set the Worker name to `baylor-emba-proposals` (matching `cloudflare/wrangler.toml`). Set **root directory** to `cloudflare` and build/deploy command to `npm run deploy` if Cloudflare requests one.
+4. Deploy. The committed Wrangler configuration keeps `INTAKE_ENABLED=false`; there are **no database credentials** or active submissions at this stage.
+5. Confirm only `/health` and `/openapi.json` respond. Do not invite classmates or enable intake.
+
+**Stage 2: protected pending queue**
+1. In Cloudflare's **D1 SQL Database** area, create database `baylor-emba-proposals`.
+2. Add a D1 binding to the Worker named `DB`, targeting the new database. Keep the Wrangler config consistent with dashboard configuration when updating code/deploying.
+3. Apply SQL migration `migrations/0001_create_proposals.sql` in the D1 dashboard SQL editor or via a controlled automation; verify tables and indexes.
+4. Configure submission-only `SUBMISSION_TOKEN` and independent `RATE_LIMIT_SALT` as **Cloudflare Worker secrets** (never put their values into public GitHub or chat).
+5. Run a paused-intake smoke test; do not enable intake until safe private backups exist.
+
+**Stage 3: verified private backup and disaster recovery**
+1. Provision a private, owner-only R2 backup destination and independent scheduled backup process for D1, GitHub history/content, and approval records.
+2. Enable daily backup confirmation, seven daily restore points, failure alerting, and restore tests per [runbook](../docs/BACKUP-AND-RECOVERY.md).
+3. Only after backups and access controls pass acceptance tests may the owner set `INTAKE_ENABLED=true`, redeploy, and test fictional change submissions.
+
+For advanced development, local Wrangler remains optional. The archived `wrangler.toml.example` is a CLI-oriented template; `wrangler.toml` is the active browser-first config.
 
 ## Connect AI clients
 - Compatible remote MCP agents: connect to `https://YOUR-WORKER.workers.dev/mcp`. Configure the Bearer submission token **privately in the connector**, not in the user's prompt.
