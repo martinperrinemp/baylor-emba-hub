@@ -16,10 +16,14 @@
 | GitHub issue submission template | Implemented |
 | JSON validation GitHub Action | Implemented; executes when workflows are enabled |
 | Reconciliation logic for normalized reports | Local prototype only |
-| Cloudflare intake, D1, editor identities | Not built or deployed |
+| Cloudflare proposal intake, D1 schema, MCP and OpenAPI source | Code published; NOT deployed or tested against live Cloudflare |
+| Cloudflare reviewer identities and approval UI | Not built |
 | GitHub writes triggered by approvals | Not built |
 | Email or WhatsApp delivery | Not built |
 | Canvas calendar or API | Explicitly out of scope |
+
+## AI-assisted submissions
+The code under [Cloudflare](../cloudflare/README.md) provides a proposal-only HTTP API and a remote MCP tool interface designed for agents to submit changes automatically. It is not deployed. Each client needs an actual connector and secret configured. All submitted changes remain pending until a human reviewer approves. The public knowledge revision must not change simply because the service accepts a report.
 
 ## Security constraints
 The public repository has no secrets or personal student data. For a later Worker, tokens live only in server-side secrets. Review actions must be authenticated, authorized and audited; a widely shared passcode cannot grant approval rights. Public forms must validate field allowlists, rate limit, reject credential-bearing URLs and untrusted code instructions, and avoid logging private inputs publicly. A model's summary is **not source verification**.
