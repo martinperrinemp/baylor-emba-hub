@@ -1,0 +1,57 @@
+name: Cohort update or resource suggestion
+description: Propose a deadline correction, resource, AI-use rule, or lesson learned. Reports are not approved changes.
+title: "[Proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **PUBLIC REPOSITORY:** Do not post student names, email addresses, grades, private messages, Canvas tokens/feed URLs, confidential documents, restricted screenshots, copyrighted case text, or work information. Proposals are **unverified** until reviewed.
+  - type: dropdown
+    id: category
+    attributes:
+      label: What are you proposing?
+      options:
+        - Assignment or presentation date
+        - Assignment requirement / dependency
+        - AI-use rule / disclosure
+        - Useful resource link
+        - Lesson learned
+        - Conflict / contradiction
+    validations:
+      required: true
+  - type: input
+    id: assignment
+    attributes:
+      label: Course / assignment ID, if applicable
+      placeholder: e.g., SAMPLE101-project-presentation
+  - type: input
+    id: current
+    attributes:
+      label: Current hub value (if applicable)
+      placeholder: e.g., presentation_at 2027-03-05 6 PM Central
+  - type: input
+    id: proposed
+    attributes:
+      label: Proposed change
+      placeholder: e.g., presentation_at 2027-03-12 6 PM Central
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source type
+      options:
+        - Instructor announcement (privately checked)
+        - Current syllabus (privately checked)
+        - Canvas manually checked (do not share private URLs)
+        - Student recollection / report
+        - Other / unknown
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Safe-to-share explanation and uncertainty
+      description: Briefly describe the source and when it was checked. Never paste protected materials or identifying information.
+    validations:
+      required: true
