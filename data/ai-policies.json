@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "default": "unknown_requires_official_verification",
+  "policies": [],
+  "guidance": "Any AI-use guidance must cite its specific official source; a useful AI tool is not automatically permitted for any graded assignment."
+}
