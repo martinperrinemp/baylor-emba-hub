@@ -72,3 +72,5 @@ The initial token is submission-only, but it is cohort-shared, so rate limiting,
 Only submit a safe paraphrase and the needed assignment field. Never include raw private Canvas content, instructor correspondence, full readings/cases, grades, emails, tokens, or Baylor work records. The data validator rejects common sensitive patterns but is not a replacement for student discretion. A suggestion can never establish a confirmed deadline without official evidence and review.
 
 The test suite exercises proposal validation, duplicate retries, and conflict cases. Unit tests do not prove that deployed Cloudflare D1, Workers bundling, remote MCP, or any specific AI client are working. Test those before cohort-wide rollout.
+
+<!-- Cloudflare Git auto-build verification: 2026-10-10. Intake remains disabled. -->
