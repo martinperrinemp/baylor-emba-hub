@@ -1,0 +1,10 @@
+name = "baylor-emba-proposals"
+main = "src/index.mjs"
+compatibility_date = "2026-10-10"
+
+# Replace ID after running: npx wrangler d1 create baylor-emba-proposals
+[[d1_databases]]
+binding = "DB"
+database_name = "baylor-emba-proposals"
+database_id = "REPLACE-WITH-ACTUAL-D1-ID"
+migrations_dir = "migrations"
