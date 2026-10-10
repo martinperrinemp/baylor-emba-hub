@@ -1,0 +1,15 @@
+# Public repository configuration for Cloudflare Git builds.
+# This deploys a safe, read-only/paused service until the database,
+# submission secrets, and independently verified backups are in place.
+name = "baylor-emba-proposals"
+main = "src/index.mjs"
+compatibility_date = "2026-10-10"
+
+[vars]
+INTAKE_ENABLED = "false"
+
+# Add the D1 DB binding *after* creating the database in Cloudflare.
+# Use the Cloudflare dashboard > Worker > Bindings > Add binding > D1 database,
+# variable name "DB", select database "baylor-emba-proposals".
+# If later managing bindings via this file, add the exact assigned database_id
+# then; never insert a placeholder database ID into an active configuration.
