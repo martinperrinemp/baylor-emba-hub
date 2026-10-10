@@ -22,6 +22,10 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 
 The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-time-connected AI assistants submitting suggestions through an MCP tool or an OpenAPI action, directly into a pending review queue. **It is source code only, not a live endpoint yet.** GitHub Issues remain the fallback until deployment and review tooling are tested.
 
+## Private backups and emergency shutdown
+
+**Required before public AI submissions:** a private owner-only daily backup of the full hub and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) is documented; daily backup jobs and storage are **not deployed yet**. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
+
 ## Contribute
 
 - [Report a change or suggest a resource](../../issues/new?template=proposal.yml) using the guided form (no need to select a GitHub issue type).
