@@ -1,5 +1,5 @@
-name: Cohort update or resource suggestion
-description: Propose a deadline correction, resource, AI-use rule, or lesson learned. Reports are not approved changes.
+name: Report a change or suggest a resource
+description: Use this guided form to report a changed due date, suggest a resource, or share a lesson. Submissions are reviewed before publication.
 title: "[Proposal] "
 body:
   - type: markdown
