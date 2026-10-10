@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_revision": 0,
+  "updated_at": "2026-10-10",
+  "last_approved_change_id": null,
+  "open_urgent_alert_count": 0,
+  "status": "foundation_unpopulated",
+  "notes": "Initial manifest. No semester deadlines are approved or populated. Revision increases only after approved canonical data changes."
+}
