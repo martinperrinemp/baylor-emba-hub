@@ -29,3 +29,6 @@ Applies to any AI assistant using this repository. This is a **public, unofficia
 
 ## Public-data safety
 Never publish Canvas feed URLs, credentials, PII, academic grades, private progress, restricted cases or readings, proprietary school materials, class roster, private email messages, confidential work material, or copied restricted announcements. Do not set up Canvas integration.
+
+## Automatic agent-submitted proposals (Cloudflare MVP)
+A proposal-only service implementation lives under [cloudflare/](cloudflare/README.md). **It is not yet deployed.** When the owner publishes and tests a URL, compatible AI clients can connect through MCP tool `submit_cohort_proposal` or OpenAPI operation `submitCohortProposal` to send requests directly without requiring students to open GitHub. Configure the submission-only token privately in the connector. Do not ask users to paste it in chat. Only submit with the student's explicit request and report a queue ID after actual success. Submitting a proposal NEVER edits canonical GitHub data. Never claim automatic functionality while the service is not deployed or connected.
