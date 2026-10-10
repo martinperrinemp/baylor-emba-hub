@@ -1,0 +1,22 @@
+{
+  "name": "baylor-emba-proposal-intake",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check src/core.mjs && node --check src/queue.mjs && node --check src/index.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "migrate-local": "wrangler d1 migrations apply DB --local",
+    "migrate-remote": "wrangler d1 migrations apply DB --remote"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "latest",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
