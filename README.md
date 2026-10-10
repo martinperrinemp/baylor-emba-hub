@@ -4,7 +4,7 @@
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
 
-> **Build status:** Foundation v0.1 (October 10, 2026). Shared data files, contribution workflow, tests, and a local conflict-reconciliation prototype are ready. The assignment catalog has **not** been populated or verified. Cloudflare submission service, reviewer logins, notifications, and autonomous AI review are **not deployed**.
+> **Build status:** Foundation v0.1 (October 10, 2026). Shared data files, contribution workflow, tests, and a local conflict-reconciliation prototype are ready. The assignment catalog has **not** been populated or verified. Cloudflare agent-submission service **source code** is now published, but the service, reviewer logins, notifications, and AI review are **not deployed**.
 
 ## Browse the knowledge base
 
@@ -17,6 +17,10 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 | Urgent conflicts | [Open alerts](data/open-alerts.json) | None logged |
 | Approved change history | [Changes](data/changes.json) | Empty |
 | Knowledge revision | [Manifest](data/manifest.json) | Revision 0 |
+
+## Automatic contributions from AI assistants
+
+The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-time-connected AI assistants submitting suggestions through an MCP tool or an OpenAPI action, directly into a pending review queue. **It is source code only, not a live endpoint yet.** GitHub Issues remain the fallback until deployment and review tooling are tested.
 
 ## Contribute
 
