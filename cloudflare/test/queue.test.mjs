@@ -23,7 +23,7 @@ function fakeDB(){
  }};
 }
 const req=()=>new Request("https://example.workers.dev/api/proposals",{headers:{"CF-Connecting-IP":"192.0.2.1"}});
-const env=DB=>({DB,RATE_LIMIT_SALT:"test-salt-of-sufficient-length"});
+const env=DB=>({DB,RATE_LIMIT_SALT:"test-salt-of-sufficient-length",INTAKE_ENABLED:"true"});
 test("queued changes do not update canonical deadlines",async()=>{
  const DB=fakeDB(),r=await submitProposal(env(DB),req(),sample);
  assert.equal(r.http_status,202);assert.equal(r.approved_record_changed,false);assert.equal(DB.state.proposals.length,1);
@@ -37,4 +37,22 @@ test("conflicts remain unresolved",async()=>{
  await submitProposal(e,req(),sample);
  const r=await submitProposal(e,req(),{...sample,client_request_id:"another-unique-xyz789",proposed_value:"2026-10-30"});
  assert.equal(r.status,"conflicting_reports");assert.equal(r.approved_record_changed,false);assert.equal(r.alternatives.length,2);
+});
+
+test("owner can pause all writes regardless of valid client payload",async()=>{
+ const DB=fakeDB();
+ const pausedEnv={...env(DB),INTAKE_ENABLED:"false"};
+ const r=await submitProposal(pausedEnv,req(),sample);
+ assert.equal(r.ok,false);
+ assert.equal(r.http_status,503);
+ assert.equal(DB.state.proposals.length,0);
+ assert.equal(DB.state.requests,0);
+});
+test("intake defaults closed without explicit opt-in",async()=>{
+ const DB=fakeDB();
+ const missingFlag={...env(DB)};
+ delete missingFlag.INTAKE_ENABLED;
+ const r=await submitProposal(missingFlag,req(),sample);
+ assert.equal(r.http_status,503);
+ assert.equal(DB.state.proposals.length,0);
 });
