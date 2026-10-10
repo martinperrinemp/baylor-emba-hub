@@ -8,3 +8,8 @@ binding = "DB"
 database_name = "baylor-emba-proposals"
 database_id = "REPLACE-WITH-ACTUAL-D1-ID"
 migrations_dir = "migrations"
+
+# Emergency pause switch: leave false until the first private backup
+# and live smoke tests have succeeded. Changes require redeploy.
+[vars]
+INTAKE_ENABLED = "false"
