@@ -32,3 +32,6 @@ Never publish Canvas feed URLs, credentials, PII, academic grades, private progr
 
 ## Automatic agent-submitted proposals (Cloudflare MVP)
 A proposal-only service implementation lives under [cloudflare/](cloudflare/README.md). **It is not yet deployed.** When the owner publishes and tests a URL, compatible AI clients can connect through MCP tool `submit_cohort_proposal` or OpenAPI operation `submitCohortProposal` to send requests directly without requiring students to open GitHub. Configure the submission-only token privately in the connector. Do not ask users to paste it in chat. Only submit with the student's explicit request and report a queue ID after actual success. Submitting a proposal NEVER edits canonical GitHub data. Never claim automatic functionality while the service is not deployed or connected.
+
+## Emergency submission pauses
+The Cloudflare submission service may temporarily refuse proposals when the owner activates an emergency shutdown. Do **not** retry in a tight loop, bypass controls, or claim success. Tell the student that shared approved information remains readable, and that the change has not been submitted. On restoration, the student can resubmit using the same idempotency identifier if appropriate. Refer to [owner-only recovery plan](docs/BACKUP-AND-RECOVERY.md); do not ask for backup credentials or links.
