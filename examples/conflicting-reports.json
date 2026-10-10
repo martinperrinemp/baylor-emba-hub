@@ -1,0 +1,31 @@
+{
+  "sample_only": true,
+  "assignment_id": "EXAMPLE-project",
+  "approved_value": "2027-03-05",
+  "reports": [
+    {
+      "proposal_id": "demo-001",
+      "assignment_id": "EXAMPLE-project",
+      "field": "presentation_at",
+      "proposed_value": "2027-03-12",
+      "source_type": "student_report",
+      "source_reference": "Unverified verbal report"
+    },
+    {
+      "proposal_id": "demo-002",
+      "assignment_id": "EXAMPLE-project",
+      "field": "presentation_at",
+      "proposed_value": "2027-03-12",
+      "source_type": "student_report",
+      "source_reference": "Same unverified report repeated"
+    },
+    {
+      "proposal_id": "demo-003",
+      "assignment_id": "EXAMPLE-project",
+      "field": "presentation_at",
+      "proposed_value": "2027-03-19",
+      "source_type": "student_report",
+      "source_reference": "Conflicting unverified recollection"
+    }
+  ]
+}
