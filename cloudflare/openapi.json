@@ -1,0 +1,143 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Baylor EMBA Cohort Proposal API",
+    "version": "0.1.0",
+    "description": "Propose unverified edits for human review; no change to approved data."
+  },
+  "servers": [
+    {
+      "url": "https://REPLACE-WITH-YOUR-WORKER.workers.dev"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "SubmissionToken": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Proposal": {
+        "type": "object",
+        "required": [
+          "category",
+          "target_id",
+          "field",
+          "proposed_value",
+          "source_type"
+        ],
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "assignment_date",
+              "assignment_requirement",
+              "ai_policy",
+              "resource",
+              "lesson"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "description": "Stable public assignment or resource ID"
+          },
+          "field": {
+            "type": "string",
+            "description": "Date fields: presentation_at, submission_due_at, official_due_at. Refer to contributor documentation for others."
+          },
+          "proposed_value": {
+            "type": "string",
+            "description": "Exact proposed value. Never invent an unknown time. Date-only YYYY-MM-DD is allowed."
+          },
+          "current_value": {
+            "type": "string",
+            "description": "Currently approved value, if known"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "instructor_announcement",
+              "syllabus",
+              "canvas_manually_checked",
+              "student_report",
+              "other_unknown"
+            ]
+          },
+          "source_note": {
+            "type": "string",
+            "maxLength": 400,
+            "description": "Brief safe paraphrase, no private data or access tokens"
+          },
+          "client_request_id": {
+            "type": "string",
+            "minLength": 8,
+            "description": "Optional retry id"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "SubmissionToken": []
+    }
+  ],
+  "paths": {
+    "/api/proposals": {
+      "post": {
+        "operationId": "submitCohortProposal",
+        "summary": "Submit proposed correction or resource for human review",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Proposal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Queued, not approved"
+          },
+          "400": {
+            "description": "Invalid"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        }
+      }
+    },
+    "/api/proposals/{proposal_id}": {
+      "get": {
+        "operationId": "checkCohortProposalStatus",
+        "summary": "Check submission review status",
+        "parameters": [
+          {
+            "name": "proposal_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    }
+  }
+}
