@@ -13,6 +13,16 @@ crons = ["*/5 * * * *"]
 [vars]
 WATCHDOG_TEST_MODE = "true"
 
+# Persist Cron invocation logs across GitHub deployments (not dashboard-only).
+# Low-volume, owner-only Worker: capture 100% of test executions and failures.
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+head_sampling_rate = 1
+
 [[r2_buckets]]
 binding = "PRIVATE_BACKUPS"
 bucket_name = "baylor-emba-private-backups"
