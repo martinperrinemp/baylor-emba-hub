@@ -74,3 +74,5 @@ Only submit a safe paraphrase and the needed assignment field. Never include raw
 The test suite exercises proposal validation, duplicate retries, and conflict cases. Unit tests do not prove that deployed Cloudflare D1, Workers bundling, remote MCP, or any specific AI client are working. Test those before cohort-wide rollout.
 
 <!-- Cloudflare Git auto-build verification: 2026-10-10. Intake remains disabled. -->
+
+<!-- Cloudflare Git trigger verification after GitHub app authorization, 2026-10-10. No runtime changes. -->
