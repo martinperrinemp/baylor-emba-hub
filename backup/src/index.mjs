@@ -69,8 +69,11 @@ export class DailyBackupWorkflow extends WorkflowEntrypoint {
   },async()=>{
     const result=await d1Export(env,{output_format:"polling",current_bookmark:bookmark});
     if(result.status==="error") throw new Error("D1 export reported an error");
-    if(!result.result?.signed_url) throw new Error("D1 export is still pending");
-    const res=await fetch(result.result.signed_url);
+    // API payloads may expose the export file at result.result.signed_url.
+    // Some documented examples show a flattened result.signed_url.
+    const signedUrl=result.result?.signed_url??result.signed_url;
+    if(!signedUrl) throw new Error("D1 export is still pending");
+    const res=await fetch(signedUrl);
     if(!res.ok) throw new Error("D1 SQL download failed: "+res.status);
     const bytes=await res.arrayBuffer();
     return storeVerified(env.PRIVATE_BACKUPS,prefix+"/d1-database.sql",bytes,"application/sql");
