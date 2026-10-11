@@ -1,0 +1,16 @@
+# Independent, owner-only backup health monitor. NO public URL or routes.
+name = "baylor-emba-backup-watchdog"
+main = "src/index.mjs"
+compatibility_date = "2026-10-10"
+workers_dev = false
+preview_urls = false
+
+# Intentionally no cron until the owner tests Discord delivery and monitoring.
+# Then add [triggers] crons = ["0 12 * * *"] (12:00 UTC daily,
+# 07:00 CDT / 06:00 CST, three hours after the backup at 09:00 UTC).
+[vars]
+WATCHDOG_TEST_MODE = "false"
+
+[[r2_buckets]]
+binding = "PRIVATE_BACKUPS"
+bucket_name = "baylor-emba-private-backups"
