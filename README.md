@@ -4,7 +4,11 @@
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
 
-> **Build status:** Foundation v0.1 (October 10, 2026). Shared data files, contribution workflow, tests, and a local conflict-reconciliation prototype are ready. The assignment catalog has **not** been populated or verified. Cloudflare agent-submission service **source code** is now published, but the service, reviewer logins, notifications, and AI review are **not deployed**.
+> **Build status:** Prototype deployed; public classmate submissions still **disabled**. Both Cloudflare Workers, D1 database and R2 backup bucket have been created, but the first backup Workflow completed only the GitHub archive steps and failed the D1 export with HTTP 401. The user updated the D1 token permissions afterward, and a successful rerun **has not yet been confirmed**. Approved course metadata has not been imported or verified. For an exact checklist and restart instructions, see [Project handoff](docs/PROJECT-HANDOFF.md).
+
+## Resume the build or move to a new AI chat
+
+Read [**Project Handoff and Build Checklist**](docs/PROJECT-HANDOFF.md) first. It tracks only user-confirmed milestones, outstanding tests and the next action, without any passwords or private coursework.
 
 ## Browse the knowledge base
 
@@ -20,11 +24,11 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 
 ## Automatic contributions from AI assistants
 
-The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-time-connected AI assistants submitting suggestions through an MCP tool or an OpenAPI action, directly into a pending review queue. **It is source code only, not a live endpoint yet.** GitHub Issues remain the fallback until deployment and review tooling are tested.
+The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-time-connected AI assistants submitting suggestions through an MCP tool or an OpenAPI action, directly into a pending review queue. **The Worker is deployed but submission intake is deliberately disabled**. Live agent submission and review tooling are not yet tested; GitHub Issues remain the fallback while intake is closed.
 
 ## Private backups and emergency shutdown
 
-**Required before public AI submissions:** a private owner-only daily backup of the GitHub hub snapshot and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) and [separate owner-only backup Worker source](backup/README.md) are published. The private R2 storage bucket has been created by the owner with an eight-day lifecycle rule, but the backup Worker, scheduled jobs, and recovery tests are **not deployed or verified yet**. The GitHub ZIP provides a reconstructible daily file snapshot, not a full Git history/Issues archive; broader recovery is a future enhancement. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
+**Required before public AI submissions:** a private owner-only daily backup of the GitHub hub snapshot and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) and [separate owner-only backup Worker source](backup/README.md) are published. The private R2 storage bucket has been created with an eight-day lifecycle rule, and a separate backup Worker has been deployed. The first manual Workflow test was **partial and failed D1 export authorization**; successful full backups, daily schedules, missed-backup alerts, and restore tests are **not yet verified**. The GitHub ZIP provides a reconstructible daily file snapshot, not a full Git history/Issues archive; broader recovery is a future enhancement. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
 
 ## Contribute
 
