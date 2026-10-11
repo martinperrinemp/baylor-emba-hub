@@ -3,7 +3,7 @@
 ## One approved hub, separate private progress
 
 - **This public GitHub repo:** canonical, approved coursework metadata, resources, verified AI-use rules, lessons learned, revision history and public conflict alerts.
-- **Student-owned private space:** completion/submission, notes, study plans, preferences, last successful revision. Never another copied master deadline database.
+- **Student-owned private space:** completion/submission, notes, study plans, preferences, last successful revision. Never another copied master deadline database. [Agent Continuity](AGENT-CONTINUITY.md) requires portable checkpoints that survive chat limits.
 - **GitHub Issues today:** change submission + human review.
 - **Proposed Cloudflare Worker + D1 later:** short intake form/API, untrusted submission queue, AI grouping and draft reviewer decisions, authenticated multi-reviewer UI, audit trails, publication after approval.
 - **AI editorial assistant:** extracts candidate field/value, groups duplicates, identifies conflicting reports, prepares summaries. Does **not** silently approve consequential changes, fabricate evidence, or bypass human review.
@@ -21,6 +21,7 @@
 | GitHub writes triggered by approvals | Not built |
 | Email or WhatsApp delivery | Not built |
 | Canvas calendar or API | Explicitly out of scope |
+| Student-owned Agent Continuity | Design and blank template published; automatic personal sync not deployed |
 | Owner-only seven-day rolling private backup | Architecture and runbook published; not deployed |
 | Emergency intake pause for MCP and REST | Fail-closed code implemented; live Cloudflare test pending |
 
