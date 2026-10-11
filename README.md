@@ -24,7 +24,7 @@ The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-ti
 
 ## Private backups and emergency shutdown
 
-**Required before public AI submissions:** a private owner-only daily backup of the full hub and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) is documented; daily backup jobs and storage are **not deployed yet**. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
+**Required before public AI submissions:** a private owner-only daily backup of the GitHub hub snapshot and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) and [separate owner-only backup Worker source](backup/README.md) are published. The private R2 storage bucket has been created by the owner with an eight-day lifecycle rule, but the backup Worker, scheduled jobs, and recovery tests are **not deployed or verified yet**. The GitHub ZIP provides a reconstructible daily file snapshot, not a full Git history/Issues archive; broader recovery is a future enhancement. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
 
 ## Contribute
 
