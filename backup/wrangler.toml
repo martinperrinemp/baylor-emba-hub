@@ -1,0 +1,22 @@
+# Private owner-only backup service, SEPARATE from public proposal intake.
+name = "baylor-emba-daily-backup"
+main = "src/index.mjs"
+compatibility_date = "2026-10-10"
+workers_dev = false
+preview_urls = false
+
+[vars]
+ACCOUNT_ID = "1c698318f2aa46859c28674feb4a0b8"
+DATABASE_ID = "45080b4f-fb83-4b04-ad93-5fba0c73a203"
+REPO_FULL_NAME = "martinperrinemp/baylor-emba-hub"
+
+[[r2_buckets]]
+binding = "PRIVATE_BACKUPS"
+bucket_name = "baylor-emba-private-backups"
+
+[[workflows]]
+name = "baylor-emba-backup-workflow"
+binding = "DAILY_BACKUP"
+class_name = "DailyBackupWorkflow"
+# Disabled until D1 export credentials and restore testing succeed.
+schedules = []
