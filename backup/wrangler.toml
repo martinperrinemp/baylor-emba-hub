@@ -18,5 +18,4 @@ bucket_name = "baylor-emba-private-backups"
 name = "baylor-emba-backup-workflow"
 binding = "DAILY_BACKUP"
 class_name = "DailyBackupWorkflow"
-# Disabled until D1 export credentials and restore testing succeed.
-schedules = []
+# No schedule is configured yet. Set up a trigger only after backup and restore testing.
