@@ -78,3 +78,9 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 After any meaningful user-confirmed milestone, update **this document in GitHub**. Mark only observed/tested work complete; keep `[ ]` for pending, failed or unverified steps. When unsure about Cloudflare runtime, say that a fresh screenshot or readout is needed. Never publish token values, personally identifying student information, or restricted course content.
 
 **Note:** This public checklist is intentionally free of passwords, token strings and student-specific coursework/progress. Secrets remain exclusively in Cloudflare or another owner-controlled private vault. This file is a planning checkpoint, not an automated backup of cloud services.
+
+### Watchdog diagnostic, 2026-10-11 04:22 UTC
+
+- Observability screenshot confirms Cron executions at 04:16 and 04:21 UTC. Both fail with `DISCORD_WEBHOOK_URL secret is not configured`. Cron is firing; the running Production Worker lacks the Discord secret.
+- Next: inspect `baylor-emba-backup-watchdog` Production Settings → Variables and Secrets; verify exact secret name and type. If missing, add securely through Cloudflare; if present, investigate deployment environment before changing it. Do not paste webhook value in chat or GitHub.
+- Direct test returned HTTP 500. Discord delivery and daily Watchdog remain unverified; temporary test endpoint and five-minute schedule are still active, and must be removed after test success.
