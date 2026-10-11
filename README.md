@@ -10,6 +10,10 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 
 Read [**Project Handoff and Build Checklist**](docs/PROJECT-HANDOFF.md) first. It tracks only user-confirmed milestones, outstanding tests and the next action, without any passwords or private coursework.
 
+## Resume your own AI assistant across conversations
+
+Every cohort member should be able to keep **confirmed personal progress in a student-owned private checkpoint** and restore it in another chat, then check fresh approved class information. The [Agent Continuity design](docs/AGENT-CONTINUITY.md) and [blank portability template](templates/personal/continuity.template.json) are published. **Automatic checkpoint sync and cross-platform connections are not yet deployed.** Never save filled student checkpoints in this public repository.
+
 ## Browse the knowledge base
 
 | Information | File | Status |
