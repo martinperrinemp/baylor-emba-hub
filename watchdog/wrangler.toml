@@ -2,7 +2,9 @@
 name = "baylor-emba-backup-watchdog"
 main = "src/index.mjs"
 compatibility_date = "2026-10-10"
-workers_dev = false
+# TEMPORARY one-shot diagnostic via workers.dev.
+# Disable again immediately after Discord delivery verified.
+workers_dev = true
 preview_urls = false
 
 # TEMPORARY Discord delivery smoke test. One alert per UTC day enforced by
