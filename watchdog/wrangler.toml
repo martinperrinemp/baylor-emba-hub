@@ -2,21 +2,19 @@
 name = "baylor-emba-backup-watchdog"
 main = "src/index.mjs"
 compatibility_date = "2026-10-10"
-# TEMPORARY one-shot diagnostic via workers.dev.
-# Disable again immediately after Discord delivery verified.
-workers_dev = true
+workers_dev = false
 preview_urls = false
 
-# TEMPORARY Discord delivery smoke test. One alert per UTC day enforced by
-# the private R2 marker. Owner must confirm receipt before switching to daily.
+# Daily owner-only backup check at 12:00 UTC, three hours after backup.
+# 07:00 CDT / 06:00 CST, with no public HTTP routes.
 [triggers]
-crons = ["*/5 * * * *"]
+crons = ["0 12 * * *"]
 
 [vars]
-WATCHDOG_TEST_MODE = "true"
+WATCHDOG_TEST_MODE = "false"
 
 # Persist Cron invocation logs across GitHub deployments (not dashboard-only).
-# Low-volume, owner-only Worker: capture 100% of test executions and failures.
+# Low-volume, owner-only Worker: capture 100% of executions and failures.
 [observability]
 enabled = true
 
