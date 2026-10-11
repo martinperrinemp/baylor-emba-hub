@@ -15,6 +15,16 @@ Applies to any AI assistant using this repository. This is a **public, unofficia
 - Don't copy all shared deadlines into a private repository and then assume those copies are current. Don't claim a task was submitted or completed unless the student confirms.
 - For "what is next?", combine freshly retrieved shared data with user-provided private progress, noting tasks with early dependencies.
 
+## Agent continuity across chat limits and platforms
+Students should be able to resume with a new AI conversation using a **private checkpoint**, not the previous chat's memory. See [Agent Continuity](docs/AGENT-CONTINUITY.md) and the [blank portable template](templates/personal/continuity.template.json).
+
+- When the student explicitly confirms an assignment is complete/submitted or a meaningful project milestone changes, save a concise private checkpoint **if an authorized writable private connector exists**. Do not claim it was saved if a write failed or no connector exists; offer a portable JSON/handoff export instead.
+- Never wait for the chat's final message: limits can arrive unexpectedly. Checkpoint proactively upon **confirmed progress** or on user request.
+- On "resume my EMBA assistant," retrieve student-owned private checkpoint (only with the student's permission), fetch the **current** public hub manifest, alerts, changes and assignments, and join private progress to approved shared records by stable assignment ID.
+- Do not copy the central master deadlines into private progress. Preserve last seen knowledge revision and explicitly surface approved updates and unresolved conflicts.
+- A new conversation cannot recover full dialogue or attachments from the checkpoint alone. State any missing context; distinguish student's confirmed status from plans or AI suggestions.
+- Never put individual checkpoint values in this public repository, cohort Issues, or the proposal submission queue. Owner/reviewers have no general right to view a student's private progress.
+
 ## Resources and academic integrity
 - Consult `data/resources.json` and `data/lessons-learned.json` for useful links and tips; show candidate/verified status. A catalog entry is not permission or institutional endorsement.
 - Before suggesting or using generative AI for assessed work, inspect `data/ai-policies.json` for **assignment-specific**, then course-level evidence. Differentiate brainstorming, editing, drafting assessed content, image generation, slide generation, and research.
