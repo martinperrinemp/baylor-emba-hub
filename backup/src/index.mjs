@@ -7,25 +7,61 @@
  * Scheduled execution is disabled until permissions and restore tests pass.
  */
 import {WorkflowEntrypoint} from "cloudflare:workers";
+import {NonRetryableError} from "cloudflare:workflows";
 import {objectPrefix,requireExportToken,storeVerified,validateGitHubRepo} from "./helpers.mjs";
 
-const HEADERS={"Accept":"application/vnd.github+json","User-Agent":"baylor-emba-owner-backup/0.1"};
+const BASE_HEADERS={"Accept":"application/vnd.github+json","User-Agent":"baylor-emba-owner-backup/0.2","X-GitHub-Api-Version":"2022-11-28"};
+function githubHeaders(env) {
+ // The public unauthenticated GitHub API is IP-limited; require a dedicated
+ // fine-grained read-only token, scoped to this repository and stored as a secret.
+ const token=env.GITHUB_BACKUP_TOKEN;
+ if(typeof token!=="string"||token.length<20) throw new NonRetryableError("GITHUB_BACKUP_TOKEN is not configured. GitHub backup is paused until a repository-scoped read-only token is installed.");
+ return {...BASE_HEADERS,Authorization:"Bearer "+token};
+}
+function responseInfo(res) {
+ const remaining=res.headers.get("x-ratelimit-remaining");
+ const reset=res.headers.get("x-ratelimit-reset");
+ const retryAfter=res.headers.get("retry-after");
+ return [
+  "HTTP "+res.status,
+  remaining!==null?"GitHub-remaining="+remaining:null,
+  reset!==null?"rate-limit-reset-UTC="+new Date(Number(reset)*1000).toISOString():null,
+  retryAfter!==null?"retry-after-seconds="+retryAfter:null
+ ].filter(Boolean).join("; ");
+}
 async function checkedJson(res,action) {
- if(!res.ok) throw new Error(action+": HTTP "+res.status);
+ if(!res.ok) {
+  const description=action+": "+responseInfo(res);
+  if([401,403,404,429].includes(res.status)) throw new NonRetryableError(description);
+  throw new Error(description);
+ }
  const data=await res.json();
- if(data?.success===false) throw new Error(action+": API error");
+ if(data?.success===false) throw new Error(action+": API returned success=false");
  return data;
 }
-async function githubHead(repo) {
+async function githubHead(repo,env) {
  validateGitHubRepo(repo);
- const data=await checkedJson(await fetch("https://api.github.com/repos/"+repo+"/commits/main",{headers:HEADERS}),"GitHub HEAD");
+ const data=await checkedJson(await fetch("https://api.github.com/repos/"+repo+"/commits/main",{headers:githubHeaders(env)}),"GitHub HEAD");
  if(!/^[a-f0-9]{40}$/.test(data.sha)) throw new Error("Unexpected GitHub SHA");
  return data.sha;
 }
-async function githubZip(repo,sha) {
- const res=await fetch("https://api.github.com/repos/"+repo+"/zipball/"+sha,{headers:HEADERS});
- if(!res.ok) throw new Error("GitHub ZIP download failed: "+res.status);
- const bytes=await res.arrayBuffer();
+async function githubZip(repo,sha,env) {
+ const res=await fetch("https://api.github.com/repos/"+repo+"/zipball/"+sha,{headers:githubHeaders(env),redirect:"manual"});
+ let response=res;
+ if([301,302,303,307,308].includes(res.status)) {
+  // Never forward authorization to a different host during a redirect.
+  const location=res.headers.get("location");
+  if(!location) throw new Error("GitHub ZIP redirect missing location");
+  const dest=new URL(location);
+  if(dest.protocol!=="https:"||dest.hostname!=="codeload.github.com") throw new NonRetryableError("Unexpected GitHub ZIP redirect host");
+  response=await fetch(dest.toString(),{redirect:"error"});
+ }
+ if(!response.ok) {
+  const description="GitHub ZIP: "+responseInfo(response);
+  if([401,403,404,429].includes(response.status)) throw new NonRetryableError(description);
+  throw new Error(description);
+ }
+ const bytes=await response.arrayBuffer();
  if(bytes.byteLength<32) throw new Error("Invalid ZIP response");
  return bytes;
 }
@@ -48,13 +84,14 @@ export class DailyBackupWorkflow extends WorkflowEntrypoint {
   const env=this.env;
   if(!env.PRIVATE_BACKUPS) throw new Error("Private backup bucket not bound");
   requireExportToken(env);
+  githubHeaders(env);
   const createdAt=new Date().toISOString();
   const prefix=objectPrefix(createdAt,event.instanceId);
   const repo=validateGitHubRepo(env.REPO_FULL_NAME);
 
-  const sha=await step.do("Pin approved GitHub commit",async()=>githubHead(repo));
+  const sha=await step.do("Pin approved GitHub commit",async()=>githubHead(repo,env));
   const github=await step.do("Archive and verify complete public repository files",async()=>{
-   const bytes=await githubZip(repo,sha);
+   const bytes=await githubZip(repo,sha,env);
    return storeVerified(env.PRIVATE_BACKUPS,prefix+"/github-source.zip",bytes,"application/zip");
   });
 
