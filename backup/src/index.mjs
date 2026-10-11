@@ -54,7 +54,9 @@ async function githubZip(repo,sha,env) {
   if(!location) throw new Error("GitHub ZIP redirect missing location");
   const dest=new URL(location);
   if(dest.protocol!=="https:"||dest.hostname!=="codeload.github.com") throw new NonRetryableError("Unexpected GitHub ZIP redirect host");
-  response=await fetch(dest.toString(),{redirect:"error"});
+  // The validated codeload host receives no Authorization header.
+  // Cloudflare Workers supports "follow" and "manual", not "error".
+  response=await fetch(dest.toString(),{redirect:"follow"});
  }
  if(!response.ok) {
   const description="GitHub ZIP: "+responseInfo(response);
