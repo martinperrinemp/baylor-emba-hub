@@ -15,3 +15,11 @@ test("detects corrupt backup",async()=>{
  const bucket={async put(){},async get(){return {async arrayBuffer(){return new TextEncoder().encode("wrong").buffer}}}};
  await assert.rejects(storeVerified(bucket,"daily/sample",new TextEncoder().encode("valid").buffer,"text/plain"),/checksum/);
 });
+
+test("backup Worker uses Cloudflare-supported redirect behavior",async()=>{
+ const {readFile}=await import("node:fs/promises");
+ const code=await readFile(new URL("../src/index.mjs",import.meta.url),"utf8");
+ assert.equal(code.includes('redirect:"error"'),false,"Cloudflare Workers does not implement redirect:error");
+ assert.equal(code.includes('dest.hostname!=="codeload.github.com"'),true,"GitHub ZIP redirects must verify destination");
+ assert.equal(code.includes('response=await fetch(dest.toString(),{redirect:"follow"})'),true,"codeload fetch must use supported redirect behavior");
+});
