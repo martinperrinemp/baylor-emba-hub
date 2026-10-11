@@ -51,7 +51,7 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [x] **Daily schedule added to GitHub source:** `backup/wrangler.toml` now has `[[workflows]] schedules = ["0 9 * * *"]`, supported by Cloudflare for recurring Workflows (09:00 UTC = 04:00 CDT / 03:00 CST). Commit `c132615`. This **does not establish that a scheduled run has occurred yet**; owner must verify Cloudflare's latest deployment and schedule, then check the first automatic instance the next morning.
 - [x] **Scheduled daily backup deployed and schedule visible in Cloudflare (user confirmed 2026-10-11 ~03:10 UTC).** Backup Worker latest build Ready; owner sees `baylor-emba-backup-workflow` daily schedule `0 9 * * *` (09:00 UTC). This verifies the schedule is configured, **not that a scheduled run has executed or succeeded yet**.
 - [ ] **Verify first automatic run after 09:00 UTC:** Check Cloudflare Workflow for successful scheduled instance and private R2 completed manifest + D1 SQL + ZIP for the date. Eight-day R2 expiration configured; accumulate at least seven verified daily restore points.
-- [ ] Set up and **test owner-only failure/missed-backup notification**. A working schedule does not guarantee failed runs will be noticed; compare last complete R2 manifest to current UTC date and alert owner if stale. Do not allow outside submissions until alerting is functioning.
+- [ ] Set up and **test owner-only failure/missed-backup notification**. [Monitoring design](BACKUP-MONITORING.md) published, but alert service is **not deployed or tested**. Next inspect Cloudflare **Alerts → Create an Alert** for available Workflow failure notifications. Regardless, verify daily R2 fresh manifest by a separate check because an omitted schedule might produce no Workflow error. Do not enable outside submissions until owner-only alerts are working.
 - [ ] Add full Git history and Issues/PR archival if a literal whole-system recovery guarantee is required; current snapshot + D1 supports basic redeployment but is not a complete audit/history backup.
 - [ ] Test `INTAKE_ENABLED=false` blocks both REST and MCP submissions and public GitHub read access remains working. Test credential rotation as part of the disaster drill.
 - [ ] Secure and test proposal submission for compatible students' AI assistants, ensuring they only create **pending** records until human approval.
@@ -66,6 +66,7 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [Submitted-change Worker source](../cloudflare/README.md)
 - [Owner backup Worker source](../backup/README.md)
 - [Recovery requirements](BACKUP-AND-RECOVERY.md)
+- [Backup monitoring specification](BACKUP-MONITORING.md)
 - [Change review design](CHANGE-PROCESS.md)
 - [Manual semester data import](SEMESTER-IMPORT.md)
 - [Portable private Agent Continuity](AGENT-CONTINUITY.md)
