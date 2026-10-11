@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "example_only": true,
+  "privacy": "PRIVATE STUDENT-OWNED CHECKPOINT. This file is a blank template; do not commit filled-out copies to the public hub.",
+  "updated_at": null,
+  "last_checkpoint_reason": null,
+  "last_seen_shared_revision": null,
+  "last_successful_hub_check_at": null,
+  "task_progress": {
+    "SAMPLE101-illustrative-assignment": {
+      "status": "in_progress",
+      "confirmed_by_student": false,
+      "confirmed_at": null,
+      "notes": "Example only: remove this sample before using"
+    }
+  },
+  "projects": [],
+  "study_preferences": {},
+  "personal_constraints": [],
+  "outstanding_questions": [],
+  "continuity_notes": []
+}
