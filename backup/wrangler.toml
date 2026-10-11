@@ -18,4 +18,7 @@ bucket_name = "baylor-emba-private-backups"
 name = "baylor-emba-backup-workflow"
 binding = "DAILY_BACKUP"
 class_name = "DailyBackupWorkflow"
-# No schedule is configured yet. Set up a trigger only after backup and restore testing.
+# Daily owner-only snapshot at 09:00 UTC (04:00 CDT / 03:00 CST).
+# Cloudflare Workflows supports non-empty schedules directly on this binding.
+# Owner verified full manual backup plus isolated D1 schema and GitHub ZIP recovery.
+schedules = ["0 9 * * *"]
