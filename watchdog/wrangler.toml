@@ -5,11 +5,13 @@ compatibility_date = "2026-10-10"
 workers_dev = false
 preview_urls = false
 
-# Intentionally no cron until the owner tests Discord delivery and monitoring.
-# Then add [triggers] crons = ["0 12 * * *"] (12:00 UTC daily,
-# 07:00 CDT / 06:00 CST, three hours after the backup at 09:00 UTC).
+# TEMPORARY Discord delivery smoke test. One alert per UTC day enforced by
+# the private R2 marker. Owner must confirm receipt before switching to daily.
+[triggers]
+crons = ["*/5 * * * *"]
+
 [vars]
-WATCHDOG_TEST_MODE = "false"
+WATCHDOG_TEST_MODE = "true"
 
 [[r2_buckets]]
 binding = "PRIVATE_BACKUPS"
