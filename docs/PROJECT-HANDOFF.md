@@ -36,10 +36,13 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [x] Dedicated Cloudflare API token `baylor-emba-d1-backup` created by owner, scoped to their Cloudflare account, saved **as secret** `D1_EXPORT_TOKEN` on backup Worker. **Actual token value is never in this repository.**
 - [x] First manual Workflow test was triggered. GitHub commit pin + ZIP archive/verification steps succeeded, but full D1 export failed with **HTTP 401**. Thus **no complete backup was confirmed**.
 - [x] Owner subsequently changed token permission from **Account / D1 / Read** to **Account / D1 / Edit**, reported **“Updated!”**.
+- [x] After the D1 token update, owner manually restarted the backup Workflow. The new attempt **failed at GitHub HEAD (HTTP 403)** before reaching the D1 export. Thus the new D1 permission is **not yet verified**.
+- [x] Backup Worker source updated to require a **repository-scoped GitHub read-only token** (`GITHUB_BACKUP_TOKEN`) and to report GitHub rate-limit response headers without exposing secrets. Auto-deploy must be verified. No token has been created or added to the Worker yet.
 
 ## Immediate next step — do not skip
 
-- [ ] **Confirm result of a new manual Workflow attempt after the token permission update.** Previous instruction was to restart the failed `baylor-emba-backup-workflow` instance; **user has NOT yet confirmed a successful rerun or supplied its new result.** Ask whether they restarted it; if so inspect status/screenshot. If not, walk them through restarting. Avoid blindly creating new tokens or widening permissions.
+- [ ] **Resolve GitHub HEAD HTTP 403:** Create fine-grained GitHub token with access only to `martinperrinemp/baylor-emba-hub` and repository permission **Contents: Read-only**, then store it as `GITHUB_BACKUP_TOKEN` secret in the separate **backup Worker** (not in public GitHub or proposal Worker). Verify the latest GitHub commit has deployed. Do not ask for the token value or retry before secret is installed.
+- [ ] Run a fresh test Workflow, confirm the GitHub steps work and determine whether the earlier **D1 export 401** is resolved by the owner's D1 token permission change. If D1 still fails, investigate without requesting secrets.
 - [ ] If export still returns HTTP 401, inspect API token scope/status, secret presence in the active deployment, Cloudflare API authorization, and error diagnostics without requesting token values. Distinguish permission, missing deployment secret, wrong resource ID, or API request shape.
 - [ ] Successful Workflow must complete **all five** steps, including R2 D1 SQL and completed manifest. Verify private R2 objects `github-source.zip`, `d1-database.sql`, `manifest.json` in a single timestamped backup directory. GitHub ZIP alone is only a **partial** backup.
 - [ ] Test restoring into an **isolated** temporary D1 database and validate recovered records/schema; test reading/reconstructing approved GitHub snapshot.
