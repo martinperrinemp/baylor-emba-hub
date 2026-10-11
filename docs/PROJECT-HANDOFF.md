@@ -12,6 +12,7 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 
 - Public repository: `martinperrinemp/baylor-emba-hub`. **No personal progress, grades, credentials, tokens, restricted course content, class rosters, confidential work files, or raw Canvas materials.**
 - Entire cohort may read approved public metadata; every student manages private progress independently.
+- **New locked requirement (Oct 10): student Agent Continuity.** Every cohort member must be able to resume their agent after chat-length limits using a student-owned PRIVATE checkpoint (confirmed task completions, current projects, preferences, last hub revision). Portable across compatible assistants. Never store filled personal data in this public repo; see [Agent Continuity](AGENT-CONTINUITY.md).
 - **No Canvas integration at all**: no calendar feed, APIs, scraping, Duo workarounds, or automatic login. Authorized semester metadata is prepared by manual review.
 - Multiple reviewers eventually approve/reject/edit/override proposals and leave an audit trail. AI consolidates duplicates and prepares suggestions but **cannot majority-vote official deadlines**.
 - Classmates should be able to tell their own compatible AI assistant to submit proposed updates. One-time connection via remote MCP or REST action; GitHub Issues are fallback. AI submission is **not yet working end-to-end or open to classmates**.
@@ -48,6 +49,8 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [ ] Configure and test secure proposal submission credentials; confirm sample AI clients can submit only **pending** changes (not approved updates).
 - [ ] Build authenticated multi-reviewer approval/edit/reject and audit UI, safe GitHub approval publication, conflict notices and change notifications.
 - [ ] Manually import/verify public-safe Fall 2026 course metadata and assignment-specific AI-use rules. Do not copy source course documents into this public repo.
+- [ ] Implement and test the student-owned private checkpoint flow: save confirmed progress, create export, restart in fresh chat, fetch current hub and reconcile by stable assignment ID. Document limitations per AI provider. **Design and blank template published, automatic sync not built.**
+- [ ] Evaluate optional authenticated per-student Cloudflare continuity storage later; do not couple it to shared class submissions, approvals, or backup bucket.
 - [ ] Finally authorize cohort onboarding **only after** the owner-only backup and restore system and review access controls have been tested.
 
 ## Key links
@@ -58,6 +61,7 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [Recovery requirements](BACKUP-AND-RECOVERY.md)
 - [Change review design](CHANGE-PROCESS.md)
 - [Manual semester data import](SEMESTER-IMPORT.md)
+- [Portable private Agent Continuity](AGENT-CONTINUITY.md)
 - Deployed proposal Worker health endpoint: https://baylor-emba-proposals.martin-perrine-mp.workers.dev/health
 
 ## Handoff maintenance rule
