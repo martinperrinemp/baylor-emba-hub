@@ -22,3 +22,6 @@ jobs:
       - run: node --test backup/test/*.test.mjs
       - run: node --check backup/src/index.mjs
       - run: node --check backup/src/helpers.mjs
+      - run: node --test watchdog/test/*.test.mjs
+      - run: node --check watchdog/src/check.mjs
+      - run: node --check watchdog/src/index.mjs
