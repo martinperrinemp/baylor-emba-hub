@@ -89,3 +89,9 @@ After any meaningful user-confirmed milestone, update **this document in GitHub*
 
 - Owner's screenshot shows `DISCORD_WEBHOOK_URL` was set as an encrypted **Builds → Variables and secrets** secret, under the `Build watch paths` and `API token` settings. Cloudflare documents build secrets are ONLY available at build time and **not** to the running Worker. This directly explains runtime log `DISCORD_WEBHOOK_URL secret is not configured`; Cron itself has already been confirmed executing.
 - **Next single user step:** on `baylor-emba-backup-watchdog` Production → Settings, navigate to the top-level **Bindings / runtime Variables and Secrets** section, **not** Builds. Add `DISCORD_WEBHOOK_URL` as type **Secret** using original private Discord webhook URL and **Deploy**. Don't share the URL. Then reload the temporary direct test URL and check Discord. After success, immediately disable workers.dev temporary test endpoint, remove temp handler, set test mode false, and schedule the daily watchdog at 12:00 UTC. Remove the unnecessary build-time duplicate secret afterward if safe to do so.
+
+### Runtime Discord secret now deployed, 2026-10-11 04:29 UTC
+
+- Owner confirmed adding and deploying `DISCORD_WEBHOOK_URL` as a **Production runtime Secret**, separate from the earlier build-time secret.
+- **Next immediate action:** open existing manual smoke-test URL `https://baylor-emba-backup-watchdog.martin-perrine-mp.workers.dev/__diagnostics/discord-smoke-test-20261011`, check browser response and receipt in private Discord `#backup-alerts`.
+- **Critical temporary exposure:** workers.dev endpoint and five-minute cron/test mode are still in place for this test. After successful delivery, promptly revert public Worker URL / diagnostic fetch handler, set `WATCHDOG_TEST_MODE=false` and Cron to daily `0 12 * * *`, and verify deployment. No evidence of delivery as of this checkpoint.
