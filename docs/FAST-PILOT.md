@@ -41,6 +41,14 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 - Two historical “waiting for instructor” records are kept as **status at the time of original tracker**, not a current availability claim. The original short/truncated titles remain flagged for verification.
 - The hub adds **Reading & Prep** with Course and Upcoming/All filters and source notes. A classmate can now use the public hub for a tentative prep plan, but the current syllabus/Canvas instructions remain authoritative.
 - The shared manifest remains at **revision 0** because no item has been independently verified and approved as canonical.
+- On October 14 the owner **confirmed the Reading & Prep section loads on mobile**. QBA reading references remain an explicitly deferred source gap; the owner will provide the original QBA reading items later.
+
+## Assignment-specific AI use guidance (October 14)
+
+- The source packet summarizes ENT professor guidance for **Paper #1** and **Paper #2**: AI is not to compose the student's assessed response; editing/polishing the student's own writing is described as permitted; if AI is used, an endnote naming the platform and describing its use is required. This is **student-prepared source-derived guidance awaiting current official re-verification**.
+- The same source describes the **ENT case presentation** as permitting AI with disclosure on its opening slide; the precise allowed scope remains to be checked. This does not imply broader permission for other assessments.
+- Published three assignment-scoped records in `data/ai-policies.json` with `verification_status=needs_verification`, `verified_permission=false`, safe attribution, and pending official questions. The hub displays these as **provisional, not permission** in the existing Your AI section. The page rendering remains to be confirmed on the live deployment.
+- For other assignments, **especially MGT and QBA, policy is unknown and not automatically authorized.** No student-specific academic status, course instructions, or confidential material was published.
 
 ## Pilot v2: remove friction, without dropping approval
 
