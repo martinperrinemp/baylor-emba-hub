@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142338">
+  <meta name="description" content="Unofficial, student-maintained Dallas EMBA cohort hub. Shared verified deadlines and resources, with your individual progress kept private.">
+  <title>Dallas EMBA | Cohort Hub</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Dallas EMBA Cohort Hub home">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span><strong>Dallas EMBA</strong><small>COHORT HUB · CLASS OF 2028</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#deadlines">Deadlines</a>
+        <a href="#resources">Resources</a>
+        <a href="#your-ai">Your AI</a>
+        <a href="#changes">Updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow"><span class="live-dot"></span> UNOFFICIAL STUDENT-MAINTAINED REFERENCE</p>
+          <h1>One shared source.<br><span class="accent">Your own progress.</span></h1>
+          <p class="lead">Course deadlines, useful resources, and changes, organized so you and your AI assistant can stay on the same page.</p>
+          <div class="buttons">
+            <a class="btn btn-gold" href="#your-ai">Get your AI started <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#deadlines">See assignments <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="notice-small">No Canvas connection. No individual grades or submissions collected here.</p>
+        </div>
+        <aside class="hero-panel" aria-label="Hub status">
+          <div class="panel-title"><span class="panel-icon">↗</span> HUB STATUS <span class="status-dot" aria-hidden="true"></span></div>
+          <div class="status-line"><span>Knowledge revision</span><strong id="revision">Checking…</strong></div>
+          <div class="status-line"><span>Reviewed assignments</span><strong id="record-count">Checking…</strong></div>
+          <div class="status-line"><span>Open cohort alerts</span><strong id="alerts-count">Checking…</strong></div>
+          <div class="line"></div>
+          <p class="mini-label">LAST PUBLISHED UPDATE</p>
+          <p id="updated" class="panel-date">Checking the repository…</p>
+          <a class="mini-link" target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub">Browse the public source ↗</a>
+        </aside>
+      </div>
+    </section>
+    <div class="container">
+      <div class="official-warning" role="note"><span aria-hidden="true">ⓘ</span><div><strong>Official instructions always come first.</strong> This is a peer-maintained planning aid, not a Baylor-operated service. Verify consequential deadlines and AI-use permissions using current course instructions or Canvas.</div></div>
+
+      <section id="deadlines" class="section">
+        <div class="section-heading">
+          <div><p class="kicker">01 / THE SHARED VIEW</p><h2>Assignment deadlines</h2><p class="section-desc">Approved dates are separate from personal completion status. Presentation and upload deadlines may differ.</p></div>
+          <label class="filter-wrap">Course
+            <select id="course-filter" aria-label="Filter assignments by course"><option value="all">All courses</option></select>
+          </label>
+        </div>
+        <div class="notice" id="data-status" role="status" aria-live="polite">Checking the latest public records…</div>
+        <div id="assignment-list" class="assignment-list" aria-live="polite"></div>
+        <p class="footnote">Don't see an assignment? It may not have been verified for publication yet. Missing is not the same as not assigned.</p>
+      </section>
+
+      <section id="resources" class="section">
+        <div class="section-heading"><div><p class="kicker">02 / THE TOOLKIT</p><h2>Shared resources</h2><p class="section-desc">Helpful tools and links, clearly marked when they are still under review.</p></div></div>
+        <div id="resource-list" class="cards"></div>
+      </section>
+
+      <section id="your-ai" class="section ai-section">
+        <div class="section-heading"><div><p class="kicker">03 / YOUR PERSONAL ASSISTANT</p><h2>Bring the hub into your AI</h2><p class="section-desc">Keep using ChatGPT, Claude, Gemini, or another assistant that can access public GitHub files. No new account for the hub.</p></div></div>
+        <div class="ai-grid">
+          <div class="ai-instructions">
+            <h3>Start in two steps</h3>
+            <ol>
+              <li><strong>Copy the prompt.</strong> Paste it into your own AI conversation, along with the link to this hub.</li>
+              <li><strong>Tell your assistant what's completed.</strong> That information stays in your private conversation, not the shared hub.</li>
+            </ol>
+            <div class="button-group">
+              <button id="copy-prompt" type="button" class="btn btn-gold">Copy AI starter prompt <span aria-hidden="true">⧉</span></button>
+              <a class="btn btn-outline light-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/AGENTS.md">Read AI instructions ↗</a>
+            </div>
+            <p id="copy-status" class="helper-text" role="status" aria-live="polite">A capable assistant should check current GitHub files before giving deadline advice.</p>
+          </div>
+          <div class="privacy-panel"><span class="lock" aria-hidden="true">◎</span><h3>Your information remains yours.</h3><p>The public hub contains shared course information, not your grades, submissions, study notes, or calendar.</p><p>For restarting a long AI chat, use a private checkpoint. Automatic cross-platform saving has <strong>not</strong> been enabled yet.</p><a target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/AGENT-CONTINUITY.md">Read the private continuity guide ↗</a></div>
+        </div>
+      </section>
+
+      <section id="changes" class="section">
+        <div class="section-heading"><div><p class="kicker">04 / KEEP IT ACCURATE</p><h2>Changes and corrections</h2><p class="section-desc">Reports are suggestions until someone verifies the source and approves the update.</p></div></div>
+        <div class="changes-grid">
+          <div>
+            <h3>Latest approved updates</h3>
+            <div id="change-list" class="change-list"></div>
+            <div id="alert-list" class="alert-list"></div>
+          </div>
+          <div class="suggest">
+            <h3>Notice a missing or changed deadline?</h3>
+            <p>Tell us the course, assignment, <em>which</em> date or rule changed, and how you verified it. Never paste grades, private messages, restricted case content or Canvas links with tokens.</p>
+            <a class="btn btn-outline light-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/issues/new?template=proposal.yml">Submit using GitHub ↗</a>
+            <button type="button" id="copy-correction" class="text-button">Copy a correction template ↗</button>
+            <p class="helper-text">GitHub proposals currently require a GitHub account. A no-login submission method is planned, but is not live.</p>
+          </div>
+        </div>
+      </section>
+      <footer class="footer"><span>Dallas EMBA Cohort Hub · Unofficial student project</span><span>Public approved data only. Official course materials take precedence.</span></footer>
+    </div>
+  </main>
+</body>
+</html>
