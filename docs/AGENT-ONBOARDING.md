@@ -3,7 +3,7 @@
 No particular AI platform is required. Different products have different abilities to read public GitHub and to retain progress; verify capabilities rather than assuming them.
 
 1. Give your AI the public repository URL and the text in [`AGENTS.md`](../AGENTS.md). Some agents can retrieve live files; others need manual uploads or copy/paste.
-2. Ask it to fetch `data/manifest.json`, `data/open-alerts.json`, and the relevant course files, including `data/assignments.json` and `data/prep.json`, **fresh** before deadline or preparation advice. Both catalogs currently contain student-organized provisional leads, not official confirmations.
+2. Ask it to fetch `data/manifest.json`, `data/open-alerts.json`, and the relevant course files, including `data/assignments.json`, `data/prep.json`, and `data/ai-policies.json`, **fresh** before deadlines, preparation, or AI-use advice. These current catalogs contain student-prepared provisional leads, not independently official confirmations. Provisional AI-use notes must **never** be treated as authorization.
 3. Keep individual assignment completion, grades, study notes, calendars, and `last_seen_shared_revision` in your own **private** record. Do not put personal progress in this public repository.
 4. For "what changed?", provide your last successfully seen revision or let a capable agent compare its private revision to `data/changes.json`.
 5. If the assistant cannot access current files, it must disclose that limitation. Verify important dates in Canvas or instructor communication yourself.
