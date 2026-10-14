@@ -19,6 +19,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#deadlines">Deadlines</a>
+        <a href="#prep">Reading & Prep</a>
         <a href="#resources">Resources</a>
         <a href="#your-ai">Your AI</a>
         <a href="#changes">Updates</a>
@@ -44,6 +45,7 @@
           <div class="status-line"><span>Knowledge revision</span><strong id="revision">Checking…</strong></div>
           <div class="status-line"><span>Reviewed assignments</span><strong id="record-count">Checking…</strong></div>
           <div class="status-line"><span>Dates awaiting review</span><strong id="candidate-count">Checking…</strong></div>
+          <div class="status-line"><span>Prep items awaiting review</span><strong id="prep-count">Checking…</strong></div>
           <div class="status-line"><span>Open cohort alerts</span><strong id="alerts-count">Checking…</strong></div>
           <div class="line"></div>
           <p class="mini-label">LAST PUBLISHED UPDATE</p>
@@ -72,13 +74,30 @@
         <p class="footnote">These dates come from a student-prepared Fall 2026 tracker and have not been independently verified against the latest course instructions. Dates explicitly marked as conflicting require extra caution. Personal completion status is never shared. Missing is not the same as not assigned.</p>
       </section>
 
+      <section id="prep" class="section">
+        <div class="section-heading">
+          <div><p class="kicker">02 / PREPARE FOR CLASS</p><h2>Readings & prep</h2><p class="section-desc">Articles, case titles, book chapters and videos from the original Fall 2026 tracker. The dates shown are preparation or discussion dates, not necessarily Canvas submission deadlines.</p></div>
+          <div class="filters">
+            <label class="filter-wrap">Dates
+              <select id="prep-date-filter" aria-label="Show upcoming or all reading and prep items"><option value="upcoming">Upcoming</option><option value="all">All dates</option></select>
+            </label>
+            <label class="filter-wrap">Course
+              <select id="prep-course-filter" aria-label="Filter reading and prep by course"><option value="all">All courses</option></select>
+            </label>
+          </div>
+        </div>
+        <div class="notice" id="prep-status" role="status" aria-live="polite">Checking the original reading list…</div>
+        <div id="prep-list" class="prep-list" aria-live="polite"></div>
+        <p class="footnote">These are provisional, student-organized references, not a confirmation that the title, requirement, availability, or date remains current. Private Canvas file links and any individual completion information are excluded. QBA reading references were not listed in the original prep tab.</p>
+      </section>
+
       <section id="resources" class="section">
-        <div class="section-heading"><div><p class="kicker">02 / THE TOOLKIT</p><h2>Shared resources</h2><p class="section-desc">Helpful tools and links, clearly marked when they are still under review.</p></div></div>
+        <div class="section-heading"><div><p class="kicker">03 / THE TOOLKIT</p><h2>Shared resources</h2><p class="section-desc">Helpful tools and links, clearly marked when they are still under review.</p></div></div>
         <div id="resource-list" class="cards"></div>
       </section>
 
       <section id="your-ai" class="section ai-section">
-        <div class="section-heading"><div><p class="kicker">03 / YOUR PERSONAL ASSISTANT</p><h2>Bring the hub into your AI</h2><p class="section-desc">Keep using ChatGPT, Claude, Gemini, or another assistant that can access public GitHub files. No new account for the hub.</p></div></div>
+        <div class="section-heading"><div><p class="kicker">04 / YOUR PERSONAL ASSISTANT</p><h2>Bring the hub into your AI</h2><p class="section-desc">Keep using ChatGPT, Claude, Gemini, or another assistant that can access public GitHub files. No new account for the hub.</p></div></div>
         <div class="ai-grid">
           <div class="ai-instructions">
             <h3>Start in two steps</h3>
@@ -97,7 +116,7 @@
       </section>
 
       <section id="changes" class="section">
-        <div class="section-heading"><div><p class="kicker">04 / KEEP IT ACCURATE</p><h2>Changes and corrections</h2><p class="section-desc">Reports are suggestions until someone verifies the source and approves the update.</p></div></div>
+        <div class="section-heading"><div><p class="kicker">05 / KEEP IT ACCURATE</p><h2>Changes and corrections</h2><p class="section-desc">Reports are suggestions until someone verifies the source and approves the update.</p></div></div>
         <div class="changes-grid">
           <div>
             <h3>Latest approved updates</h3>
@@ -113,7 +132,7 @@
           </div>
         </div>
       </section>
-      <footer class="footer"><span>Dallas EMBA Cohort Hub · Unofficial student project</span><span>Public approved data only. Official course materials take precedence.</span></footer>
+      <footer class="footer"><span>Dallas EMBA Cohort Hub · Unofficial student project</span><span>Provisional items are clearly labeled. Official course materials take precedence.</span></footer>
     </div>
   </main>
 </body>
