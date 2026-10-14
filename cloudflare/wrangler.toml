@@ -14,3 +14,11 @@ binding = "DB"
 database_name = "baylor-emba-proposals"
 database_id = "45080b4f-fb83-4b04-ad93-5fba0c73a203"
 migrations_dir = "migrations"
+
+# Public static classmate landing page, bundled with this existing Worker.
+# Only the fixed read API and submission routes execute the Worker script;
+# the landing page itself requires no new service, domain, account, or secret.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/mcp", "/health", "/openapi.json"]
