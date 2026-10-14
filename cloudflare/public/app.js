@@ -62,38 +62,56 @@ function deadlineFor(item){
 function kindFor(item) {
  return item.submission_due_at?"Submission":item.official_due_at?"Due":item.presentation_at?"Presentation":"Date not verified";
 }
+function todayChicago(){
+ const parts=new Intl.DateTimeFormat("en-US",{year:"numeric",month:"2-digit",day:"2-digit",timeZone:"America/Chicago"}).formatToParts(new Date());
+ const get=type=>parts.find(p=>p.type===type)?.value;
+ return get("year")+"-"+get("month")+"-"+get("day");
+}
 function renderAssignments(data){
  const container=$("assignment-list");
  const recs=Array.isArray(data?.records)?data.records:[];
  const reviewed=recs.filter(isReviewed);
  const filter=$("course-filter");
+ const dateFilter=$("date-filter");
+ const chicagoDay=todayChicago();
  const courseCodes=[...new Set(recs.map(r=>r.course_id||r.course||"").filter(Boolean))].sort();
  for(const course of courseCodes){const option=elt("option","",course);option.value=course;filter.append(option);}
  const render=()=>{
   const selected=filter.value;
-  const filtered=recs.filter(r=>selected==="all"||(r.course_id||r.course)===selected).slice().sort((a,b)=>String(deadlineFor(a)||"9999").localeCompare(String(deadlineFor(b)||"9999")));
+  const filtered=recs.filter(r=>(selected==="all"||(r.course_id||r.course)===selected)&&(dateFilter.value==="all"||!deadlineFor(r)||String(deadlineFor(r)).slice(0,10)>=chicagoDay)).slice().sort((a,b)=>String(deadlineFor(a)||"9999").localeCompare(String(deadlineFor(b)||"9999")));
   if(!filtered.length){
-   emptyMessage(container,"No reviewed assignment deadlines published yet.","The course records are still being verified. Please rely on official course materials for deadlines while this hub is populated.");
+   emptyMessage(container,"No matching assignment dates.",dateFilter.value==="upcoming"?"Try All dates or another course. Official Canvas deadlines always take priority.":"No class record matches these filters.");
    return;
   }
   const fragment=document.createDocumentFragment();
   for(const item of filtered){
    const card=elt("article","assignment");
-   const info=elt("div");const badge=elt("span","pill "+(isReviewed(item)?"":"candidate"),isReviewed(item)?"Reviewed":"Needs verification");
+   const info=elt("div");const badge=elt("span","pill "+(isReviewed(item)?"":"candidate"),isReviewed(item)?"Reviewed":item.verification_status==="conflicted"?"Dates conflict · verify":"Provisional · verify");
    const heading=elt("h3","",item.title||item.assignment_title||"Untitled assignment");
    const course=elt("p","",String(item.course_id||item.course||"Course not specified"));
    info.append(badge,heading,course);
-   if(item.verification_status&&!isReviewed(item))info.append(elt("p","","Unverified information. Confirm in your course."));
+   if(item.verification_status&&!isReviewed(item)){
+     info.append(elt("p","","Student-maintained schedule; check the official assignment instructions."));
+   }
+   if(item.source_reference){
+     const source=document.createElement("details");
+     const summary=elt("summary","","Source and verification notes");
+     source.append(summary,elt("p","",item.source_reference));info.append(source);
+   }
    const dates=elt("div","date-group");dates.append(elt("strong","",kindFor(item)),elt("div","",safeDate(deadlineFor(item))||"Not confirmed"));
    if(item.presentation_at&&item.submission_due_at)dates.append(elt("div","", "Presentation: "+safeDate(item.presentation_at)));
    card.append(info,dates);fragment.append(card);
   }
   container.replaceChildren(fragment);
  };
- filter.addEventListener("change",render);render();
+ filter.addEventListener("change",render);
+ dateFilter.addEventListener("change",render);
+ render();
  text($("record-count"),String(reviewed.length));
- if(!reviewed.length) text($("data-status"),"No officially reviewed dates have been entered in the cohort catalog. This is a working pilot, not yet an authoritative assignment calendar.");
- else text($("data-status"),"Showing public records. Check the status on each item and confirm consequential deadlines in Canvas.");
+ text($("candidate-count"),String(recs.length-reviewed.length));
+ if(!reviewed.length)
+   text($("data-status"),recs.length+" provisional class dates from the Fall 2026 master tracker are available. NONE have been checked against current official instructions for the shared hub. Do not treat them as authoritative.");
+ else text($("data-status"),reviewed.length+" reviewed assignments and "+(recs.length-reviewed.length)+" provisional items. Confirm consequential dates in current Canvas/instructor instructions.");
 }
 function renderResources(data) {
  const parent=$("resource-list");const rows=Array.isArray(data?.resources)?data.resources:[];
@@ -145,7 +163,7 @@ async function boot(){
   text($("revision"),"Unavailable");text($("updated"),"Could not verify current GitHub revision");
  }
  if(has(assignments))renderAssignments(assignments.value);
- else{text($("record-count"),"Unavailable");text($("data-status"),"Live records could not be checked. Do not rely on this hub for deadlines.");emptyMessage($("assignment-list"),"Data temporarily unavailable","Confirm your assignments in official course systems.");}
+ else{text($("record-count"),"Unavailable");text($("candidate-count"),"Unavailable");text($("data-status"),"Live records could not be checked. Do not rely on this hub for deadlines.");emptyMessage($("assignment-list"),"Data temporarily unavailable","Confirm your assignments in official course systems.");}
  if(has(resources))renderResources(resources.value);
  else emptyMessage($("resource-list"),"Resources temporarily unavailable","You can still browse the source repository using the links below.");
  renderChanges(has(changes)?changes.value:{},has(alerts)?alerts.value:{});
