@@ -43,6 +43,7 @@
           <div class="panel-title"><span class="panel-icon">↗</span> HUB STATUS <span class="status-dot" aria-hidden="true"></span></div>
           <div class="status-line"><span>Knowledge revision</span><strong id="revision">Checking…</strong></div>
           <div class="status-line"><span>Reviewed assignments</span><strong id="record-count">Checking…</strong></div>
+          <div class="status-line"><span>Dates awaiting review</span><strong id="candidate-count">Checking…</strong></div>
           <div class="status-line"><span>Open cohort alerts</span><strong id="alerts-count">Checking…</strong></div>
           <div class="line"></div>
           <p class="mini-label">LAST PUBLISHED UPDATE</p>
@@ -57,13 +58,18 @@
       <section id="deadlines" class="section">
         <div class="section-heading">
           <div><p class="kicker">01 / THE SHARED VIEW</p><h2>Assignment deadlines</h2><p class="section-desc">Approved dates are separate from personal completion status. Presentation and upload deadlines may differ.</p></div>
-          <label class="filter-wrap">Course
-            <select id="course-filter" aria-label="Filter assignments by course"><option value="all">All courses</option></select>
-          </label>
+          <div class="filters">
+            <label class="filter-wrap">Dates
+              <select id="date-filter" aria-label="Show upcoming or all assignments"><option value="upcoming">Upcoming</option><option value="all">All dates</option></select>
+            </label>
+            <label class="filter-wrap">Course
+              <select id="course-filter" aria-label="Filter assignments by course"><option value="all">All courses</option></select>
+            </label>
+          </div>
         </div>
         <div class="notice" id="data-status" role="status" aria-live="polite">Checking the latest public records…</div>
         <div id="assignment-list" class="assignment-list" aria-live="polite"></div>
-        <p class="footnote">Don't see an assignment? It may not have been verified for publication yet. Missing is not the same as not assigned.</p>
+        <p class="footnote">These dates come from a student-prepared Fall 2026 tracker and have not been independently verified against the latest course instructions. Dates explicitly marked as conflicting require extra caution. Personal completion status is never shared. Missing is not the same as not assigned.</p>
       </section>
 
       <section id="resources" class="section">
