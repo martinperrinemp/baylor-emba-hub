@@ -1,8 +1,8 @@
 # Project handoff and build checklist
 
-**Last user-confirmed checkpoint: October 10, 2026 ~11:30 PM CDT (October 11 ~04:30 UTC).**
+**Last user-confirmed infrastructure checkpoint:** October 10, 2026 ~11:30 PM CDT (October 11 ~04:30 UTC). **Latest code changes:** October 13, 2026, fast classmate read-only pilot, Cloudflare deployment not yet verified.
 
-**CURRENT NEXT ACTION:** Owner confirmed latest Watchdog deployment **Ready** (version `72d321c2`) and confirmed **Settings → Trigger events** shows the permanent **daily** schedule rather than every five minutes (2026-10-11 ~04:37 UTC). GitHub config sets daily Cron `0 12 * * *`, disables test mode and the public workers.dev endpoint, and removes diagnostic HTTP route. Private Discord direct test **succeeded**. **Still verify** no workers.dev public URL in Cloudflare Domains, first scheduled 09:00 UTC backup and 12:00 UTC Watchdog health check, and isolated missing-backup detection/alert. No classmate submissions opened.
+**CURRENT NEXT ACTION (Oct 13, 2026):** We have committed a **public, mobile-friendly read-only cohort launch page** into the *existing* `cloudflare` Worker using Cloudflare Static Assets; it is intended to load at `https://baylor-emba-proposals.martin-perrine-mp.workers.dev/`. It displays only GitHub public shared JSON via a new `GET /api/public/{allowlisted-file}`, with an AI prompt and candidate resource flags. **Owner has not yet confirmed the new Cloudflare deployment or tested the page.** First check Worker `baylor-emba-proposals` → Deployments **Ready**, then open `/`, `/health`, and `/api/public/manifest.json`. `INTAKE_ENABLED=false` remains unchanged. The **shared approved assignments list is empty**; next essential work is the owner's manual review and approval of sanitized course metadata, with no automatic Canvas integration. Read [FAST-PILOT.md](FAST-PILOT.md). After pilot verification, revisit pending private Watchdog URL shutdown, unattended backup checks, and isolated failure alert acceptance tests. No cohort submissions opened.
 
 This file is the durable handoff for a future AI conversation. **It is not a live connection to Cloudflare.** Confirm changing service status in the owner's dashboard before making claims or executing migrations. Do not confuse code published in GitHub with deployed, fully working features.
 
@@ -69,6 +69,18 @@ This file is the durable handoff for a future AI conversation. **It is not a liv
 - [ ] Manually import/verify public-safe Fall 2026 assignment dates and AI-use restrictions, keeping Canvas integration excluded.
 - [ ] Implement and test student-owned Agent Continuity checkpoints (save confirmed progress, private export, resume new chat, refresh shared hub). Design/template published, automatic private sync not built.
 - [ ] Finally authorize cohort onboarding only after the restore drill, backup monitoring, proper permissions, and change review controls are tested.
+
+## Fast rollout milestone (October 13, 2026)
+
+- [x] **Reuse proven GitHub → Cloudflare pipeline** rather than adding another database, domain, token, or worker. One public read-only mobile landing page under `cloudflare/public/{index.html,styles.css,app.js}`; planned user URL: `https://baylor-emba-proposals.martin-perrine-mp.workers.dev/`.
+- [x] **Public read-only API committed** to existing paused proposal Worker: `cloudflare/src/public.mjs` strict JSON filename allowlist, fetches public GitHub canonical `data/` entries, 60-second cache, no private D1 reads or user data. `cloudflare/src/index.mjs` handles `GET /api/public/{filename}` before token-authenticated submit routing; `cloudflare/wrangler.toml` includes `[assets]` for static page and `run_worker_first` for API endpoints.
+- [x] Public pilot displays reviewed/candidate status without pretending assignments are confirmed; copyable starter AI prompt; privacy guidance; GitHub Issue fallback (requires GitHub login); safe correction template; no login or personal data collection. User's own EMBA progress is not in public site.
+- [x] Regression tests for public filename allowlist and safe failure plus `node --check` validation added to GitHub CI; **execution/passing status has not been confirmed** (GitHub combined status query returned no statuses at time of commit). Read [Fast pilot](FAST-PILOT.md).
+- [ ] **Verify Worker site deployment and public endpoints** in owner's browser: newest `baylor-emba-proposals` deployment Ready, root landing page, `/health`, `/api/public/manifest.json`, and that unapproved coursework is not misrepresented as verified.
+- [ ] **Populate the minimum useful shared catalog**: owner reviews small set of student-visible dates, events and AI restrictions, checks current authoritative Canvas/syllabus/instructor instructions manually, approves only safe metadata for public GitHub. Current `data/assignments.json` has **zero records** and `data/ai-policies.json` has **zero verified policies**. Never claim the pilot is a usable cohort calendar until reviewed records actually appear.
+- [ ] Pilot with 2–3 classmates using one URL and simple ChatGPT/Claude/Gemini prompt, collect friction. Don't imply that every AI product has automatic website or write access.
+- [ ] Implement low-friction no-GitHub classmate submission + review after verifying **private daily backup monitoring, emergency switch, abuse controls**, and owner authorization. No auto-publishing of student-reported dates. Private per-user continuity stays independently owned until authentic student sync exists.
+- [ ] **Previous safety checks still pending:** independently verify Watchdog workers.dev URL disabled, first unattended backup + health check, and an isolated missing-backup alert. Nothing from the fast landing-page work changes existing backup permissions or schedules.
 
 ## Key links
 
