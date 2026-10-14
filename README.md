@@ -4,7 +4,7 @@
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
 
-> **Build status (Oct 13, 2026):** **Read-only classmate landing page LIVE, visually verified on Android (owner screenshot October 13, 2026).** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The hub now includes **40 provisional Fall 2026 assignment/deadline candidates** imported from the owner's original master tracker; **none are independently verified against current official instructions**, and shared knowledge revision remains 0. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
+> **Build status (Oct 13, 2026):** **Read-only classmate landing page LIVE, visually verified on Android (owner screenshot October 13, 2026).** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The hub now includes **40 provisional Fall 2026 assignment/deadline candidates and 46 provisional ENT/MGT Reading & Prep items** imported from the original master tracker; **none are independently verified against current official instructions**, and shared knowledge revision remains 0. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
 
 ## Resume the build or move to a new AI chat
 
@@ -16,7 +16,7 @@ Every cohort member should be able to keep **confirmed personal progress in a st
 
 ## Start with the cohort hub
 
-The classmate-facing page is live at **[Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/)**. One URL lets students inspect public course metadata, candidate resources, changes, and copy an AI onboarding prompt. The page does not collect students' grades, personal progress, or their ChatGPT conversations.
+The classmate-facing page is live at **[Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/)**. One URL lets students inspect public course metadata, a provisional Reading & Prep list, candidate resources, changes, and copy an AI onboarding prompt. The page does not collect students' grades, personal progress, or their ChatGPT conversations.
 
 **First use:** open the page, copy **AI starter prompt**, and paste into your own AI assistant. Assistants that cannot fetch the public repo must say so. Candidate dates are **not authoritative** until checked against current course instructions, and missing course records are **not** evidence that no coursework is due.
 
@@ -27,6 +27,7 @@ The [fast pilot plan](docs/FAST-PILOT.md) lists the minimum tests before sharing
 | Information | File | Status |
 | --- | --- | --- |
 | Shared assignments and dependencies | [Assignments](data/assignments.json) | 40 provisional Fall 2026 dates imported; 0 officially verified |
+| Reading, videos, cases and chapter titles | [Reading & Prep](data/prep.json) | 46 provisional ENT/MGT items; preparation dates do not necessarily represent graded due dates |
 | Baylor templates and useful tools | [Resource catalog](data/resources.json) | Candidate entries; check verification fields |
 | Student tips and experience | [Lessons learned](data/lessons-learned.json) | Empty |
 | Course- and assignment-level AI-use rules | [AI policies](data/ai-policies.json) | Unknown until verified |
