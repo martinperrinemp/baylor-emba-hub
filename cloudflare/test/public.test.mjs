@@ -8,6 +8,7 @@ test("Only explicitly public JSON filenames can be retrieved",async()=>{
  assert.equal(r.status,404);
  assert.equal(fetched,false);
  assert.deepEqual(PUBLIC_DATA_FILES.includes("assignments.json"),true);
+ assert.equal(PUBLIC_DATA_FILES.includes("prep.json"),true);
 });
 
 test("Serves allowed GitHub JSON with short-lived public caching",async()=>{
@@ -33,4 +34,15 @@ test("Invalid and oversize JSON cannot populate the public endpoint",async()=>{
  assert.equal(invalid.status,502);
  const oversized=await publicDataResponse("assignments.json",async()=>new Response("{}",{headers:{"content-length":"300000"}}));
  assert.equal(oversized.status,502);
+});
+
+test("Read-only prep file is explicitly allowed and fetches only public GitHub data",async()=>{
+ let requestUrl="";
+ const response=await publicDataResponse("prep.json",async url=>{
+  requestUrl=url;
+  return new Response(JSON.stringify({schema_version:"1.0.0",records:[{id:"example"}]}),{status:200});
+ });
+ assert.equal(response.status,200);
+ assert.equal((await response.json()).records[0].id,"example");
+ assert.equal(requestUrl,"https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json");
 });
