@@ -19,6 +19,8 @@ jobs:
           node-version: '22'
       - run: node --test cloudflare/test/*.test.mjs
       - run: node --check cloudflare/src/index.mjs
+      - run: node --check cloudflare/src/public.mjs
+      - run: node --check cloudflare/public/app.js
       - run: node --test backup/test/*.test.mjs
       - run: node --check backup/src/index.mjs
       - run: node --check backup/src/helpers.mjs
