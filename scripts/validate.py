@@ -47,6 +47,20 @@ def validate():
     assert len(rid) == len(set(rid)), "Duplicate resource ids"
     assert all("verification_status" in x and "ai_tool" in x for x in data["resources"]["resources"])
     assert data["ai-policies"].get("default") == "unknown_requires_official_verification"
+    ai_policies = data["ai-policies"].get("policies", [])
+    assert isinstance(ai_policies, list), "AI policies must be an array"
+    assert len({p["id"] for p in ai_policies}) == len(ai_policies), "Duplicate AI policy ids"
+    known_assignments = set(ids)
+    forbidden_policy_fields = {"personal_status", "grade", "student_name", "student_email", "submitted", "completed"}
+    for p in ai_policies:
+        assert p.get("assignment_id") in known_assignments, "AI policy references unknown assignment"
+        assert p.get("verification_status") in {"verified", "needs_verification", "conflicted"}
+        assert not forbidden_policy_fields.intersection(p), "Personal data or status in public AI policy"
+        assert p.get("source_reference"), "AI policy must carry safe source attribution"
+        assert "baylor.instructure.com" not in json.dumps(p).lower(), "Private course link in public AI guidance"
+        if p["verification_status"] != "verified":
+            assert p.get("verified_permission") is False, "Unverified policy cannot grant permission"
+
     assert len(data["changes"]["changes"]) <= manifest["knowledge_revision"], "Changes exceed revision"
     return True
 
