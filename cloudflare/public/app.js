@@ -45,10 +45,16 @@ function isReviewed(record){
 function safeDate(raw) {
  if(typeof raw!=="string"||!/^\d{4}-\d{2}-\d{2}/.test(raw))return "";
  const dateOnly=/^\d{4}-\d{2}-\d{2}$/.test(raw);
- const d=new Date(dateOnly?raw+"T12:00:00-05:00":raw);
+ // Date-only values are calendar dates, not UTC instants. Never shift them
+ // to a different day based on the classmate's device timezone.
+ if(dateOnly){
+  const [year,month,day]=raw.split("-").map(Number);
+  const calendarDate=new Date(Date.UTC(year,month-1,day,12));
+  return new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"}).format(calendarDate);
+ }
+ const d=new Date(raw);
  if(!Number.isFinite(d.getTime()))return raw;
- const formatted=new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",year:"numeric",...(dateOnly?{}:{hour:"numeric",minute:"2-digit",timeZone:"America/Chicago",timeZoneName:"short"})}).format(d);
- return formatted;
+ return new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit",timeZone:"America/Chicago",timeZoneName:"short"}).format(d);
 }
 function deadlineFor(item){
  return item.submission_due_at || item.official_due_at || item.presentation_at || null;
