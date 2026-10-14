@@ -4,6 +4,6 @@
   "updated_at": "2026-10-14",
   "last_approved_change_id": null,
   "open_urgent_alert_count": 0,
-  "status": "provisional_master_and_prep_imported",
-  "notes": "40 provisional assignment/deadline candidates and 46 provisional ENT/MGT Reading & Prep items imported from the student-prepared Fall 2026 tracker. No records have been independently confirmed against current official course instructions; approved knowledge revision remains 0. ENT peer evaluation date and DoorDash presentation-vs-upload dates are flagged as conflicting. Preparation/discussion dates are not automatically graded submission deadlines. QBA materials are absent from the original Reading & Prep sheet. Personal statuses and private course links are never published."
+  "status": "provisional_master_prep_and_ai_guidance",
+  "notes": "Fall 2026 provisional catalogs contain 40 assignments, 46 ENT/MGT Reading & Prep items, and 3 assignment-scoped ENT AI-use summaries (Paper #1, Paper #2, case presentation) from the student-prepared cohort starter pack. All await independent review against current instructor/Canvas guidance, and AI-use summaries do NOT grant permission. MGT/QBA AI permissions remain unknown. Owner has confirmed both dates and reading catalog are visible on mobile; AI policy page rendering pending owner confirmation. Shared approved knowledge revision stays 0. Two earlier changed-deadline conflicts remain flagged, QBA reading references are absent from the supplied workbook, and no personal completion data is stored here."
 }
