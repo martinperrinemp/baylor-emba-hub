@@ -178,6 +178,39 @@ function renderResources(data) {
  }
  parent.replaceChildren(...nodes);
 }
+function renderAiPolicies(data){
+ const parent=$("ai-policy-list");
+ const policies=Array.isArray(data?.policies)?data.policies:[];
+ if(!policies.length){
+  const note=elt("p","policy-empty","No assignment-specific AI rules have been captured. Consult your current instructor instructions before using AI for assessed work.");
+  parent.replaceChildren(note);return;
+ }
+ const result=document.createDocumentFragment();
+ for(const item of policies){
+  const box=elt("article","policy-card");
+  const tag=elt("span","policy-state",isReviewed(item)?"Source checked":"Provisional · not permission");
+  box.append(tag,elt("h4","",item.title||"Assignment-specific AI policy"));
+  const line=elt("p","",item.captured_guidance||"No specific AI-use guidance captured.");
+  box.append(line);
+  if(item.restricted_uses_captured?.length){
+   box.append(elt("strong","policy-label","Restrictions in source summary"));
+   const list=elt("ul","policy-points");
+   for(const restriction of item.restricted_uses_captured)list.append(elt("li","",restriction));
+   box.append(list);
+  }
+  if(item.disclosure_requirement_captured){
+   box.append(elt("strong","policy-label","Disclosure noted in source"));
+   box.append(elt("p","",item.disclosure_requirement_captured));
+  }
+  const details=elt("details","policy-provenance");
+  details.append(elt("summary","","Source and verification limits"));
+  details.append(elt("p","",item.source_reference||"Student-maintained class summary, not reverified."));
+  if(item.open_questions)details.append(elt("p","",item.open_questions));
+  box.append(details);
+  result.append(box);
+ }
+ parent.replaceChildren(result);
+}
 function renderChanges(data,alerts){
  const c=$("change-list"),a=$("alert-list");const changes=Array.isArray(data?.changes)?data.changes:[];
  if(!changes.length)emptyMessage(c,"No approved changes yet.","When a change is verified and published, it will appear here.");
@@ -199,8 +232,8 @@ async function loadFile(name) {
 async function boot(){
  $("copy-prompt").addEventListener("click",()=>copyToClipboard(PROMPT,"AI starter prompt"));
  $("copy-correction").addEventListener("click",()=>copyToClipboard(CORRECTION,"Correction template"));
- const [manifest,assignments,prep,resources,changes,alerts]=await Promise.allSettled([
-  loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("resources.json"),loadFile("changes.json"),loadFile("open-alerts.json")
+ const [manifest,assignments,prep,resources,policies,changes,alerts]=await Promise.allSettled([
+  loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("resources.json"),loadFile("ai-policies.json"),loadFile("changes.json"),loadFile("open-alerts.json")
  ]);
  const has=m=>m.status==="fulfilled";
  if(has(manifest)){
@@ -220,6 +253,7 @@ async function boot(){
  }
  if(has(resources))renderResources(resources.value);
  else emptyMessage($("resource-list"),"Resources temporarily unavailable","You can still browse the source repository using the links below.");
+ renderAiPolicies(has(policies)?policies.value:{});
  renderChanges(has(changes)?changes.value:{},has(alerts)?alerts.value:{});
  if(!has(manifest)||!has(assignments)||!has(alerts))text($("data-status"),"Some public data could not be verified. Please check official course instructions.");
 }
