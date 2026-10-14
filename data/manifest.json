@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "knowledge_revision": 0,
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-14",
   "last_approved_change_id": null,
   "open_urgent_alert_count": 0,
-  "status": "provisional_master_schedule_imported",
-  "notes": "40 public-safe candidate deadline records imported from the student-prepared Fall 2026 master tracker and cohort starter pack. Zero records have been independently verified against current official course sources; knowledge_revision remains 0 and approved changes remain empty. Conflicting DoorDash presentation/upload and ENT peer-evaluation dates are explicitly marked. Do not treat candidate dates as official."
+  "status": "provisional_master_and_prep_imported",
+  "notes": "40 provisional assignment/deadline candidates and 46 provisional ENT/MGT Reading & Prep items imported from the student-prepared Fall 2026 tracker. No records have been independently confirmed against current official course instructions; approved knowledge revision remains 0. ENT peer evaluation date and DoorDash presentation-vs-upload dates are flagged as conflicting. Preparation/discussion dates are not automatically graded submission deadlines. QBA materials are absent from the original Reading & Prep sheet. Personal statuses and private course links are never published."
 }
