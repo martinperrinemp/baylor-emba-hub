@@ -1,6 +1,68 @@
 {
   "schema_version": "1.0.0",
   "default": "unknown_requires_official_verification",
-  "policies": [],
-  "guidance": "Any AI-use guidance must cite its specific official source; a useful AI tool is not automatically permitted for any graded assignment."
+  "policies": [
+    {
+      "course_id": "ENT 5342",
+      "verification_status": "needs_verification",
+      "last_verified_at": null,
+      "source_type": "student_prepared_cohort_starter_pack",
+      "source_reference": "Fall 2026 student-prepared Dallas EMBA cohort starter pack (Sep 26, 2026), summarizing ENT instructor AI guidance. Exact current syllabus/Canvas/instructor requirements not independently rechecked.",
+      "policy_scope": "assignment",
+      "verified_permission": false,
+      "id": "ent-5342-paper-1-ai-guidance",
+      "assignment_id": "ent-5342-module-2-paper-1",
+      "title": "ENT Paper #1: AI editing only",
+      "captured_guidance": "AI should not compose the student's response. Editing and polishing the student's own response is described as permitted in the student-prepared summary.",
+      "allowed_uses_captured": [
+        "Editing and polishing writing originally composed by the student"
+      ],
+      "restricted_uses_captured": [
+        "Using generative AI to compose the student's assessed paper"
+      ],
+      "disclosure_requirement_captured": "If AI is used, add an endnote identifying the AI platform and briefly describing its use.",
+      "open_questions": "Confirm the current official Canvas prompt and exact AI-use policy; this student-prepared summary is not proof of current permission."
+    },
+    {
+      "course_id": "ENT 5342",
+      "verification_status": "needs_verification",
+      "last_verified_at": null,
+      "source_type": "student_prepared_cohort_starter_pack",
+      "source_reference": "Fall 2026 student-prepared Dallas EMBA cohort starter pack (Sep 26, 2026), summarizing ENT instructor AI guidance. Exact current syllabus/Canvas/instructor requirements not independently rechecked.",
+      "policy_scope": "assignment",
+      "verified_permission": false,
+      "id": "ent-5342-paper-2-ai-guidance",
+      "assignment_id": "ent-5342-module-4-paper-2",
+      "title": "ENT Paper #2: AI editing only",
+      "captured_guidance": "AI should not compose the student's response. Editing and polishing the student's own response is described as permitted in the student-prepared summary.",
+      "allowed_uses_captured": [
+        "Editing and polishing writing originally composed by the student"
+      ],
+      "restricted_uses_captured": [
+        "Using generative AI to compose the student's assessed paper"
+      ],
+      "disclosure_requirement_captured": "If AI is used, add an endnote identifying the AI platform and briefly describing its use.",
+      "open_questions": "Confirm the current official Canvas prompt and exact AI-use policy; this student-prepared summary is not proof of current permission."
+    },
+    {
+      "course_id": "ENT 5342",
+      "verification_status": "needs_verification",
+      "last_verified_at": null,
+      "source_type": "student_prepared_cohort_starter_pack",
+      "source_reference": "Fall 2026 student-prepared Dallas EMBA cohort starter pack (Sep 26, 2026), summarizing ENT instructor AI guidance. Exact current syllabus/Canvas/instructor requirements not independently rechecked.",
+      "policy_scope": "assignment",
+      "verified_permission": false,
+      "id": "ent-5342-case-presentation-ai-guidance",
+      "assignment_id": "ent-5342-case-case-presentation-description-slide-submission",
+      "title": "ENT case presentation: AI disclosure",
+      "captured_guidance": "Student-prepared materials describe AI as allowed for the case presentation when disclosed on the opening slide.",
+      "allowed_uses_captured": [
+        "AI use for this specific case presentation, subject to the applicable instructor restrictions and disclosure"
+      ],
+      "restricted_uses_captured": [],
+      "disclosure_requirement_captured": "If AI is used, disclose its use on the opening slide.",
+      "open_questions": "Recheck the exact scope of permitted assistance and presentation/slide submission instructions. This does not authorize AI use on other ENT, MGT or QBA assessments."
+    }
+  ],
+  "guidance": "Unverified student-prepared summaries are ONLY leads to be confirmed. They are not permission to use AI. A useful AI tool is not automatically permitted for assessed coursework. Assignment-specific current instructor/Canvas rules supersede this catalog. Unlisted assignments, including all MGT and QBA work in this snapshot, have UNKNOWN AI-use permissions; never infer approval."
 }
