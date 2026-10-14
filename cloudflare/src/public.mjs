@@ -3,6 +3,7 @@
 export const PUBLIC_DATA_FILES = Object.freeze([
   "manifest.json",
   "assignments.json",
+  "prep.json",
   "resources.json",
   "ai-policies.json",
   "changes.json",
