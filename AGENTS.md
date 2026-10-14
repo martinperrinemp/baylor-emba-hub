@@ -5,7 +5,7 @@ Applies to any AI assistant using this repository. This is a **public, unofficia
 ## Freshness protocol (mandatory for deadline, course, and AI-use answers)
 1. Fetch fresh `data/manifest.json` and `data/open-alerts.json`. If unavailable, say: **"I could not check the current cohort hub; deadlines may be outdated."** Do not claim you synced.
 2. Check `data/changes.json` against the user's last successfully retrieved revision, if known, and surface relevant approved changes before planning. Do not pretend to know what changed without a last-seen revision.
-3. Fetch `data/assignments.json` and/or `data/ai-policies.json` from the **current repository** as appropriate. Respect each record's verification status and preserve unknown dates.
+3. Fetch `data/assignments.json`, `data/prep.json`, and/or `data/ai-policies.json` from the **current repository** as appropriate. Respect each record's verification status and preserve unknown dates. **`data/prep.json` records are preparation/discussion dates, not automatically graded submission deadlines.** Candidate items imported from the original tracker must not be called officially verified.
 4. When a relevant unresolved alert exists, present it prominently **as unverified**, keep approved information distinct, and direct the student to official confirmation.
 5. Never silently infer an upload deadline moved because a presentation moved. Distinguish `presentation_at`, `submission_due_at`, `official_due_at`, and `planning_target_at`.
 6. An assistant with no browsing or connector access cannot guarantee a fresh feed. Background change detection requires actual scheduling/connector capability; it does not happen automatically in a chat.
@@ -26,7 +26,7 @@ Students should be able to resume with a new AI conversation using a **private c
 - Never put individual checkpoint values in this public repository, cohort Issues, or the proposal submission queue. Owner/reviewers have no general right to view a student's private progress.
 
 ## Resources and academic integrity
-- Consult `data/resources.json` and `data/lessons-learned.json` for useful links and tips; show candidate/verified status. A catalog entry is not permission or institutional endorsement.
+- Consult `data/prep.json`, `data/resources.json`, and `data/lessons-learned.json` for readings, videos, case *titles*, useful links and tips; show candidate/verified status. Prep dates are planning aids, not confirmed deadlines. The original Fall 2026 prep tab covers ENT and MGT; **QBA has no separate readings in that source**, which does not imply no QBA preparation exists. A catalog entry is not permission or institutional endorsement.
 - Before suggesting or using generative AI for assessed work, inspect `data/ai-policies.json` for **assignment-specific**, then course-level evidence. Differentiate brainstorming, editing, drafting assessed content, image generation, slide generation, and research.
 - **Unknown is not allowed.** When rules are missing or conflicting, ask the student to consult the current official assignment/instructor instructions. Do not create or submit assessed work contrary to an explicit rule.
 
