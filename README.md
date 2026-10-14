@@ -4,7 +4,7 @@
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
 
-> **Build status:** Prototype deployed; public classmate submissions still **disabled**. Both Cloudflare Workers, D1 database and R2 backup bucket have been created, and the first **complete manually triggered backup Workflow** succeeded on October 11, 2026 at approximately 02:42 UTC (5/5 steps), with GitHub source and D1 data exported to the owner's private R2 bucket. **R2 object inspection, isolated restore, daily scheduling and failure alerts are still pending.** Approved course metadata has not been imported or verified. For an exact checklist and restart instructions, see [Project handoff](docs/PROJECT-HANDOFF.md).
+> **Build status (Oct 13, 2026):** **Read-only classmate landing page committed, Cloudflare live deployment not yet owner-verified.** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The shared course deadline catalog is **empty until manually reviewed**. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
 
 ## Resume the build or move to a new AI chat
 
@@ -13,6 +13,14 @@ Read [**Project Handoff and Build Checklist**](docs/PROJECT-HANDOFF.md) first. I
 ## Resume your own AI assistant across conversations
 
 Every cohort member should be able to keep **confirmed personal progress in a student-owned private checkpoint** and restore it in another chat, then check fresh approved class information. The [Agent Continuity design](docs/AGENT-CONTINUITY.md) and [blank portability template](templates/personal/continuity.template.json) are published. **Automatic checkpoint sync and cross-platform connections are not yet deployed.** Never save filled student checkpoints in this public repository.
+
+## Start with the cohort hub
+
+Once Cloudflare deployment is verified, the classmate-facing page is at **[Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/)**. One URL lets students inspect public course metadata, candidate resources, changes, and copy an AI onboarding prompt. The page does not collect students' grades, personal progress, or their ChatGPT conversations.
+
+**First use:** open the page, copy **AI starter prompt**, and paste into your own AI assistant. Assistants that cannot fetch the public repo must say so. Missing course records are **not** evidence that no coursework is due.
+
+The [fast pilot plan](docs/FAST-PILOT.md) lists the minimum tests before sharing with classmates. The existing [GitHub correction form](../../issues/new?template=proposal.yml) remains a fallback requiring GitHub login. No-login automatic proposals and human reviewer tools are not yet live.
 
 ## Browse the knowledge base
 
@@ -32,11 +40,11 @@ The [Cloudflare proposal intake prototype](cloudflare/README.md) supports one-ti
 
 ## Owner-only Discord backup monitoring
 
-The owner created a private Discord `backup-alerts` channel and incoming webhook. A separate [backup watchdog Worker prototype](watchdog/README.md) is published and programmed to verify daily R2 manifests, GitHub ZIP and D1 SQL checksums, and send a deduplicated Discord warning when a backup is missing. **The watchdog is not deployed, its webhook secret is not configured, and no alert has been verified yet.** It must remain private and distinct from the cohort submission Worker.
+The separate [backup watchdog Worker](watchdog/README.md) is deployed and scheduled daily. A **Production runtime** Discord webhook secret delivered a successful direct TEST message to the owner's private `backup-alerts` channel, and the temporary test endpoint was removed. **The first unattended scheduled health check, missing-backup scenario and disabled public URL still require owner verification.** The watchdog remains separate from the cohort submission Worker and private R2 backup data.
 
 ## Private backups and emergency shutdown
 
-**Required before public AI submissions:** a private owner-only daily backup of the GitHub hub snapshot and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) and [separate owner-only backup Worker source](backup/README.md) are published. The private R2 storage bucket has been created with an eight-day lifecycle rule, and a separate backup Worker has been deployed. After troubleshooting authorization and GitHub archive downloads, the owner verified the first **complete five-step manual backup Workflow**. Daily schedule **configured in GitHub code** (Cloudflare activation not yet verified); R2 object inspection, D1 schema recovery, and ZIP readability have been verified. **First automatic run, missed-backup alerts, database row restore, and full-history archives remain unverified.** The GitHub ZIP provides a reconstructible daily file snapshot, not a full Git history/Issues archive; broader recovery is a future enhancement. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
+**Required before public AI submissions:** a private owner-only daily backup of the GitHub hub snapshot and D1 queue, seven days of restore points, backup failure monitoring, and a tested restore procedure. The [backup and recovery plan](docs/BACKUP-AND-RECOVERY.md) and [separate owner-only backup Worker source](backup/README.md) are published. The private R2 storage bucket has been created with an eight-day lifecycle rule, and a separate backup Worker has been deployed. After troubleshooting authorization and GitHub archive downloads, the owner verified the first **complete five-step manual backup Workflow**. Daily backup and watchdog schedules **confirmed active in Cloudflare**, and R2 object inspection, D1 schema restore, GitHub ZIP readability, and a direct Discord test have been verified. **First automatic end-to-end cycle, missing-backup scenario, D1 data-row restore and full-history archives remain unverified.** The GitHub ZIP provides a reconstructible daily file snapshot, not a full Git history/Issues archive; broader recovery is a future enhancement. The submission service now defaults to **paused**, with a server-side emergency stop for both MCP and REST clients. The public read-only hub remains available during an incident.
 
 ## Contribute
 
