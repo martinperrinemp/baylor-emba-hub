@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "knowledge_revision": 0,
-  "updated_at": "2026-10-10",
+  "updated_at": "2026-10-13",
   "last_approved_change_id": null,
   "open_urgent_alert_count": 0,
-  "status": "foundation_unpopulated",
-  "notes": "Initial manifest. No semester deadlines are approved or populated. Revision increases only after approved canonical data changes."
+  "status": "provisional_master_schedule_imported",
+  "notes": "40 public-safe candidate deadline records imported from the student-prepared Fall 2026 master tracker and cohort starter pack. Zero records have been independently verified against current official course sources; knowledge_revision remains 0 and approved changes remain empty. Conflicting DoorDash presentation/upload and ENT peer-evaluation dates are explicitly marked. Do not treat candidate dates as official."
 }
