@@ -1,6 +1,6 @@
 # AI-to-cohort submission service (proposal-only prototype)
 
-**Source code published, but service NOT deployed.** Students do not need to navigate GitHub once they configure a compatible AI connector. This is a single backend for API-action and MCP-capable agents.
+**Service deployed with cohort submissions intentionally PAUSED** (`INTAKE_ENABLED=false`). A public read-only landing page and public GitHub data endpoint have now been added to the existing Worker; their live deployment must be confirmed by the owner. Students do not yet have a working authorized AI submission connector. When the owner eventually opens and tests intake, compatible clients can submit proposals to the D1 pending queue without navigating GitHub.
 
 ## What your classmates can say
 "Professor moved our group presentation to October 23. Submit that update to the cohort."
@@ -11,12 +11,14 @@ Their connected AI should:
 3. Submit a proposal via the connected action `submitCohortProposal` or MCP tool `submit_cohort_proposal`.
 4. Confirm **queued for review**, never claim the approved date changed until publication.
 
-## Supported endpoints after deployment
+## Existing public and protected endpoints
 - `POST /api/proposals`: receive proposal and return proposal ID and conflict status
 - `GET /api/proposals/:id`: read pending/review status
 - `GET /openapi.json`: API-action schema with deployed server URL
 - `/mcp`: remote MCP endpoint exposing `submit_cohort_proposal` and `get_cohort_proposal_status`
 - `GET /health`: basic status
+- `GET /`: public mobile-friendly cohort launch page (new, live verification pending)
+- `GET /api/public/{filename}`: strictly allowlisted, read-only data from public GitHub (new, live verification pending); no D1 access
 
 Both write interfaces place items in the **same private D1 pending queue**. They never change the public GitHub repository. Immediate field-by-field grouping detects identical and conflicting reports but does **not** independently verify instructor evidence or schedule notifications. Those are later phases.
 
