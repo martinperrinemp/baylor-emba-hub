@@ -1,6 +1,6 @@
 # Fast pilot: launch the shared class hub without waiting for every feature
 
-**Status:** A public, mobile-friendly cohort landing page has been added under `cloudflare/public/`, deployed by the existing `baylor-emba-proposals` GitHub → Cloudflare build once the owner confirms the new deployment. **Do not claim the page is live until its URL is opened and checked.** The intake Worker remains `INTAKE_ENABLED=false`; the page cannot accept automatic student submissions.
+**Status (2026-10-13):** Public mobile landing page **visually verified LIVE on owner's Android** at `baylor-emba-proposals.martin-perrine-mp.workers.dev`. The original Fall 2026 Excel master tracker and cohort starter pack were recovered, and **40 dated course-wide deliverables have been imported as `needs_verification` candidates** (two with `conflicted` status). They are displayed transparently as provisional, not approved or automatically verified. `knowledge_revision` remains `0` and `INTAKE_ENABLED=false` keeps agent writes paused. Personal status, teammate names, and private Canvas links were excluded.
 
 ## Why this is faster
 
@@ -18,12 +18,21 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 ## Launch acceptance steps (owner can verify in browser)
 
 1. Cloudflare → Workers & Pages → `baylor-emba-proposals` → Deployments: latest GitHub build **Ready** after the static-assets commit.
-2. Open `https://baylor-emba-proposals.martin-perrine-mp.workers.dev/`. Confirm landing page loads on desktop/mobile, and the current empty assignment catalog is **clearly labeled not yet verified**.
+2. **Completed:** Owner opened live mobile hub and confirmed responsive UI and public status. After this master import, reopen the hub and confirm it now shows **40 provisional dates**, including flagged conflicting DoorDash submission date and ENT peer evaluation, plus **0 reviewed assignments**. Use 'Upcoming' and 'All dates' filters. Do not claim current published data formally verified.
 3. Verify `/health` still reports online and `/api/public/manifest.json` gives valid JSON with `knowledge_revision`, while `/api/public/secret.json` returns 404. Any unknown `/api/public` filename must be refused.
 4. **Confirm the proposal emergency stop remains off:** existing `INTAKE_ENABLED=false`, including both REST and MCP write routes. Do not authorize classmate submissions before review and monitor tests.
 5. Review and approve a small set of **public-safe** assignments from the actual current course instructions (start with October and November). For each: `course_id`, safe title, presentation vs upload deadline, timezone, `verification_status`, short non-restricted source reference, and `last_verified_at`. Unknowns remain `null`. Student tracker snapshots can supply **candidates for owner review**, never automatically become approved public deadlines. Upload nothing from Canvas automatically.
 6. Publish approved records in `data/assignments.json`, log revision + a change in `data/manifest.json` and `data/changes.json`. Reopen page: they should appear within approximately 60 seconds. Confirm the dates match current authoritative class instructions.
 7. Pilot with 2–3 trusted classmates: send only the live URL, have each ask their own AI to use the hub, and collect friction notes. Reuse one GitHub → Cloudflare deployment pipeline. Never promise agent-tool integration where unsupported.
+
+## Master tracker import notes (October 13)
+
+- Original source: `EMBA_Fall_2026_Tracker.xlsx`, **40 dated deliverables** and one undated internal team kickoff. Also checked the sanitized cohort-oriented `Baylor_Dallas_EMBA_Cohort_Starter_Pack_Fall_2026.docx` prepared September 26 and a subsequent private October 9 continuity summary.
+- Imported exactly **40 course-wide dated records** to `data/assignments.json`: ENT 5342 (10), MGT 5311 (19), QBA 5330 (11). The undated internal kickoff was excluded. No team-member names, private meeting plans, completion/submission statuses, case texts, or Canvas file URLs were copied.
+- All `verification_status` values remain `needs_verification`, except two `conflicted` records. `last_verified_at` is `null`, `knowledge_revision` stays `0`. This is a **provisional class calendar**, not a claim of official confirmation.
+- **DoorDash:** Original tracker lists case slide/description deadline Oct 7 at 5 PM; later cohort starter says presentation moved to Oct 13, and owner confirms it took place that day. Published candidate separates presentation `2026-10-13 6 PM CDT` from `submission_due_at: null`; the changed/unknown upload deadline must not be invented.
+- **ENT peer evaluation:** Original tracker lists Oct 10; newer private continuity lists Oct 15 at 11:59 PM. Published provisional Oct 15 candidate **flagged conflict** until current official course instructions are rechecked.
+- Students can start using their own AI with the hub's starter prompt now, **provided they understand provisional dates are not authoritative** and course syllabi/Canvas remain binding. A full class launch and accepting public correction submissions still require the previously documented tests/approval controls.
 
 ## Pilot v2: remove friction, without dropping approval
 
