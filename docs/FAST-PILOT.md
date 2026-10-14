@@ -1,6 +1,6 @@
 # Fast pilot: launch the shared class hub without waiting for every feature
 
-**Status (2026-10-13):** Public mobile landing page **visually verified LIVE on owner's Android** at `baylor-emba-proposals.martin-perrine-mp.workers.dev`. The original Fall 2026 Excel master tracker and cohort starter pack were recovered, and **40 dated course-wide deliverables have been imported as `needs_verification` candidates** (two with `conflicted` status). They are displayed transparently as provisional, not approved or automatically verified. `knowledge_revision` remains `0` and `INTAKE_ENABLED=false` keeps agent writes paused. Personal status, teammate names, and private Canvas links were excluded.
+**Status (2026-10-13):** Public mobile landing page **visually verified LIVE on owner's Android** at `baylor-emba-proposals.martin-perrine-mp.workers.dev`. The original Fall 2026 Excel master tracker and cohort starter pack were recovered, and **40 dated course-wide deliverables** plus **46 course-wide ENT/MGT Reading & Prep references** have been imported as provisional candidates (two date records have `conflicted` status). They are displayed transparently as provisional, not approved or automatically verified. `knowledge_revision` remains `0` and `INTAKE_ENABLED=false` keeps agent writes paused. Personal status, teammate names, and private Canvas links were excluded.
 
 ## Why this is faster
 
@@ -9,7 +9,7 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 ## Pilot v1: shareable public read-only hub
 
 - The existing Worker serves responsive static assets at its root. It also exposes an **allowlisted**, read-only `/api/public/{filename}.json` endpoint that fetches public GitHub `data/` JSON, cached for up to 60 seconds. No D1 access, secrets, or writes for this endpoint.
-- Students see reviewed assignment records when they exist, unreviewed resources clearly marked **candidate**, knowledge revision, urgent alerts, approved changes and a copyable AI startup prompt.
+- Students see provisional coursework deadlines and Reading & Prep, resource verification labels, knowledge revision, urgent alerts, approved changes and a copyable AI startup prompt. Neither the preparation date nor an unverified due date is presented as officially confirmed.
 - Students can use their own AI assistant; the prompt instructs it to consult GitHub records fresh and disclose if it cannot fetch them. No promise that every AI product can auto-read a website or persist progress.
 - Correcting a record currently uses the GitHub Issue form (GitHub account required) or a copyable safe correction template forwarded to a volunteer for manual review. The no-login submission UI and AI-to-queue workflow are **not yet enabled**.
 - Student-specific completions and private continuity checkpoints are NOT sent to the shared site or D1. See `docs/AGENT-CONTINUITY.md`.
@@ -33,6 +33,14 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 - **DoorDash:** Original tracker lists case slide/description deadline Oct 7 at 5 PM; later cohort starter says presentation moved to Oct 13, and owner confirms it took place that day. Published candidate separates presentation `2026-10-13 6 PM CDT` from `submission_due_at: null`; the changed/unknown upload deadline must not be invented.
 - **ENT peer evaluation:** Original tracker lists Oct 10; newer private continuity lists Oct 15 at 11:59 PM. Published provisional Oct 15 candidate **flagged conflict** until current official course instructions are rechecked.
 - Students can start using their own AI with the hub's starter prompt now, **provided they understand provisional dates are not authoritative** and course syllabi/Canvas remain binding. A full class launch and accepting public correction submissions still require the previously documented tests/approval controls.
+
+## Reading & Prep import (October 14)
+
+- Original spreadsheet's **Reading & Prep** tab lists 46 materials: **23 ENT 5342** and **23 MGT 5311**. There is no dedicated QBA preparation/reading list in that tab; this is a source gap, not proof that QBA has no reading requirements.
+- Imported only titles, modules, course codes, the original purpose/context, preparation/discussion dates, and five public third-party links labeled **not rechecked**. The original personal progress flags, study-hour estimates, individual notes, internal Canvas links, and copyrighted cases/article contents were excluded.
+- Two historical “waiting for instructor” records are kept as **status at the time of original tracker**, not a current availability claim. The original short/truncated titles remain flagged for verification.
+- The hub adds **Reading & Prep** with Course and Upcoming/All filters and source notes. A classmate can now use the public hub for a tentative prep plan, but the current syllabus/Canvas instructions remain authoritative.
+- The shared manifest remains at **revision 0** because no item has been independently verified and approved as canonical.
 
 ## Pilot v2: remove friction, without dropping approval
 
