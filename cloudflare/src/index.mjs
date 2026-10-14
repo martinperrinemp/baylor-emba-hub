@@ -5,6 +5,7 @@ import {z} from "zod";
 import {submitProposal,getProposalStatus} from "./queue.mjs";
 import {safeProblem} from "./core.mjs";
 import openapi from "../openapi.json";
+import {publicDataResponse} from "./public.mjs";
 
 const CATEGORIES=["assignment_date","assignment_requirement","ai_policy","resource","lesson"];
 const SOURCES=["instructor_announcement","syllabus","canvas_manually_checked","student_report","other_unknown"];
@@ -60,6 +61,12 @@ export default {
    return Response.json({service:"baylor-emba-proposal-intake",status:"online",approved_records_edited:false});
   if(request.method==="GET"&&url.pathname==="/openapi.json")
    return Response.json({...openapi,servers:[{url:url.origin}]});
+  // Read-only approved public data. This never reads the private D1 queue,
+  // uses a secret, or changes approved GitHub data.
+  if(request.method==="GET"&&url.pathname.startsWith("/api/public/")){
+   const filename=url.pathname.slice("/api/public/".length);
+   return publicDataResponse(filename);
+  }
   if(!["/mcp","/api/proposals"].includes(url.pathname)&&!/^\/api\/proposals\/[a-f0-9-]{36}$/i.test(url.pathname))
    return safeProblem("Route not found",404);
   if(!authorized(request,env)) return safeProblem("Valid submission connector token required",401);
