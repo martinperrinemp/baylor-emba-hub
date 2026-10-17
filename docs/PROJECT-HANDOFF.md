@@ -6,6 +6,8 @@
 
 **Known readiness:** class dates/trips section is already visible live (user confirmed); six QBA modules mapped to their exact Fall 2026 blocks; 55 active assignment records and 104 reading/prep records are in GitHub; user's separate private Sheet was tested with saved, confirmed status. **Still unverified:** independent reviewer approval (knowledge_revision remains 0), exact direct Sheets integration behavior on real ChatGPT Free and Claude Free accounts, and end-to-end classmate onboarding. Work on those in parallel with packaging, disclose uncertainty and do not promise connector writes where unsupported.
 
+**First starter-kit deliverable CREATED Oct 17:** A new Google Sheet `Dallas EMBA Progress Tracker – COPY ME (Blank Template)` exists separately from the owner's private actual progress tracker. It has `START HERE` and `Progress` tabs, all 55 current active shared assignment IDs/titles, empty personal status/date cells, and a validated status dropdown. Direct Google read-back verified both tabs, all 55 rows and absence of private status values. **Sharing remains private.** Owner must use the Google Sheets Share UI to set **Anyone with link → Viewer**, because the available Drive connector cannot grant that specific public-link permission; after access test, publish a Google `/copy` template link through the Hub. Never publish or change sharing on the owner's real private Sheet.
+
 **Do not share the owner's real `EMBA Personal Progress` Google Sheet.** Make a separate blank/new view-only template, then publish only that template's **/copy** URL if permissions and content have been checked. No grades or personal progress in the public repository.
 
 
