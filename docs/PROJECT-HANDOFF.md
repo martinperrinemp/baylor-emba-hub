@@ -1,5 +1,11 @@
 # Project handoff and build checklist
 
+## OCTOBER 17 UPDATE: QBA MODULE MAPPING AND LIVE SITE CONFIRMATION
+
+**Confirmed by owner:** the public Cloudflare site visibly renders **Class weekends, trips & key dates**. All six QBA module assignments were confirmed against the Fall course timetable: Module 1 Sep 5 Sat 1:30–5 PM; Module 2 Oct 16 Fri 1–4:30 PM; Module 3 Oct 17 Sat 9 AM–12:30 PM; Module 4 Nov 13 Fri 5–8:30 PM; Module 5 Dec 4 Fri 1–4:30 PM; Module 6 Dec 5 Sat 9 AM–12:30 PM. Current structured source is `data/program-calendar.json`.
+
+All six corresponding Fall 2026 QBA blocks are marked `student_confirmed` for module mapping, and each of the 58 QBA read/watch records now has `class_session_id` and `due_or_discuss_date` (class session only; **NOT** a submission deadline). The shared calendar and preparation records are student-supplied with independent reviewer signoff still pending; `knowledge_revision=0`. **Next:** visually verify new *QBA 5330 · Module N* labels and QBA module date filters on the live page after this merge. Do not revisit the already-confirmed mapping or invent additional deadlines.
+
 ## LATEST CATALOG IMPORT (October 17, 2026): program + Fall course blocks + QBA modules
 
 The owner supplied two one-page MBA-in-Dallas PDFs and Canvas gradebook listings for ENT/MGT/QBA. Metadata-only program schedule with 20 highlighted class-date blocks (2026–2028), five major milestones/trips, five payment dates, 16 Fall 2026 course time blocks, ENT residency morning/afternoon blocks and the Oct 7 presentation schedule's historical/superseded note now lives in `data/program-calendar.json`; the read-only public endpoint and responsive schedule section have been implemented in source. **User-supplied timetable:** Oct 17 Saturday QBA 9 AM–12:30 PM, NO Saturday afternoon class. Future-year classes don't yet have course details.

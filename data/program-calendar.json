@@ -381,9 +381,13 @@
       "start_time": "13:30",
       "end_time": "17:00",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 1",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 1",
+      "module_number": 1,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-10-16-friday_1300",
@@ -391,9 +395,13 @@
       "start_time": "13:00",
       "end_time": "16:30",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 2",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 2",
+      "module_number": 2,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-10-16-friday_1700",
@@ -411,9 +419,13 @@
       "start_time": "09:00",
       "end_time": "12:30",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 3",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 3",
+      "module_number": 3,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-10-16-saturday_1330",
@@ -441,9 +453,13 @@
       "start_time": "17:00",
       "end_time": "20:30",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 4",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 4",
+      "module_number": 4,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-11-13-saturday_0900",
@@ -471,9 +487,13 @@
       "start_time": "13:00",
       "end_time": "16:30",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 5",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 5",
+      "module_number": 5,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-12-04-friday_1700",
@@ -491,9 +511,13 @@
       "start_time": "09:00",
       "end_time": "12:30",
       "course_id": "QBA 5330",
-      "display_course": "QBA 5330",
+      "display_course": "QBA 5330 · Module 6",
       "session_status": "scheduled",
-      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026.",
+      "module": "Module 6",
+      "module_number": 6,
+      "module_mapping_source": "Student confirmed six-module course-block sequence in conversation Oct 17, 2026; session dates/times derived from published Fall 2026 class schedule.",
+      "module_mapping_status": "student_confirmed"
     },
     {
       "id": "session-2026-12-04-saturday_1330",
@@ -596,8 +620,9 @@
   "notes": [
     "Future years list class dates but do not name courses.",
     "Graduation date is given as May 2028 only, not a precise day.",
-    "Course/module-to-weekend mapping for six QBA modules has not been independently confirmed, beyond first class weekend as Module 1.",
+    "All six QBA module-to-session mappings confirmed by enrolled student Oct 17, 2026, from their course progression and Fall 2026 timetable. This does not imply these preparation dates are graded submission deadlines.",
     "Yellow one-day highlights in February and September 2027 are reproduced as one-day class dates with time to verify.",
-    "Schedules and payment dates subject to change."
+    "Schedules and payment dates subject to change.",
+    "Displayed QBA modules refer to the course session time block; all reading/viewing should be completed in advance where required by Canvas."
   ]
 }

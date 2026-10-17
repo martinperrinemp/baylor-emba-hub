@@ -4,6 +4,15 @@
 
 **Important qualification:** Direct Google Sheets read/write was verified through the Google Drive connector on **the owner's connected ChatGPT account**. It has NOT yet been verified on ChatGPT Free or Claude Free, and some students may need the previous explicit Project-checkpoint fallback. Do not advertise universal Free-plan write access until tested.
 
+## Recent completed academic content milestones (October 17, 2026)
+
+- [x] Owner confirmed new public Class weekends, trips & key dates layout is visible on the Cloudflare hub.
+- [x] Import 58 QBA module reading/tutorial references and 11 separate week 1–11 readiness quiz entries into the shared Fall academic catalog (metadata only).
+- [x] Confirm and link all six QBA module-to-class time blocks: Sep 5, Oct 16, Oct 17, Nov 13, Dec 4 and Dec 5. Class-session dates on prep are not submission deadlines.
+- [x] Record Fall 2026 Friday/Saturday courses and published Class of 2028 program calendar.
+- [ ] Confirm new module labels display on Cloudflare after deployment; validate that upcoming prep filter shows the right QBA modules.
+- [ ] Still outstanding: human review of course requirements, free-plan ChatGPT/Claude access testing, private tracker negative-case tests, better weekly checklist layout.
+
 ## What counts as success
 
 A student says "I submitted Quiz M3." Their AI identifies the stable assignment ID in the shared Hub, finds the matching row in the student's **private** Google Sheet, changes only the status and update time after explicit confirmation, receives a successful write response, **reads back the cell**, and reports the exact confirmed saved status. In a new Project chat, the AI reads the same Sheet and plans the upcoming 7–14 days from current shared course records and confirmed private statuses. No score or grade storage.
