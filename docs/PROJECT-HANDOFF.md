@@ -1,5 +1,16 @@
 # Project handoff and build checklist
 
+## CURRENT NEXT BUILD PRIORITY (Oct 17, 2026): classmate starter kit
+
+**Owner decision:** the shared calendar, Fall assignments and ENT/MGT/QBA readings are substantially uploaded, and connected ChatGPT ↔ private Google Sheets persistent status writes have worked. **Stop repeatedly re-designing personal storage and prioritize a student onboarding package**: (1) new safe Google **Sheet** template the class can view and **Make a copy** into their own private Drive, with 55 stable assignment IDs and no personal statuses/grades, (2) downloadable cross-platform AI-agent personality/instructions and everyday prompt pack, (3) tested ChatGPT Free/Claude Free walkthroughs, and (4) a visible **Get Started** path on the existing Cloudflare website. A Google **Doc** is optional for a human-readable one-page guide, not the writable tracker. Full details and build acceptance tests: [current roadmap](ROADMAP.md).
+
+**Known readiness:** class dates/trips section is already visible live (user confirmed); six QBA modules mapped to their exact Fall 2026 blocks; 55 active assignment records and 104 reading/prep records are in GitHub; user's separate private Sheet was tested with saved, confirmed status. **Still unverified:** independent reviewer approval (knowledge_revision remains 0), exact direct Sheets integration behavior on real ChatGPT Free and Claude Free accounts, and end-to-end classmate onboarding. Work on those in parallel with packaging, disclose uncertainty and do not promise connector writes where unsupported.
+
+**First starter-kit deliverable CREATED Oct 17:** A new Google Sheet `Dallas EMBA Progress Tracker – COPY ME (Blank Template)` exists separately from the owner's private actual progress tracker. It has `START HERE` and `Progress` tabs, all 55 current active shared assignment IDs/titles, empty personal status/date cells, and a validated status dropdown. Direct Google read-back verified both tabs, all 55 rows and absence of private status values. **Sharing remains private.** Owner must use the Google Sheets Share UI to set **Anyone with link → Viewer**, because the available Drive connector cannot grant that specific public-link permission; after access test, publish a Google `/copy` template link through the Hub. Never publish or change sharing on the owner's real private Sheet.
+
+**Do not share the owner's real `EMBA Personal Progress` Google Sheet.** Make a separate blank/new view-only template, then publish only that template's **/copy** URL if permissions and content have been checked. No grades or personal progress in the public repository.
+
+
 ## OCTOBER 17 UPDATE: QBA MODULE MAPPING AND LIVE SITE CONFIRMATION
 
 **Confirmed by owner:** the public Cloudflare site visibly renders **Class weekends, trips & key dates**. All six QBA module assignments were confirmed against the Fall course timetable: Module 1 Sep 5 Sat 1:30–5 PM; Module 2 Oct 16 Fri 1–4:30 PM; Module 3 Oct 17 Sat 9 AM–12:30 PM; Module 4 Nov 13 Fri 5–8:30 PM; Module 5 Dec 4 Fri 1–4:30 PM; Module 6 Dec 5 Sat 9 AM–12:30 PM. Current structured source is `data/program-calendar.json`.
