@@ -2,6 +2,16 @@
 
 **Status:** Test plan only; no automatic personal persistence or background reminders deployed. Use the [Roadmap](ROADMAP.md). Run on personal, private ChatGPT/Claude Projects. Never make filled checkpoints public.
 
+## Observed pilot result: owner ChatGPT Project (October 16, 2026 CDT)
+
+- **Observed:** The owner clicked **Save to project** on an assistant response containing a progress checkpoint. The menu then offered **Remove from project sources**.
+- **Observed:** A brand-new conversation in the same Project recovered all three example statuses accurately, differentiating two submitted from one outstanding.
+- **Source identified:** The fresh-chat assistant cited an automatically saved Project source named `EMBA Practice Planning.txt`, containing the prior response and its embedded `CURRENT EMBA PROGRESS` checkpoint. This **does confirm recovery from a saved Project source**, though it is not a separately authored checkpoint file.
+- **Still untested:** Superseding/removing old source versions, recovery after a second status change, actual Free-plan behavior on ChatGPT and Claude, source limits, fresh Hub retrieval, and pre-classweekend quiz coverage.
+- **Privacy:** Only this sanitized capability observation belongs in public GitHub. Do **not** publish the student’s actual progress, personal checkpoint or grades.
+
+**Pilot result:** Initial Project-source persistence / new-chat retrieval **passed for the owner's tested account**; full cross-platform and checkpoint-update workflow remains open.
+
 ## One-time setup (each platform separately)
 
 1. Create a **private Project** called "EMBA" (or use an existing one). Put a dedicated chat inside it named **Progress & Weekly Planning**.
