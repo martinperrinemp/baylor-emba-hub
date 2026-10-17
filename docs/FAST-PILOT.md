@@ -2,6 +2,14 @@
 
 **Status (2026-10-13):** Public mobile landing page **visually verified LIVE on owner's Android** at `baylor-emba-proposals.martin-perrine-mp.workers.dev`. The original Fall 2026 Excel master tracker and cohort starter pack were recovered, and **40 dated course-wide deliverables** plus **46 course-wide ENT/MGT Reading & Prep references** have been imported as provisional candidates (two date records have `conflicted` status). They are displayed transparently as provisional, not approved or automatically verified. `knowledge_revision` remains `0` and `INTAKE_ENABLED=false` keeps agent writes paused. Personal status, teammate names, and private Canvas links were excluded.
 
+## Updated priority: private AI Projects, not personal databases (decision October 16, 2026)
+
+The **student experience** is a personal ChatGPT or Claude Project with one ongoing **Progress & Weekly Planning** chat. A student explicitly confirms progress; their AI makes a short **CURRENT EMBA PROGRESS** checkpoint, which the student saves/updates in private Project knowledge when available. In a new chat the AI should retrieve that checkpoint, or ask the student to paste it. No score tracking, mandatory workbook, personal GitHub repo, Zero Trust account, private D1, OAuth/MCP sync or automatic reminders for this pilot. See [Roadmap](ROADMAP.md) and [copy/paste pilot tests](AI-PROJECT-PILOT.md).
+
+**First tests, before coding:** ChatGPT Free and Claude Free: confirm finished-versus-submitted status, generate and explicitly save a checkpoint, create new chat in Project, recover correct statuses, then revise/save/retest. Record which save controls actually exist, and do not claim autosave. If saving source cannot be done reliably, use a private copy/paste checkpoint fallback. Public Hub remains source of *shared candidate data only*, not grades or private work status.
+
+**Pilot reliability bottleneck:** verify all assignments/quizzes/readings for the next 2–4 weeks and the upcoming class weekend against authoritative current course instructions, especially hidden module quizzes. Student-provided file or syllabus summaries can omit new Canvas tasks. A 24–48-hour early finish target is planning guidance, not an actual instructor deadline or reminder notification. No missing task can be treated as evidence that no task exists.
+
 ## Why this is faster
 
 This follows the existing GitHub + Cloudflare delivery approach proved with the cohort's other prototype work: start with one easily shared URL and the essential functionality, commit small changes to GitHub, let Cloudflare deploy, then inspect the live page on a real device. Do **not** add a fourth Worker, login service, spreadsheet, domain, or duplicate database just for a landing page.
@@ -23,7 +31,7 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 4. **Confirm the proposal emergency stop remains off:** existing `INTAKE_ENABLED=false`, including both REST and MCP write routes. Do not authorize classmate submissions before review and monitor tests.
 5. Review and approve a small set of **public-safe** assignments from the actual current course instructions (start with October and November). For each: `course_id`, safe title, presentation vs upload deadline, timezone, `verification_status`, short non-restricted source reference, and `last_verified_at`. Unknowns remain `null`. Student tracker snapshots can supply **candidates for owner review**, never automatically become approved public deadlines. Upload nothing from Canvas automatically.
 6. Publish approved records in `data/assignments.json`, log revision + a change in `data/manifest.json` and `data/changes.json`. Reopen page: they should appear within approximately 60 seconds. Confirm the dates match current authoritative class instructions.
-7. Pilot with 2–3 trusted classmates: send only the live URL, have each ask their own AI to use the hub, and collect friction notes. Reuse one GitHub → Cloudflare deployment pipeline. Never promise agent-tool integration where unsupported.
+7. First run the [AI Project pilot](AI-PROJECT-PILOT.md) using an owner's private progress and genuine ChatGPT Free/Claude Free accounts. After verifying upcoming official course data, pilot with 2–3 trusted classmates: share the public URL and setup guide, ask them to test checkpoint recovery privately, and collect friction notes **without collecting or publishing private progress**. Never promise agent-tool integration where unsupported.
 
 ## Master tracker import notes (October 13)
 
@@ -54,7 +62,7 @@ This follows the existing GitHub + Cloudflare delivery approach proved with the 
 
 - Ship **public-safe proposal intake** only after an owner-tested pending queue, reasonable bot/spam controls, tested emergency pause, private backup freshness alerts and at least one review process. A shared public reviewer password is **not** acceptable.
 - A modest **owner-first approval interface** that confirms actual evidence and manually updates canonical GitHub records is sufficient for an initial pilot. Multi-reviewer admin tools and automated publication can follow.
-- Publish a portable private `continuity.json` generation / download workflow first. Do not build centralized storage of personal progress until authenticated student identities and data deletion/export protections exist.
+- **First test a Project-saved short private progress checkpoint, with a private copy/paste fallback.** Optional JSON download comes only if students need it. Do not build centralized storage of personal progress for this pilot.
 - Add features when pilot users demonstrate the need. Avoid new Workers, complex notifications, duplicated data, and credentials unless an explicit capability requires them.
 
 ## Out of scope for first pilot

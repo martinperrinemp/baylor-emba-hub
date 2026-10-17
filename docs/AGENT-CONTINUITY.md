@@ -1,62 +1,41 @@
-# Agent Continuity: resume a student's EMBA assistant across conversations
+# Agent continuity: private progress across EMBA conversations
 
-**Status: product requirement and design. Not yet deployed as an automatic personal sync service.**
+**Decision October 16, 2026 (CDT):** Use one private student-owned ChatGPT or Claude Project with a dedicated **Progress & Weekly Planning** chat, plus an **explicitly saved short progress checkpoint**. No required Excel, private GitHub repository, Obsidian, student Cloudflare account, D1 student database, or custom MCP connection. Test free-plan source-saving and new-chat recovery before claiming reliability.
 
-## Objective
+See [current roadmap](ROADMAP.md), [student onboarding](AGENT-ONBOARDING.md), and [pilot test plan](AI-PROJECT-PILOT.md).
 
-A cohort member should be able to open a new conversation in ChatGPT, Claude, Gemini, or another compatible assistant and ask it to **resume their EMBA work** without repeating completed tasks, project progress or preferences. This requires durable private storage, NOT the previous model's chat history.
+## Which records are authoritative?
 
-The public hub remains the only **canonical approved course, deadline and AI-use policy source**. Every student's checkpoint is theirs alone.
+- **Canvas/current syllabus/instructor communications** are authoritative for actual class assignments, deadlines, submissions, and AI policies.
+- **Public EMBA Hub** is an unofficial human-reviewed catalog of shareable coursework metadata, stable assignment IDs, readings, quizzes, class weekends, AI-use summaries, and approved changes. It may be incomplete or provisional. It stores no student's progress.
+- **Student's latest explicitly saved private CURRENT EMBA PROGRESS checkpoint** is the working personal status record. The student's explicit corrections override it. Neither the model's memory nor the checkpoint proves Canvas submission.
+- Student-owned grades are **not stored or tracked by this system**. A student may privately paste a Canvas grades table or upload a PDF for one-off analysis.
 
-## Two data layers
+## Student experience
 
-| Data | Where it lives | Who can access |
-|---|---|---|
-| Officially reviewed shared course/assignment IDs, dates, AI policies, resources, revisions | Public `baylor-emba-hub` repository | Anyone |
-| Student's confirmed completion/submission status, study plan, next actions, personal preferences, last synced shared revision, task notes | Student-owned **private** continuity storage | Student and AI connections they authorize |
+1. Create a private Project called **EMBA** in ChatGPT or Claude. Create a conversation inside it called **Progress & Weekly Planning**.
+2. Report work accurately as **not started**, **in progress**, **finished but not submitted**, or **submitted**. The assistant changes personal status only based on explicit student statements.
+3. Ask: "What is due or needed before our next class weekend?" The assistant checks public Hub data if it can; identifies unknown or provisional coverage; merges the student's confirmed progress; and proposes 7- or 14-day work with 24–48-hour early targets when precise deadlines exist.
+4. Periodically request **CURRENT EMBA PROGRESS**. The assistant generates a concise versioned checkpoint. The student **explicitly saves it to Project sources/knowledge if available**, replacing/superseding any older copy, and verifies retrieval in a fresh Project conversation. The assistant must never claim to have saved or synced when it merely generated text.
+5. If a Free plan does not permit a dependable saved Project checkpoint, copy it to a private note and paste it into future conversations. This is an openly documented manual fallback, not a failure to hide.
+6. Pilot first on genuine ChatGPT Free and Claude Free before onboarding classmates. Platform capabilities, Project memory behavior and save controls may differ.
 
-**Never publish personal checkpoints to this public repository or its GitHub Issues.** The public `templates/personal/continuity.template.json` is empty example structure only. No grades, contact details or restricted source text should be included in shared templates.
+## Small checkpoint specification
 
-## Minimal private checkpoint format
+Include: `checkpoint_version`, `updated_at` if accurately known, `last_seen_shared_revision` only if actually fetched, and a short set of personal task rows keyed by public stable ID **when known** (course, short title, status, student confirmation, next action). Optional next-week time availability may be included at the student's request.
 
-- `schema_version`, `updated_at`, `last_seen_shared_revision`, `last_successful_hub_check_at`
-- `task_progress` keyed by stable *shared hub assignment ID*, with `status` among `not_started / in_progress / completed / submitted / blocked`, `confirmed_by_student`, `confirmed_at`, `notes`
-- `projects`: short non-confidential summary, current milestone, next action, pending decisions, relevant shared IDs
-- `study_preferences` and `personal_constraints`: optional, only if the student explicitly chooses to save them
-- `outstanding_questions` and `continuity_notes`: keep concise; distinguish student facts from an AI suggestion
-- `last_checkpoint_reason`: `user_request`, `confirmed_progress_change`, `session_handoff`, or `scheduled_sync`
+Do **not** include grades, scores, copied public deadlines as authoritative truth, private contact information, restricted readings, full Canvas screenshots or personal teammate details. If an ID is missing, use a short title plus `id_unresolved` instead of inventing an ID.
 
-Avoid storing copied hub-wide deadlines in private progress. Restore joins current public assignments with private task statuses **by stable assignment ID**, and surfaces any changed/retired IDs.
+When an assignment title/date changes in the Hub, **do not change the student's confirmed status** merely because public data changed. Compare IDs and approved revision history. If duplicate checkpoints exist, surface conflict and ask which is latest.
 
-## Basic supported workflow, even before automatic synchronization
+## Reliability rules
 
-1. An assistant with permitted tools or explicit user confirmation writes a private checkpoint **after meaningful confirmed progress**, not just when it thinks a chat is about to end. Chat length limits can be reached unexpectedly.
-2. On request, the assistant should also offer a copyable, human-readable handoff and a portable JSON export.
-3. In a new chat, the student connects the same private storage or supplies their saved checkpoint, then asks to resume. The AI retrieves the public `AGENTS.md`, manifest, changes and alerts, then merges private progress with **fresh, verified shared records**.
-4. Report changed deadlines since `last_seen_shared_revision` only if the assistant successfully checked that revision history. If retrieval fails, warn that current dates cannot be verified.
-5. Show a brief *resumed status*: confirmed completed/submitted; currently in progress; top next actions; unresolved questions; new verified cohort changes. Never treat a planned task as submitted.
-6. Save the newly checked revision and any **student-confirmed** progress back to private storage where a write connection exists; otherwise explain that the user must save an export.
+- No assistant is an automatic, guaranteed calendar alarm without a separately authorized scheduling system. A 24–48-hour buffer is a **planning target** only.
+- Never mark a merely finished task as submitted or infer completion from silence.
+- Never claim a fresh Hub lookup, knowledge-save, checkpoint write, or change sync without actually performing and confirming it.
+- No public GitHub storage of filled private checkpoints; no copy into correction reports.
+- Current Hub source gaps and provisional entries must be conspicuously labeled, not presented as a complete schedule.
 
-## Stages and compatibility
+## Later experiments, only if needed
 
-**Phase 1 (lowest complexity):** downloadable/copyable private checkpoint; optionally student-owned private GitHub repo that the student connects to their assistant. Cross-platform portability comes from a documented JSON format. An agent may lack write permission; in that case, export instead of claiming autosave.
-
-**Phase 2 (cohort-friendly):** optional authenticated continuity API on Cloudflare with per-user private storage, per-user permissions, encryption and account/data export/delete controls, so students need not create their own GitHub repo. A central service would then hold personal student information and requires privacy/security review and ongoing operating costs. Keep it **strictly isolated** from public suggestion intake and owner-only disaster-recovery bucket. This is not part of the current live infrastructure.
-
-Different AI products/plans support different connectors and persistent storage. **Do not promise universal or invisible automatic continuation.** Nothing runs simply because a chat reaches a length limit. Autosave and restart require a real, connected action to read/write a checkpoint.
-
-## Safety and correctness
-
-- No common cohort login or shared token for viewing/editing someone's private progress.
-- A student owns, can inspect, export, correct and delete their private checkpoint. A reviewer/admin of shared content gets no access.
-- Secure storage must ensure authenticated access, per-user authorization, change history and backups with a restore drill.
-- Never save passwords, bearer tokens, grades, private discussions, copyrighted cases/readings or full Canvas screenshots into a public GitHub repo.
-- Default to recording `submitted` or `completed` only with an explicit student confirmation. `AI suggested done` is not sufficient.
-- If someone stops midway through an assignment, save the **work status and next decision**, not a fabricated completed solution.
-- Don't claim conversation history can be fully reconstructed. The checkpoint preserves the *useful task state*, not every message, attachment or nuanced context.
-
-## Suggested student restart prompt
-
-> Resume my Baylor EMBA assistant. Load my private continuity checkpoint from the account I connected, then fetch the latest public Baylor EMBA Hub manifest, assignments, change feed and open alerts. Tell me what I confirmed as complete, what I'm working on, what's changed since my last hub check, and my next priorities. If you cannot access either source, say so and ask me to provide the missing checkpoint.
-
-**Fallback:** If no private account is connected, paste/upload the exported checkpoint and use the same restart prompt. Do not upload it to the public cohort issue queue.
+Optional export/Excel, personal GitHub or Obsidian, read/write MCP and private Cloudflare continuity storage remain deferred. They are not prerequisites for initial pilot. Grade tracking and grade-calculation product features were explicitly dropped. Keep the separate, paused shared-proposal D1 service isolated from student information.

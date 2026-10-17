@@ -6,6 +6,16 @@ This public repository gives the Dallas Executive MBA cohort and compatible AI a
 
 > **Build status (Oct 13, 2026):** **Read-only classmate landing page LIVE, visually verified on Android (owner screenshot October 13, 2026).** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The hub now includes **40 provisional Fall 2026 assignment/deadline candidates, 46 provisional ENT/MGT Reading & Prep items, and three source-attributed provisional ENT AI-use notes** imported from the student-prepared semester materials; **none are independently verified against current official instructions**, and shared knowledge revision remains 0. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
 
+## Current student-first direction (decision October 16, 2026)
+
+The near-term product is **weekly planning and assignment progress**, not grade tracking or a new student database. Each student uses a **private ChatGPT or Claude Project**, a dedicated **Progress & Weekly Planning** chat, and an **explicitly saved private progress checkpoint** where their account supports it. New chats should read that checkpoint or ask for a private pasted copy. Chat memory and automatic autosave are **not guaranteed**. A 24–48-hour early completion target is planning guidance, not a proactive alert. Students may privately paste Canvas grades for one-off analysis; **the Hub does not store or calculate personal grades**.
+
+- [Prioritized project roadmap](docs/ROADMAP.md)
+- [Project checkpoint pilot and acceptance tests](docs/AI-PROJECT-PILOT.md)
+- [ChatGPT and Claude Project setup and starter instructions](docs/AGENT-ONBOARDING.md)
+
+Existing shared Hub source records (40 assignments, 46 prep items) are still **provisional** until official source review. The top launch priority is ensuring upcoming class-weekend quizzes and readings are not missed. No Cloudflare code was modified by this documentation update.
+
 ## Resume the build or move to a new AI chat
 
 Read [**Project Handoff and Build Checklist**](docs/PROJECT-HANDOFF.md) first. It tracks only user-confirmed milestones, outstanding tests and the next action, without any passwords or private coursework.

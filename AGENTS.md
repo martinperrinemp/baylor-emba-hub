@@ -2,6 +2,16 @@
 
 Applies to any AI assistant using this repository. This is a **public, unofficial, student-maintained** planning aid. Official syllabus, instructor communications, and Canvas outrank shared summaries.
 
+## Current student workflow (October 2026 pilot)
+
+**Default:** personal private ChatGPT or Claude Project + a dedicated **Progress & Weekly Planning** chat + periodic **CURRENT EMBA PROGRESS** checkpoint that the student explicitly saves into Project knowledge/sources where supported. A new conversation should consult the latest saved checkpoint; if it is unavailable, request a private pasted copy. Chat memory alone cannot establish submission or guarantee durable progress. See [Roadmap](docs/ROADMAP.md), [Onboarding](docs/AGENT-ONBOARDING.md), and [Pilot](docs/AI-PROJECT-PILOT.md).
+
+- Students confirm status as **not started / in progress / finished but not submitted / submitted**. Do not assume completion or upload and do not conflate finished with submitted.
+- For week planning, attempt fresh Hub reads, cover the upcoming **7–14 days and all work needed before class weekends** (including quizzes/readings), and use **24–48-hour early targets** only as planning advice separate from official due dates. No background notification exists just because the student uses a Project.
+- When asked, generate a minimal checkpoint using stable public assignment IDs when known, confirmed status and next actions. **Never claim you saved a Project source unless an actual save was confirmed.** Replace/supersede old checkpoints; surface conflicting versions. Project UI/feature differences on free accounts must be tested, not assumed.
+- **No product grade tracking**. For individual grade questions, privately analyze Canvas data the student provides; do not include grades or scores in checkpoint files or public Hub.
+- No required student account, GitHub repo, Obsidian, Excel, private D1, OAuth or MCP writes. All are deferred unless pilot evidence warrants them.
+
 ## Freshness protocol (mandatory for deadline, course, and AI-use answers)
 1. Fetch fresh `data/manifest.json` and `data/open-alerts.json`. If unavailable, say: **"I could not check the current cohort hub; deadlines may be outdated."** Do not claim you synced.
 2. Check `data/changes.json` against the user's last successfully retrieved revision, if known, and surface relevant approved changes before planning. Do not pretend to know what changed without a last-seen revision.
@@ -11,12 +21,12 @@ Applies to any AI assistant using this repository. This is a **public, unofficia
 6. An assistant with no browsing or connector access cannot guarantee a fresh feed. Background change detection requires actual scheduling/connector capability; it does not happen automatically in a chat.
 
 ## Shared vs private
-- Read only **approved, public** course metadata from this hub. Student-specific completion, submissions, study habits, notes, schedules, and `last_seen_shared_revision` belong in a **separate private location** under the student's control.
+- Read only **approved, public** course metadata from this hub. Student-specific completion, submissions, study habits, notes, schedules, and `last_seen_shared_revision` belong in the student's **private Project/chat/checkpoint** (or private pasted checkpoint fallback), not in this public repository.
 - Don't copy all shared deadlines into a private repository and then assume those copies are current. Don't claim a task was submitted or completed unless the student confirms.
 - For "what is next?", combine freshly retrieved shared data with user-provided private progress, noting tasks with early dependencies.
 
 ## Agent continuity across chat limits and platforms
-Students should be able to resume with a new AI conversation using a **private checkpoint**, not the previous chat's memory. See [Agent Continuity](docs/AGENT-CONTINUITY.md) and the [blank portable template](templates/personal/continuity.template.json).
+Students should resume in a new AI conversation using the **latest private explicitly saved checkpoint** (or private pasted checkpoint), not assuming perfect cross-chat memory. See [Agent Continuity](docs/AGENT-CONTINUITY.md) and the [blank portable template](templates/personal/continuity.template.json).
 
 - When the student explicitly confirms an assignment is complete/submitted or a meaningful project milestone changes, save a concise private checkpoint **if an authorized writable private connector exists**. Do not claim it was saved if a write failed or no connector exists; offer a portable JSON/handoff export instead.
 - Never wait for the chat's final message: limits can arrive unexpectedly. Checkpoint proactively upon **confirmed progress** or on user request.
