@@ -110,7 +110,7 @@ function renderAssignments(data){
  text($("record-count"),String(reviewed.length));
  text($("candidate-count"),String(recs.length-reviewed.length));
  if(!reviewed.length)
-   text($("data-status"),recs.length+" provisional class dates from the Fall 2026 master tracker are available. NONE have been checked against current official instructions for the shared hub. Do not treat them as authoritative.");
+   text($("data-status"),recs.length+" provisional assignment records from the original tracker and updated Canvas-supplied metadata are available. NONE have been checked against current official instructions for the shared hub. Do not treat them as authoritative.");
  else text($("data-status"),reviewed.length+" reviewed assignments and "+(recs.length-reviewed.length)+" provisional items. Confirm consequential dates in current Canvas/instructor instructions.");
 }
 function renderPrep(data){
