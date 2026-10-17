@@ -1,5 +1,13 @@
 # Baylor EMBA Cohort Knowledge Hub
 
+## Three-platform student setup — October 17, 2026
+
+The three-step [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) now instructs students to **rename their private Google Sheet copy** to `EMBA Personal Progress` before saving; download the plain-text [Agent Instructions](cloudflare/public/downloads/EMBA-Agent-Instructions.txt) for use **inside their AI's instructions settings** during setup; then choose the prominent [ChatGPT](docs/SETUP-CHATGPT.md), [Claude](docs/SETUP-CLAUDE.md), or new [Gemini](docs/SETUP-GEMINI.md) guide. [Example prompts](cloudflare/public/downloads/EMBA-Common-Prompts.txt) are optional extras.
+
+Paid versions are recommended for the best chance of connected Google Sheets edits, but this depends on features and permissions and is **not guaranteed**. Eligible U.S. college students may receive 12 months of [Google AI Pro at no cost](https://gemini.google/us/students/) under Google's offer terms, with enrollment verification, payment method and Dec 31, 2026 redemption deadline. Gemini's regular Gem chat is not equivalent to Gemini in Sheets, which may require the student to review/apply an edit.
+
+
+
 ## New: Classmate starter kit (October 17, 2026)
 
 **Three steps:** [Make your own blank progress Sheet](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy); [download the EMBA agent personality and rules](cloudflare/public/downloads/EMBA-Agent-Instructions.txt); follow [ChatGPT setup](docs/SETUP-CHATGPT.md) or [Claude setup](docs/SETUP-CLAUDE.md). There is also a [prompt pack](cloudflare/public/downloads/EMBA-Common-Prompts.txt) and [one-page quickstart](docs/START-HERE.md).
