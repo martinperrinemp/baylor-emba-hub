@@ -1,14 +1,14 @@
 # EMBA Assistant setup: Claude
 
-**For students using Claude, including Free accounts.** Claude's Projects are available on Free plans, but Google Workspace read/write and editing options can differ depending on account, interface and enabled connectors. This workflow has **not yet passed an independent Claude Free write-and-readback pilot**.
+**Recommended: a paid Claude plan if you want the most integrated Google Docs/Sheets/Slides editing experience.** Claude for Google Workspace sidebar is offered on paid plans; Google Workspace connectors and available chat actions can differ on Free accounts. A subscription alone does not prove ordinary Project-chat writing works. This workflow has **not yet passed an independent Claude Free write-and-readback pilot**.
 
 ## Before you start
 - Open the [public EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/).
-- [Make a private copy of the class blank Google Sheet](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). Call your copy **EMBA Personal Progress**. Never edit/share the cohort's view-only template.
+- [Make a private copy of the class blank Google Sheet](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). **In the Google Make a copy dialog, rename your new copy `EMBA Personal Progress` before saving it**. Never edit/share the cohort's view-only template.
 - [Get the EMBA Agent Instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt).
 
 ## Setup
-1. Open Claude and create a **private EMBA Project**. Paste the full downloaded instructions into the Project's custom instructions. If instructions or project knowledge are unavailable, paste them into your private planning conversation.
+1. Download the plain-text **EMBA-Agent-Instructions.txt**, open it and **copy its entire contents**. Open Claude and create a **private EMBA Project**. Paste all of the text into the **Project instructions** field and save. This is not software to install or a file that updates itself. If instructions or project knowledge are unavailable, paste them into your private planning conversation.
 2. Give Claude the public Hub URL. It should consult shared calendar, readings and assignments for weekly planning; flag records it cannot retrieve or verify.
 3. Enable available **Google Workspace / Google Drive / Google Sheets** connectors through Claude's chat tools or connector settings as supported by your account. Log in with the Google account that owns YOUR copy. Google Drive file browsing and live Google Sheets editing may use separate connectors. Features may be in beta and may be disabled on some accounts.
 4. Ask Claude to locate your own private **EMBA Personal Progress** Google Sheet and **read only** the first few Progress rows. Check that it found YOUR copy.
