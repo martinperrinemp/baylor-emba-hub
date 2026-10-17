@@ -1,68 +1,45 @@
-# EMBA Assistant setup: Google Gemini (Google AI Pro)
+# Set up your EMBA assistant in Google Gemini
 
-**Suggested for students who want the most integrated Google Sheets experience.** A paid or eligible Google AI Pro subscription offers access to Gemini features in Google Workspace, but **Gemini chat/Gems and Gemini in Google Sheets are not identical**. The normal Gemini Gem conversation has not been independently shown to write directly to the tracker. Gemini in Sheets can propose and apply changes within the Sheet on eligible accounts. Verify the edit instead of assuming a background sync.
+**Start here:** [Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started). Gemini calls a reusable custom assistant a Gem, rather than a Project. Make the Gem for planning; spreadsheet editing may use Gemini inside Google Sheets.
 
-## Student offer (US)
+**You need:** a Google account and a Gemini account. Use your own Google Sheet, not the class's blank master. You do **not** need a GitHub account.
 
-[Claim the student Google AI Pro offer](https://gemini.google/us/students/) or [see Google eligibility rules](https://support.google.com/googleone/answer/17422238?hl=en).
+## 1. Make your private progress Sheet
 
-As of October 2026, **eligible U.S. higher-education students** (including Baylor students who satisfy Google's criteria) can get **12 months of Google AI Pro at no cost**, through **December 31, 2026**. You need to verify enrollment (SheerID), use an eligible **personal Google account**, and provide a qualifying payment method. **Unless cancelled, the membership renews at Google's then-applicable paid price after the promotional year**. Check Google's terms before enrolling. This is a Google offer, **not a Baylor-specific guarantee**.
+Open [Make a copy of the class tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). In Google's copy window, change the name to **EMBA Personal Progress**, then click **Make a copy**. Open your new file and check **Share**: access should be **Restricted**. You will see 55 assignment rows with blank Status cells.
 
-## Step 1: Make your own private progress tracker
+## 2. Copy the assistant instructions
 
-1. Open the [Dallas EMBA Progress Tracker - Make a copy](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy).
-2. When Google's **Copy document / Make a copy** dialog appears, **rename the new file to `EMBA Personal Progress` before pressing Make a copy**. If you've already saved it, rename the file in Google Sheets now.
-3. Open **Share** on your **own new copy** and make sure it is **Restricted/private**. Do not type personal progress into the publicly viewable class master.
-4. In your copy, the **Progress** tab has `Assignment | ID | Status | Last Updated`; titles and IDs are already filled, statuses and timestamps are intentionally blank. **Blank means unconfirmed**, not “not started.”
+On the [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started), under Step 2, click **Or copy full text**. That copies the assistant's personality and rules. Prefer a file instead? Download the [instruction .txt file](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/downloads/EMBA-Agent-Instructions.txt), open it, and copy all the text. It is **not** software to install.
 
-## Step 2: Download the EMBA personality text file
+## 3. Create a Gem and paste the instructions
 
-Open [EMBA Agent Instructions (.txt)](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt) and **copy its entire text**. This is *not* an executable app, plugin, spreadsheet or file you need to install on your computer. You'll **paste it into the assistant's custom instructions** in Step 3.
+Open [Gemini](https://gemini.google.com/) and sign in. Open the sidebar → **Gems** (sometimes **Settings & help → Gems**) → **New Gem**. Name it **EMBA Planner**. **Paste all the text from Step 2 into Instructions**, then click **Save**. Select your new Gem to start chatting. The **Knowledge** section is optional; do not put the text only in a description.
 
-## Step 3: Set up your assistant in Gemini
+## 4. Ask Gemini to find your progress Sheet
 
-For October 2026 Gemini, the closest equivalent to a ChatGPT/Claude Project is a **Gem**, which stores a reusable set of custom instructions. Google has announced that personal-account Gems will transition to **skills** beginning in November 2026, so the interface name may change.
+In your **EMBA Planner Gem**, ask: *“Find my Google Drive spreadsheet EMBA Personal Progress and read its Progress tab headings. Do not edit.”* If Gemini offers to connect **Google Workspace**, follow the sign-in steps for the account that owns your Sheet. A Gem finding a Sheet **does not mean it can edit it**.
 
-1. Open [gemini.google.com](https://gemini.google.com/) in your browser, signed in to the Google account you want to use.
-2. Open the sidebar → **Gems** (sometimes under Settings and help) → **New Gem**.
-3. Name it **Dallas EMBA Planner**.
-4. Paste the **entire EMBA-Agent-Instructions.txt text** into the Gem's **Instructions** field. This is the critical setup step. Do **not** paste the instructions into a mere title/description, and don't upload them to the public class Hub.
-5. Optionally, under **Knowledge**, add a public Hub link or other resources allowed by your instructor. If you attach a Drive file as Knowledge, Gemini may use its latest version for reference, but **adding it as Knowledge does not grant reliable write access**.
-6. Press **Save**. Start a chat with your new **Dallas EMBA Planner** Gem.
-7. Ask: “Check the current Baylor EMBA Hub course calendar and assignment/prep lists. What should I finish before the next class weekend? Clearly flag provisional information.” Gemini needs live web/Workspace access for fresh checks; ask it to disclose failures.
+## 5. Test editing inside Google Sheets
 
-## Step 4: Connect Google Workspace and test the progress Sheet
+On a **computer**, open **your copied Sheet**. Click **Ask Gemini** at the upper right (if your Google AI plan includes it). Ask for the fictional TEST-001 update below. **Review the change and click Apply** when prompted. Refresh the Sheet and check Status and Last Updated. If Ask Gemini is missing, your account may not have this Sheets feature.
 
-**Reading in Gemini Apps:** Google Workspace can be connected through Gemini's Connected Apps controls if the account/admin settings permit it. Sign in to the Google account that owns **your** `EMBA Personal Progress` Sheet. Ask your Gem to locate and read it. **This does not prove a Gem can edit it.**
+## 6. Plan from your saved Gem
 
-**Editing in Google Sheets:** Open **your personal copied Sheet** on a desktop with an eligible Google AI/Workspace account. Use **Ask Gemini / Gemini in Sheets** in the top-right side panel. If your saved Gem is available in the Workspace side panel, select it there; otherwise use Gemini in Sheets directly while following the same EMBA instructions. Tell it:
+Return to **EMBA Planner** in Gemini and ask the weekly question below. If your Gem cannot directly read or write the updated Sheet, use the Sheets panel to edit and paste relevant status rows into the Gem chat. **Gem chat and Gemini in Sheets are different tools**; do not assume the two automatically share edit permissions.
 
-> Find only the fictional `TEST-001` row in this personal Sheet (or add exactly one new fictional TEST-001 row). Set its Status to "In progress", update Last Updated, and show me the exact changed cells. Do not touch any real assignments.
+## Copy/paste test question
 
-When Gemini provides a change preview, **review it and click Apply if required**. Refresh the Sheet and confirm the Status and timestamp cells. Then try the same in a new conversation and see whether it can read the new values.
+> In MY private Google Sheet named EMBA Personal Progress, add one fictional row named "Test only" with ID TEST-001, then set Status to "In progress" and Last Updated to the current date and time. Read those two cells back and tell me if the edit really saved. Do not change any real assignments or the publicly shared class template.
 
-**Important platform distinction:** Google documents robust editing in the **Gemini in Sheets side panel**, not guaranteed autonomous editing of a Google Sheet from every standard Gem chat. If the ordinary Gem chat cannot update your Sheet, keep using the Gem for planning and the Sheets side panel for status edits. The two experiences are not interchangeable.
+## First weekly planning question
 
-## Step 5: Start your weekly plan
+> What do I need to complete before our next class weekend? Check the latest EMBA Hub deadlines and readings. Use my private Sheet for confirmed progress, and flag any unverified dates.
 
-In your saved Gem, try:
+## If you get stuck
 
-> Check the latest public Dallas EMBA Hub calendar, Fall course assignments, and readings. Read my own private `EMBA Personal Progress` Sheet if connected. Make a realistic 7/14-day checklist of work before the next class weekend. Keep personal status private, highlight the difference between finished and submitted, and distinguish exact Canvas deadlines from suggested early targets.
+A Google AI Pro subscription may unlock Gemini in Sheets but does not guarantee chat-to-Sheet editing. Eligible U.S. college students may qualify for a 12-month Google AI Pro offer; verify current terms and renewal details with Google. If connecting or updating fails, you can still ask for a plan and change your own Google Sheet manually. The assistant must not say “saved” unless it can read the new value back. **Canvas and instructors have the official deadlines.**
 
-If Gemini cannot read your private Sheet from this chat, paste the relevant status rows or update them in Google Sheets first. Never claim a change saved if you haven't verified it.
+[Google's official instructions for creating Gems](https://support.google.com/gemini/answer/15146780?hl=en) · [Return to EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started)
 
-## Study quality and privacy
-
-- The shared Hub contains student-supplied, **provisional** metadata. Canvas, current syllabi and instructor messages are authoritative.
-- **Do not share your copied Sheet with the class**. Only the empty master is publicly available.
-- The tracker records progress **statuses only**, not grades, percentages or score calculations.
-- Gemini in Sheets editing may depend on region, account type, subscription, administrator and feature availability.
-- These steps describe Google features available in October 2026 and will need review when Gems become skills.
-
-## Sources
-
-- [Google: Using Gems](https://support.google.com/gemini/answer/15146780?hl=en)
-- [Google: Connect Workspace to Gemini](https://support.google.com/gemini/answer/15229592?hl=en)
-- [Google: Edit spreadsheets with Gemini in Sheets](https://support.google.com/docs/answer/16959434?hl=en)
-- [Google: Perform actions in Sheets with Gemini](https://support.google.com/docs/answer/14356410?hl=en)
-- [Google: Student AI offer and requirements](https://support.google.com/googleone/answer/17422238?hl=en)
+*Independent student-run tool, not a Baylor-operated service.*
