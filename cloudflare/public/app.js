@@ -197,7 +197,7 @@ function renderProgramCalendar(data) {
   }));
   const combined=[...events.map(e=>({...e,date:e.start_date,detail:e.date_precision==="month_only"?e.display_date:safeDate(e.start_date)+(e.end_date&&e.end_date!==e.start_date?" – "+safeDate(e.end_date):"")})),
     ...payments.map(p=>({...p,date:p.due_date,detail:safeDate(p.due_date)}))]
-    .filter(x=>all||x.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
+    .filter(x=>all||(x.date>=today||(x.date_precision==="month_only"&&x.date.slice(0,7)===today.slice(0,7)))).sort((a,b)=>a.date.localeCompare(b.date));
   if(!combined.length)emptyMessage($("program-event-list"),"No events in this view","Check official program communications.");
   else $("program-event-list").replaceChildren(...combined.map(e=>{
    const el=elt("div","program-event");
