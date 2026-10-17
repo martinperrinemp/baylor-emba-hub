@@ -1,5 +1,10 @@
 # Project handoff and build checklist
 
+## BAYLOR/HANKAMER WEB THEME UPDATE (OCTOBER 17, 2026)
+
+Website source was reworked for [official Baylor Green (#154734) and University Gold (#FFB81C)](https://brand.web.baylor.edu/brand-standards/official-brand-colors), plus approved general Georgia/Helvetica typography, a text-only **Hankamer School of Business / MBA in Dallas** identity, warm neutral cards, cleaner executive-style presentation, and mobile-scrollable navigation. Existing Google Sheet onboarding, assignment/calendar content, and working API untouched. No restricted logos or brand signatures copied/reconstructed. Disclaimer remains above fold and in footer: **independent, not Baylor operated/endorsed**. Contrast checks and JS element reference checks passed. See [brand implementation guide](BRAND-THEME.md). **Next** visually inspect live desktop and mobile site after merge; no automated visual approval claimed.
+
+
 ## OCTOBER 17 — THREE-PLATFORM STARTER-KIT POLISH
 
 Per owner feedback: Step 1 now explicitly says to rename the newly copied Google Sheet to **EMBA Personal Progress** in the copy dialog before saving. Step 2 describes **EMBA-Agent-Instructions.txt** as plain text to paste into a ChatGPT/Claude **Project instructions** field or Gemini **Gem instructions** during Step 3, not software. Step 3 has three prominent dedicated setup guide buttons; example prompts are extra, not a mandatory step.
