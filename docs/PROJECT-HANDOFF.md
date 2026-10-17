@@ -1,5 +1,12 @@
 # Project handoff and build checklist
 
+## October 17: novice UX rewrite and website-native setup guides
+
+The three canonical guides `docs/SETUP-CHATGPT.md`, `docs/SETUP-CLAUDE.md`, `docs/SETUP-GEMINI.md` have been rewritten for someone who has only used AI as a search box. Matching, accessible single-purpose HTML pages were created in `cloudflare/public/guides/`, with responsive `guide.css`. Hub Step 3 links point to `/guides/{chatgpt,claude,gemini}.html`, **not GitHub**. Each shows the exact Project/Gem instructions field, where to connect Google, how to test a fake TEST-001 row and verify actual Sheets persistence, and a weekly planning question. Manual fallback provided.
+
+Live edit distinction: Claude Google Drive and Google Sheets are separate connectors (per Claude official guide); Gemini Gem and Gemini-in-Sheets are separate experiences (per Google help); ChatGPT Google Drive writes depend on account authorization. Template sheet START HERE row references were updated and read back. No classmate status, grades, tokens or actual personal Sheet ID in public docs. **Verify Cloudflare guide pages/routes on live site and run a real beginner pilot** before wider sharing.
+
+
 ## BAYLOR/HANKAMER WEB THEME UPDATE (OCTOBER 17, 2026)
 
 Website source was reworked for [official Baylor Green (#154734) and University Gold (#FFB81C)](https://brand.web.baylor.edu/brand-standards/official-brand-colors), plus approved general Georgia/Helvetica typography, a text-only **Hankamer School of Business / MBA in Dallas** identity, warm neutral cards, cleaner executive-style presentation, and mobile-scrollable navigation. Existing Google Sheet onboarding, assignment/calendar content, and working API untouched. No restricted logos or brand signatures copied/reconstructed. Disclaimer remains above fold and in footer: **independent, not Baylor operated/endorsed**. Contrast checks and JS element reference checks passed. See [brand implementation guide](BRAND-THEME.md). **Next** visually inspect live desktop and mobile site after merge; no automated visual approval claimed.
