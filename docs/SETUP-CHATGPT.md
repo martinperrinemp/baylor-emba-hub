@@ -1,6 +1,6 @@
 # EMBA Assistant setup: ChatGPT
 
-**For students using ChatGPT, including Free accounts.** This is a practical setup path, not a promise that every plan exposes Google Drive write actions. Use the [public Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) and [downloadable agent instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt).
+**Recommended: a paid ChatGPT plan for the best chance of smooth Google Drive/Sheets integration, with higher usage capacity.** Free accounts can still use the Hub and may have limited spreadsheet features. **Neither paid nor free subscriptions guarantee direct Google Sheet edits from an ordinary Project chat**; test the enabled actions. Use the [public Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) and [downloadable agent instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt).
 
 ## What you need
 - Your own ChatGPT account and Google account.
@@ -8,8 +8,8 @@
 - Approximately a few minutes for setup and a test; availability varies by account.
 
 ## Setup
-1. Select **Make a copy** on the Google Sheets link. Name YOUR copy **EMBA Personal Progress**. Check **Share**: your copy should be private/restricted. Its Progress tab starts with public assignment titles and IDs but **all status and timestamp cells blank**.
-2. In ChatGPT, create a private **EMBA** Project (if your account has Projects). Open its menu → Project settings/instructions. Paste the entire [EMBA Agent Instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt). You can also paste them at the beginning of a normal private conversation if Project instructions are unavailable.
+1. Select **Make a copy** on the Google Sheets link. In Google's copy dialog, **rename YOUR new file to `EMBA Personal Progress` before clicking Make a copy**. If already copied, rename the new Sheet now. Check **Share**: your copy should be private/restricted. Its Progress tab starts with public assignment titles and IDs but **all status and timestamp cells blank**.
+2. **Download the plain-text [.txt EMBA Agent Instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt), open the text file and copy everything in it.** In ChatGPT, create a private **EMBA** Project (if your account has Projects). Open **Project settings → Instructions** and **paste the full downloaded text into the Project instructions field**, then save those instructions. This file does not need to be installed as software. You can also paste them at the beginning of a normal private conversation if Project instructions are unavailable.
 3. Use Settings → Plugins/Apps, or the chat tools menu if offered, to find and connect **Google Drive** to YOUR Google account. Grant only the permissions you want to authorize. Capabilities depend on plan and account settings.
 4. If helpful, paste the public Hub URL and the link to **your own private Sheet** into a private Project chat. Do NOT publish your copy in the cohort Hub or post it in GitHub.
 5. Ask: **"Find MY private EMBA Personal Progress Sheet and read its Progress column headers. Do not edit."** Verify the assistant references YOUR copy, not the public template.
