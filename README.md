@@ -4,7 +4,7 @@
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
 
-> **Build status (Oct 13, 2026):** **Read-only classmate landing page LIVE, visually verified on Android (owner screenshot October 13, 2026).** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The hub now includes **40 provisional Fall 2026 assignment/deadline candidates, 46 provisional ENT/MGT Reading & Prep items, and three source-attributed provisional ENT AI-use notes** imported from the student-prepared semester materials; **none are independently verified against current official instructions**, and shared knowledge revision remains 0. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
+> **Build status (Oct 13, 2026):** **Read-only classmate landing page LIVE, visually verified on Android (owner screenshot October 13, 2026).** The existing `baylor-emba-proposals` Worker hosts a responsive public hub and a read-only public GitHub data endpoint, while **`INTAKE_ENABLED=false`** keeps automatic proposals paused. The owner has verified a manual full backup, an isolated D1 schema restore, readable GitHub ZIP, a daily backup and Watchdog schedule, and a Discord test message. **First unattended backup/watchdog cycle and missing-backup alert are not yet verified.** The hub now includes **55 active Fall 2026 assignment candidates (plus three superseded aggregate QBA quiz placeholders), 104 provisional ENT/MGT/QBA Reading & Prep items, a program calendar, and three source-attributed provisional ENT AI-use notes** imported from the student-prepared semester materials; **none are independently verified against current official instructions**, and shared knowledge revision remains 0. See the [fast pilot checklist](docs/FAST-PILOT.md) and [live project handoff](docs/PROJECT-HANDOFF.md).
 
 ## October 17, 2026: Coursework catalog + program calendar expanded
 
@@ -46,11 +46,12 @@ The [fast pilot plan](docs/FAST-PILOT.md) lists the minimum tests before sharing
 
 | Information | File | Status |
 | --- | --- | --- |
-| Shared assignments and dependencies | [Assignments](data/assignments.json) | 40 provisional Fall 2026 dates imported; 0 officially verified |
-| Reading, videos, cases and chapter titles | [Reading & Prep](data/prep.json) | 46 provisional ENT/MGT items; preparation dates do not necessarily represent graded due dates |
+| Shared assignments and dependencies | [Assignments](data/assignments.json) | 55 active provisional Fall 2026 records; 3 old QBA quiz aggregates superseded; 0 reviewer-approved |
+| Reading, videos, cases and chapter titles | [Reading & Prep](data/prep.json) | 104 provisional ENT/MGT/QBA items; most QBA modules have no separate prep dates |
 | Baylor templates and useful tools | [Resource catalog](data/resources.json) | Candidate entries; check verification fields |
 | Student tips and experience | [Lessons learned](data/lessons-learned.json) | Empty |
 | Course- and assignment-level AI-use rules | [AI policies](data/ai-policies.json) | Three provisional ENT assignment-specific summaries; no verified permissions, MGT/QBA unknown |
+| Class dates, travel and fall courses | [Program calendar](data/program-calendar.json) | 2026–2028 class-date highlights, Fall 2026 blocks, events and payment dates; subject to change |
 | Urgent conflicts | [Open alerts](data/open-alerts.json) | None logged |
 | Approved change history | [Changes](data/changes.json) | Empty |
 | Knowledge revision | [Manifest](data/manifest.json) | Revision 0 |
