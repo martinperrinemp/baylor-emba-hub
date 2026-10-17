@@ -1,5 +1,12 @@
 # Baylor EMBA Cohort Knowledge Hub
 
+## New: Classmate starter kit (October 17, 2026)
+
+**Three steps:** [Make your own blank progress Sheet](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy); [download the EMBA agent personality and rules](cloudflare/public/downloads/EMBA-Agent-Instructions.txt); follow [ChatGPT setup](docs/SETUP-CHATGPT.md) or [Claude setup](docs/SETUP-CLAUDE.md). There is also a [prompt pack](cloudflare/public/downloads/EMBA-Common-Prompts.txt) and [one-page quickstart](docs/START-HERE.md).
+
+The master Sheet is Google-confirmed shared as ANYONE / READER with no personal scores or status values. Each student makes a copy under their own Google account and keeps personal progress private. The Get Started area and direct text downloads are implemented in website source; live Cloudflare deployment still needs a post-merge check. ChatGPT Free / Claude Free Google Sheet writes are NOT verified yet; each guide provides a manual fallback.
+
+
 **Unofficial, student-maintained resource. Not operated by or endorsed by Baylor University.**
 
 This public repository gives the Dallas Executive MBA cohort and compatible AI assistants **one shared source** for approved coursework metadata, deadlines, resources, lessons learned, AI-use guidance, and change alerts. **Canvas, current course syllabi, and instructor communications are authoritative. Each student is responsible for independently verifying deadlines and submissions.**
