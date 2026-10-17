@@ -1,5 +1,16 @@
 # EMBA Hub roadmap: classmate-ready starter kit first
 
+## Beginner onboarding walkthrough: three platforms (October 17, 2026)
+
+- [x] Rewrite ChatGPT, Claude and Gemini setup guides as short, numbered click-by-click instructions written for classmates who have never used AI Projects, Gems or GitHub.
+- [x] Add website-native, mobile-responsive beginner guides at `/guides/chatgpt.html`, `/guides/claude.html` and `/guides/gemini.html` so students never need a GitHub account or repository view.
+- [x] Point Step 3 website buttons to these guides; include a common fictional Google Sheet write/read-back test and the first weekly planning prompt.
+- [x] Separate Claude Drive reading from Google Sheets live editing, and Gemini Gem planning from Gemini-in-Sheets actions; avoid guaranteeing edits on any plan.
+- [x] Update view-only Google Sheet template's START HERE tab to point students to the direct web guides (Google read-back verified).
+- [ ] Confirm guide routes, responsiveness and links on live Cloudflare site after merge.
+- [ ] Have one classmate with no AI setup experience follow their chosen guide completely and record any friction; test actual free plan actions rather than guessing.
+
+
 ## Baylor-themed public Hub refresh (October 17, 2026)
 
 - [x] Source implementation: official **Baylor Green #154734** and **University Gold #FFB81C**, Georgia and Helvetica, recognizable **Hankamer / MBA in Dallas** program naming.
