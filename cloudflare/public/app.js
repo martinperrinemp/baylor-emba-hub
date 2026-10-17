@@ -4,7 +4,7 @@ const BASE="https://github.com/martinperrinemp/baylor-emba-hub";
 const PROMPT=[
  "Help me as my personal Dallas Executive MBA assistant using the unofficial cohort hub:",
  BASE,
- "First, read AGENTS.md, then fetch FRESH data/manifest.json, data/open-alerts.json, data/changes.json, data/assignments.json, data/prep.json and data/ai-policies.json.",
+ "First, read AGENTS.md, then fetch FRESH data/manifest.json, data/open-alerts.json, data/changes.json, data/assignments.json, data/prep.json, data/program-calendar.json and data/ai-policies.json.",
  "Use verified metadata for confirmed claims. You may show provisional Fall 2026 assignment and prep records only as UNVERIFIED leads with clear warnings; never present them as authoritative due dates. Distinguish preparation/discussion dates, presentation dates and actual submission deadlines. If no verified dates exist or you cannot retrieve current records, say so and do not invent dates.",
  "Official course materials and instructor directions outrank this hub. Do not connect or scrape Canvas.",
  "Keep my own completions, notes, grades, preferences and personal checkpoints private, separate from the public repository. Mark an assignment completed/submitted only after I confirm it.",
@@ -69,7 +69,7 @@ function todayChicago(){
 }
 function renderAssignments(data){
  const container=$("assignment-list");
- const recs=Array.isArray(data?.records)?data.records:[];
+ const recs=(Array.isArray(data?.records)?data.records:[]).filter(r=>r.record_status!=="superseded_aggregate");
  const reviewed=recs.filter(isReviewed);
  const filter=$("course-filter");
  const dateFilter=$("date-filter");
@@ -114,15 +114,17 @@ function renderAssignments(data){
  else text($("data-status"),reviewed.length+" reviewed assignments and "+(recs.length-reviewed.length)+" provisional items. Confirm consequential dates in current Canvas/instructor instructions.");
 }
 function renderPrep(data){
- const container=$("prep-list"),filter=$("prep-course-filter"),dateFilter=$("prep-date-filter");
+ const container=$("prep-list"),filter=$("prep-course-filter"),dateFilter=$("prep-date-filter"),moduleFilter=$("prep-module-filter");
  const items=Array.isArray(data?.records)?data.records:[];
  const reviewed=items.filter(isReviewed).length;
  const today=todayChicago();
  const courses=[...new Set(items.map(r=>r.course_id).filter(Boolean))].sort();
  for(const course of courses){const option=elt("option","",course);option.value=course;filter.append(option);}
+ const modules=[...new Set(items.map(r=>r.module).filter(Boolean))].sort((a,b)=>Number((a.match(/\d+/)||[])[0]||99)-Number((b.match(/\d+/)||[])[0]||99));
+ for(const mod of modules){const option=elt("option","",mod);option.value=mod;moduleFilter.append(option);}
  const draw=()=>{
-  const selected=filter.value,upcoming=dateFilter.value==="upcoming";
-  const filtered=items.filter(r=>(selected==="all"||r.course_id===selected)&&(!upcoming||!r.due_or_discuss_date||r.due_or_discuss_date>=today))
+  const selected=filter.value,upcoming=dateFilter.value==="upcoming",mod=moduleFilter.value;
+  const filtered=items.filter(r=>(selected==="all"||r.course_id===selected)&&(mod==="all"||r.module===mod)&&(!upcoming||!r.due_or_discuss_date||r.due_or_discuss_date>=today))
    .slice().sort((a,b)=>String(a.due_or_discuss_date||"9999").localeCompare(String(b.due_or_discuss_date||"9999"))||String(a.course_id).localeCompare(String(b.course_id)));
   if(!filtered.length){
    emptyMessage(container,"No matching readings or prep.",upcoming?"Try All dates to see the earlier modules, or choose another course. The official syllabus may list additional readings.":"No entries are recorded under these filters.");return;
@@ -140,7 +142,7 @@ function renderPrep(data){
    body.append(elt("h3","",item.title||"Untitled prep item"));
    body.append(elt("p","prep-meta",[(item.course_id||"Course unknown"),item.module,item.prep_type?.replaceAll("_"," ")].filter(Boolean).join(" · ")));
    if(item.needed_for)body.append(elt("p","prep-purpose","Listed for: "+item.needed_for));
-   if(typeof item.external_resource_url==="string" && /^https:\/\/(?:www\.)?(?:youtube\.com|mckinsey\.com)\//i.test(item.external_resource_url)){
+   if(typeof item.external_resource_url==="string" && /^https:\/\/(?:www\.)?(?:youtube\.com|mckinsey\.com|joshdp34\.github\.io)\//i.test(item.external_resource_url)){
     const link=elt("a","prep-link","Original public link (not rechecked) ↗");
     link.href=item.external_resource_url;link.target="_blank";link.rel="noopener noreferrer";body.append(link);
    }
@@ -157,10 +159,56 @@ function renderPrep(data){
  };
  filter.addEventListener("change",draw);
  dateFilter.addEventListener("change",draw);
+ moduleFilter.addEventListener("change",draw);
  draw();
  text($("prep-count"),String(items.length-reviewed));
- text($("prep-status"),items.length+" student-tracker readings and preparation items are listed. "+(items.length-reviewed)+" await independent review. Dates are for preparing/discussing, not automatically graded due dates.");
+ text($("prep-status"),items.length+" reading and preparation items are listed, including QBA module lists. "+(items.length-reviewed)+" require cohort review. Module-only lists have no assigned due date; check Canvas.");
 }
+
+function renderProgramCalendar(data) {
+ const dates=Array.isArray(data?.class_dates)?data.class_dates:[],
+       sessions=Array.isArray(data?.fall_2026_sessions)?data.fall_2026_sessions:[],
+       events=Array.isArray(data?.key_events)?data.key_events:[],
+       payments=Array.isArray(data?.payment_dates)?data.payment_dates:[];
+ const mode=$("schedule-date-filter"),today=todayChicago();
+ const draw=()=>{
+  const all=mode.value==="all";
+  const available=dates.filter(d=>all||d.end_date>=today).slice().sort((a,b)=>a.start_date.localeCompare(b.start_date));
+  const shown=all?available:available.slice(0,7);
+  const list=$("program-date-list");
+  if(!shown.length)emptyMessage(list,"No class dates in this view","Check the current official program calendar.");
+  else list.replaceChildren(...shown.map((d,index)=>{
+   const node=elt("article","program-card");
+   node.append(elt("strong","",d.title),elt("div","program-date",safeDate(d.start_date)+(d.start_date!==d.end_date?" – "+safeDate(d.end_date):"")));
+   if(d.note)node.append(elt("p","",d.note));
+   const blocks=sessions.filter(x=>x.date>=d.start_date&&x.date<=d.end_date);
+   if(blocks.length){
+    const details=elt("details","program-sessions");if(!all&&index===0)details.open=true;
+    details.append(elt("summary","","Fall 2026 course blocks"));
+    for(const b of blocks){
+     const weekday=new Date(b.date+"T12:00:00Z").getUTCDay()===5?"Fri":"Sat";
+     const item=elt("div","program-session");
+     item.append(elt("span","",weekday+" "+b.start_time+"–"+b.end_time),elt("strong","",b.display_course));
+     details.append(item);
+    }
+    node.append(details);
+   }
+   return node;
+  }));
+  const combined=[...events.map(e=>({...e,date:e.start_date,detail:e.date_precision==="month_only"?e.display_date:safeDate(e.start_date)+(e.end_date&&e.end_date!==e.start_date?" – "+safeDate(e.end_date):"")})),
+    ...payments.map(p=>({...p,date:p.due_date,detail:safeDate(p.due_date)}))]
+    .filter(x=>all||x.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
+  if(!combined.length)emptyMessage($("program-event-list"),"No events in this view","Check official program communications.");
+  else $("program-event-list").replaceChildren(...combined.map(e=>{
+   const el=elt("div","program-event");
+   el.append(elt("strong","",e.title),elt("span","",e.detail));
+   return el;
+  }));
+ };
+ mode.addEventListener("change",draw);draw();
+ text($("schedule-status"),dates.length+" class date blocks through March 2028, with Fall 2026 course sections, travel, milestones and payment dates. All are subject to change.");
+}
+
 function renderResources(data) {
  const parent=$("resource-list");const rows=Array.isArray(data?.resources)?data.resources:[];
  if(!rows.length){emptyMessage(parent,"No shared resources yet.","Resources will appear once student contributors submit and reviewers approve them.");return;}
@@ -232,8 +280,8 @@ async function loadFile(name) {
 async function boot(){
  $("copy-prompt").addEventListener("click",()=>copyToClipboard(PROMPT,"AI starter prompt"));
  $("copy-correction").addEventListener("click",()=>copyToClipboard(CORRECTION,"Correction template"));
- const [manifest,assignments,prep,resources,policies,changes,alerts]=await Promise.allSettled([
-  loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("resources.json"),loadFile("ai-policies.json"),loadFile("changes.json"),loadFile("open-alerts.json")
+ const [manifest,assignments,prep,program,resources,policies,changes,alerts]=await Promise.allSettled([
+  loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("program-calendar.json"),loadFile("resources.json"),loadFile("ai-policies.json"),loadFile("changes.json"),loadFile("open-alerts.json")
  ]);
  const has=m=>m.status==="fulfilled";
  if(has(manifest)){
@@ -243,6 +291,8 @@ async function boot(){
  }else{
   text($("revision"),"Unavailable");text($("updated"),"Could not verify current GitHub revision");
  }
+ if(has(program))renderProgramCalendar(program.value);
+ else {text($("schedule-status"),"Program calendar unavailable. Use official schedules.");emptyMessage($("program-date-list"),"Calendar unavailable","Verify dates in current Baylor materials.");emptyMessage($("program-event-list"),"Events unavailable","Check official dates.");}
  if(has(assignments))renderAssignments(assignments.value);
  else{text($("record-count"),"Unavailable");text($("candidate-count"),"Unavailable");text($("data-status"),"Live records could not be checked. Do not rely on this hub for deadlines.");emptyMessage($("assignment-list"),"Data temporarily unavailable","Confirm your assignments in official course systems.");}
  if(has(prep))renderPrep(prep.value);
