@@ -18,6 +18,7 @@
         <span><strong>Dallas EMBA</strong><small>COHORT HUB · CLASS OF 2028</small></span>
       </a>
       <nav aria-label="Main navigation">
+        <a href="#schedule">Class calendar</a>
         <a href="#deadlines">Deadlines</a>
         <a href="#prep">Prep</a>
         <a href="#resources">Resources</a>
@@ -57,6 +58,21 @@
     <div class="container">
       <div class="official-warning" role="note"><span aria-hidden="true">ⓘ</span><div><strong>Official instructions always come first.</strong> This is a peer-maintained planning aid, not a Baylor-operated service. Verify consequential deadlines and AI-use permissions using current course instructions or Canvas.</div></div>
 
+      <section id="schedule" class="section">
+        <div class="section-heading">
+          <div><p class="kicker">01 / PROGRAM CALENDAR</p><h2>Class weekends, trips & key dates</h2><p class="section-desc">Class of 2028 program calendar plus exact Fall 2026 Friday/Saturday course blocks. Future-year courses have not yet been supplied.</p></div>
+          <div class="filters"><label class="filter-wrap">Show
+            <select id="schedule-date-filter" aria-label="Show upcoming or all class and key dates"><option value="upcoming">Upcoming</option><option value="all">All dates</option></select>
+          </label></div>
+        </div>
+        <div id="schedule-status" class="notice" role="status">Loading class dates…</div>
+        <h3 class="program-subhead">Class dates & course blocks</h3>
+        <div id="program-date-list" class="program-grid"></div>
+        <h3 class="program-subhead">Trips, milestones & payment dates</h3>
+        <div id="program-event-list" class="program-events"></div>
+        <p class="footnote">From the Class of 2028 program calendar and Fall 2026 timetable updated August 17. Schedules can change. A few single-day class highlights lack precise session times; verify with current course instructions.</p>
+      </section>
+
       <section id="deadlines" class="section">
         <div class="section-heading">
           <div><p class="kicker">01 / THE SHARED VIEW</p><h2>Assignment deadlines</h2><p class="section-desc">Approved dates are separate from personal completion status. Presentation and upload deadlines may differ.</p></div>
@@ -71,12 +87,12 @@
         </div>
         <div class="notice" id="data-status" role="status" aria-live="polite">Checking the latest public records…</div>
         <div id="assignment-list" class="assignment-list" aria-live="polite"></div>
-        <p class="footnote">These dates come from a student-prepared Fall 2026 tracker and have not been independently verified against the latest course instructions. Dates explicitly marked as conflicting require extra caution. Personal completion status is never shared. Missing is not the same as not assigned.</p>
+        <p class="footnote">These dates combine the original student tracker and newer student-provided Canvas assignment lists, which still await independent cohort review. Dates explicitly marked as conflicting require extra caution. Personal completion status is never shared. Missing is not the same as not assigned.</p>
       </section>
 
       <section id="prep" class="section">
         <div class="section-heading">
-          <div><p class="kicker">02 / PREPARE FOR CLASS</p><h2>Readings & prep</h2><p class="section-desc">Articles, case titles, book chapters and videos from the original Fall 2026 tracker. The dates shown are preparation or discussion dates, not necessarily Canvas submission deadlines.</p></div>
+          <div><p class="kicker">02 / PREPARE FOR CLASS</p><h2>Readings & prep</h2><p class="section-desc">Articles, cases, chapters and tutorials from the ENT/MGT tracker and QBA course modules. The dates shown are preparation or discussion dates, not necessarily Canvas submission deadlines.</p></div>
           <div class="filters">
             <label class="filter-wrap">Dates
               <select id="prep-date-filter" aria-label="Show upcoming or all reading and prep items"><option value="upcoming">Upcoming</option><option value="all">All dates</option></select>
@@ -84,11 +100,14 @@
             <label class="filter-wrap">Course
               <select id="prep-course-filter" aria-label="Filter reading and prep by course"><option value="all">All courses</option></select>
             </label>
+            <label class="filter-wrap">Module
+              <select id="prep-module-filter" aria-label="Filter readings by module"><option value="all">All modules</option></select>
+            </label>
           </div>
         </div>
         <div class="notice" id="prep-status" role="status" aria-live="polite">Checking the original reading list…</div>
         <div id="prep-list" class="prep-list" aria-live="polite"></div>
-        <p class="footnote">These are provisional, student-organized references, not a confirmation that the title, requirement, availability, or date remains current. Private Canvas file links and any individual completion information are excluded. QBA reading references were not listed in the original prep tab.</p>
+        <p class="footnote">These are provisional, student-organized references, not a confirmation that the title, requirement, availability, or date remains current. Private Canvas file links and any individual completion information are excluded. QBA module readings and tutorials are now listed; exact preparation dates still require confirmation.</p>
       </section>
 
       <section id="resources" class="section">
@@ -111,7 +130,7 @@
             </div>
             <p id="copy-status" class="helper-text" role="status" aria-live="polite">A capable assistant should check current GitHub files before giving deadline advice.</p>
           </div>
-          <div class="privacy-panel"><span class="lock" aria-hidden="true">◎</span><h3>Your information remains yours.</h3><p>The public hub contains shared course information, not your grades, submissions, study notes, or calendar.</p><p>For restarting a long AI chat, use a private checkpoint. Automatic cross-platform saving has <strong>not</strong> been enabled yet.</p><a target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/AGENT-CONTINUITY.md">Read the private continuity guide ↗</a></div>
+          <div class="privacy-panel"><span class="lock" aria-hidden="true">◎</span><h3>Your information remains yours.</h3><p>The public hub contains shared course information, never your individual grades, submissions or study notes. Your private Google Sheet can track personal statuses.</p><p>With an authorized Google Drive connector, capable assistants can update your private Sheet. Verify support on your plan; use a saved private checkpoint only as a fallback.</p><a target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/AGENT-CONTINUITY.md">Read the private continuity guide ↗</a></div>
         </div>
         <div id="ai-rules" class="ai-policy-wrap">
           <h3>Assignment-specific AI-use guidance</h3>
