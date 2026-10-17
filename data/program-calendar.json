@@ -1,0 +1,603 @@
+{
+  "schema_version": "1.0.0",
+  "timezone": "America/Chicago",
+  "source_priority": "Program class-date calendar and Fall 2026 course timetable supplied by student Oct 17, 2026. Official updated course communications supersede older printed schedule.",
+  "calendar_last_transcribed": "2026-10-17",
+  "general_class_times": {
+    "friday": "13:00–20:30",
+    "saturday": "09:00–17:00",
+    "note": "General class times, not proof every date follows full-day schedule."
+  },
+  "class_dates": [
+    {
+      "id": "dallas-class-2026-09-04",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2026-09-04",
+      "end_date": "2026-09-05",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2026-10-16",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-17",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2026-11-13",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2026-11-13",
+      "end_date": "2026-11-14",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2026-12-04",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2026-12-04",
+      "end_date": "2026-12-05",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-01-08",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-01-08",
+      "end_date": "2027-01-09",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-02-05",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-02-05",
+      "end_date": "2027-02-06",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-02-19",
+      "title": "Class date (one day highlighted; time to verify)",
+      "start_date": "2027-02-19",
+      "end_date": "2027-02-19",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "Single date highlighted yellow in program calendar; exact session times and course not supplied.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-03-05",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-03-05",
+      "end_date": "2027-03-06",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-04-09",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-04-09",
+      "end_date": "2027-04-10",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-05-07",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-05-07",
+      "end_date": "2027-05-08",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-06-25",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-06-25",
+      "end_date": "2027-06-26",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-07-23",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-07-23",
+      "end_date": "2027-07-24",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-09-03",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-09-03",
+      "end_date": "2027-09-04",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-09-24",
+      "title": "Class date (one day highlighted; time to verify)",
+      "start_date": "2027-09-24",
+      "end_date": "2027-09-24",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "Single date highlighted yellow in program calendar; exact session times and course not supplied.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-10-15",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-10-15",
+      "end_date": "2027-10-16",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-11-05",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-11-05",
+      "end_date": "2027-11-06",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2027-12-03",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2027-12-03",
+      "end_date": "2027-12-04",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2028-01-07",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2028-01-07",
+      "end_date": "2028-01-08",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2028-02-04",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2028-02-04",
+      "end_date": "2028-02-05",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    },
+    {
+      "id": "dallas-class-2028-03-03",
+      "title": "Dallas EMBA class weekend",
+      "start_date": "2028-03-03",
+      "end_date": "2028-03-04",
+      "category": "class",
+      "status": "published_program_calendar",
+      "verification_status": "source_transcribed",
+      "source_reference": "Baylor MBA in Dallas Class of 2028 program calendar, colored class dates (uploaded Oct 17, 2026). Course-by-course detail available only for Fall 2026.",
+      "note": "General scheduled class times: Fri 1:00–8:30pm and Sat 9:00am–5:00pm; confirm semester-specific schedule.",
+      "courses": null
+    }
+  ],
+  "key_events": [
+    {
+      "id": "event-orientation",
+      "title": "Orientation",
+      "start_date": "2026-08-21",
+      "end_date": "2026-08-21",
+      "date_precision": "day",
+      "display_date": null,
+      "category": "orientation",
+      "verification_status": "source_transcribed",
+      "source_reference": "Class of 2028 MBA in Dallas three-year program calendar (uploaded Oct 17, 2026). Dates subject to change."
+    },
+    {
+      "id": "event-baylor-in-texas",
+      "title": "Baylor in Texas",
+      "start_date": "2026-09-20",
+      "end_date": "2026-09-23",
+      "date_precision": "day",
+      "display_date": null,
+      "category": "residency",
+      "verification_status": "source_transcribed",
+      "source_reference": "Class of 2028 MBA in Dallas three-year program calendar (uploaded Oct 17, 2026). Dates subject to change."
+    },
+    {
+      "id": "event-baylor-in-dc",
+      "title": "Baylor in DC",
+      "start_date": "2027-06-06",
+      "end_date": "2027-06-10",
+      "date_precision": "day",
+      "display_date": null,
+      "category": "travel",
+      "verification_status": "source_transcribed",
+      "source_reference": "Class of 2028 MBA in Dallas three-year program calendar (uploaded Oct 17, 2026). Dates subject to change."
+    },
+    {
+      "id": "event-baylor-abroad",
+      "title": "Baylor Abroad",
+      "start_date": "2028-04-01",
+      "end_date": "2028-04-08",
+      "date_precision": "day",
+      "display_date": null,
+      "category": "travel",
+      "verification_status": "source_transcribed",
+      "source_reference": "Class of 2028 MBA in Dallas three-year program calendar (uploaded Oct 17, 2026). Dates subject to change."
+    },
+    {
+      "id": "event-graduation-in-waco",
+      "title": "Graduation in Waco",
+      "start_date": "2028-05-01",
+      "end_date": null,
+      "date_precision": "month_only",
+      "display_date": "May 2028 (date not provided)",
+      "category": "graduation",
+      "verification_status": "source_transcribed",
+      "source_reference": "Class of 2028 MBA in Dallas three-year program calendar (uploaded Oct 17, 2026). Dates subject to change."
+    }
+  ],
+  "payment_dates": [
+    {
+      "id": "payment-2026-08-31",
+      "title": "Fall 2026 payment deadline",
+      "due_date": "2026-08-31",
+      "category": "payment",
+      "source_reference": "Class of 2028 published MBA in Dallas program calendar; individual financial arrangements may differ."
+    },
+    {
+      "id": "payment-2027-01-31",
+      "title": "Spring 2027 payment deadline",
+      "due_date": "2027-01-31",
+      "category": "payment",
+      "source_reference": "Class of 2028 published MBA in Dallas program calendar; individual financial arrangements may differ."
+    },
+    {
+      "id": "payment-2027-05-31",
+      "title": "Summer 2027 payment deadline",
+      "due_date": "2027-05-31",
+      "category": "payment",
+      "source_reference": "Class of 2028 published MBA in Dallas program calendar; individual financial arrangements may differ."
+    },
+    {
+      "id": "payment-2027-08-31",
+      "title": "Fall 2027 payment deadline",
+      "due_date": "2027-08-31",
+      "category": "payment",
+      "source_reference": "Class of 2028 published MBA in Dallas program calendar; individual financial arrangements may differ."
+    },
+    {
+      "id": "payment-2028-01-31",
+      "title": "Spring 2028 payment deadline",
+      "due_date": "2028-01-31",
+      "category": "payment",
+      "source_reference": "Class of 2028 published MBA in Dallas program calendar; individual financial arrangements may differ."
+    }
+  ],
+  "fall_2026_sessions": [
+    {
+      "id": "session-2026-09-04-friday_1300",
+      "date": "2026-09-04",
+      "start_time": "13:00",
+      "end_time": "16:30",
+      "course_id": null,
+      "display_course": "No class",
+      "session_status": "no_class",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-09-04-friday_1700",
+      "date": "2026-09-04",
+      "start_time": "17:00",
+      "end_time": "20:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-09-04-saturday_0900",
+      "date": "2026-09-05",
+      "start_time": "09:00",
+      "end_time": "12:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-09-04-saturday_1330",
+      "date": "2026-09-05",
+      "start_time": "13:30",
+      "end_time": "17:00",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-10-16-friday_1300",
+      "date": "2026-10-16",
+      "start_time": "13:00",
+      "end_time": "16:30",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-10-16-friday_1700",
+      "date": "2026-10-16",
+      "start_time": "17:00",
+      "end_time": "20:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-10-16-saturday_0900",
+      "date": "2026-10-17",
+      "start_time": "09:00",
+      "end_time": "12:30",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-10-16-saturday_1330",
+      "date": "2026-10-17",
+      "start_time": "13:30",
+      "end_time": "17:00",
+      "course_id": null,
+      "display_course": "No class",
+      "session_status": "no_class",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-11-13-friday_1300",
+      "date": "2026-11-13",
+      "start_time": "13:00",
+      "end_time": "16:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-11-13-friday_1700",
+      "date": "2026-11-13",
+      "start_time": "17:00",
+      "end_time": "20:30",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-11-13-saturday_0900",
+      "date": "2026-11-14",
+      "start_time": "09:00",
+      "end_time": "12:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-11-13-saturday_1330",
+      "date": "2026-11-14",
+      "start_time": "13:30",
+      "end_time": "17:00",
+      "course_id": null,
+      "display_course": "No class",
+      "session_status": "no_class",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-12-04-friday_1300",
+      "date": "2026-12-04",
+      "start_time": "13:00",
+      "end_time": "16:30",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-12-04-friday_1700",
+      "date": "2026-12-04",
+      "start_time": "17:00",
+      "end_time": "20:30",
+      "course_id": "MGT 5311",
+      "display_course": "MGT 5311",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-12-04-saturday_0900",
+      "date": "2026-12-05",
+      "start_time": "09:00",
+      "end_time": "12:30",
+      "course_id": "QBA 5330",
+      "display_course": "QBA 5330",
+      "session_status": "scheduled",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    },
+    {
+      "id": "session-2026-12-04-saturday_1330",
+      "date": "2026-12-05",
+      "start_time": "13:30",
+      "end_time": "17:00",
+      "course_id": null,
+      "display_course": "No class",
+      "session_status": "no_class",
+      "source_reference": "Class of 2028 Fall 2026 course/session schedule, updated Aug 17, 2026; supplied by student Oct 17, 2026."
+    }
+  ],
+  "residency_sessions": [
+    {
+      "id": "residency-2026-09-20-AM",
+      "date": "2026-09-20",
+      "daypart": "AM",
+      "title": "Drive to Waco",
+      "course_id": null,
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-20-PM",
+      "date": "2026-09-20",
+      "daypart": "PM",
+      "title": "Team building",
+      "course_id": null,
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-21-AM",
+      "date": "2026-09-21",
+      "daypart": "AM",
+      "title": "ENT 5342 #1",
+      "course_id": "ENT 5342",
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-21-PM",
+      "date": "2026-09-21",
+      "daypart": "PM",
+      "title": "ENT 5342 #2",
+      "course_id": "ENT 5342",
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-22-AM",
+      "date": "2026-09-22",
+      "daypart": "AM",
+      "title": "ENT 5342 #3 (location TBD)",
+      "course_id": "ENT 5342",
+      "location": "To be determined",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-22-PM",
+      "date": "2026-09-22",
+      "daypart": "PM",
+      "title": "ENT 5342 #4 (location TBD)",
+      "course_id": "ENT 5342",
+      "location": "To be determined",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-23-AM",
+      "date": "2026-09-23",
+      "daypart": "AM",
+      "title": "ENT 5342 #5",
+      "course_id": "ENT 5342",
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    },
+    {
+      "id": "residency-2026-09-23-PM",
+      "date": "2026-09-23",
+      "daypart": "PM",
+      "title": "ENT 5342 #6",
+      "course_id": "ENT 5342",
+      "location": "Waco",
+      "source_reference": "Fall 2026 session timetable, Aug 17 edition. Travel/locations may change."
+    }
+  ],
+  "other_sessions": [
+    {
+      "id": "ent-virtual-group-presentation-original-2026-10-07",
+      "date": "2026-10-07",
+      "start_time": "17:30",
+      "end_time": "20:30",
+      "title": "ENT 5342 evening group presentations (original schedule, superseded)",
+      "course_id": "ENT 5342",
+      "session_status": "superseded_verify_change",
+      "note": "Printed Fall 2026 schedule lists Oct 7. Student reports presentation subsequently moved to Oct 13; do not treat Oct 7 as an active date or assert all groups moved.",
+      "source_reference": "Fall 2026 timetable from Aug 17, 2026; later student Canvas/participation update Oct 17, 2026."
+    }
+  ],
+  "notes": [
+    "Future years list class dates but do not name courses.",
+    "Graduation date is given as May 2028 only, not a precise day.",
+    "Course/module-to-weekend mapping for six QBA modules has not been independently confirmed, beyond first class weekend as Module 1.",
+    "Yellow one-day highlights in February and September 2027 are reproduced as one-day class dates with time to verify.",
+    "Schedules and payment dates subject to change."
+  ]
+}
