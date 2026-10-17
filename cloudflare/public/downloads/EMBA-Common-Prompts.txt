@@ -1,0 +1,38 @@
+DALLAS EMBA | EVERYDAY PROMPTS
+Copy or adapt any prompt in your personal ChatGPT or Claude EMBA Project.
+
+1. MY WEEK
+"What is due or required in the next 7 days across MGT, QBA and ENT? Check the newest public EMBA Hub records and my private Google Sheet. Separate confirmed deadlines from provisional items."
+
+2. PREPARE FOR CLASS
+"What do I need to read, watch, quiz on, and submit BEFORE our next class weekend? Include QBA readiness quizzes and each course block. Build a 14-day preparation checklist."
+
+3. FIT MY REAL SCHEDULE
+"I have [N] hours this week, with [constraints]. Rank my outstanding work by urgency and effort. Plan short work sessions and aim to finish 24–48 hours ahead of verified deadlines."
+
+4. I FINISHED, BUT DIDN'T SUBMIT
+"I finished [exact assignment], but I have NOT submitted it. Set its private Google Sheet status to 'Finished, not submitted', update its timestamp, and read the row back to verify. Keep the submission on my outstanding list."
+
+5. I SUBMITTED IT
+"I submitted [exact assignment]. Find the matching public assignment ID and update only its row in my private progress Sheet to 'Submitted'. Update Last Updated and verify both fields by reading them back."
+
+6. HELP ME CATCH UP
+"What items are overdue, due soon, or still unconfirmed? Help me prioritize without assuming missing Sheet statuses mean not started."
+
+7. COURSE CONTENT
+"Explain [concept] in the context of [course/module] and quiz me on it. Follow the course's applicable AI-use rules; don't write assessed submissions that I'm required to author myself."
+
+8. CHECK FOR CHANGES
+"Fetch the current EMBA Hub manifest, open alerts and change log. Compare only with the last revision you actually saw. What new or corrected dates need my attention? Tell me if you cannot check."
+
+9. START A BRAND-NEW CHAT
+"Locate MY private 'EMBA Personal Progress' Google Sheet, not the shared blank template. Read current statuses and the latest public EMBA Hub. What do I need to work on before the next class weekend?"
+
+10. TEST MY CONNECTION
+"In my private progress Sheet, create or find an explicitly fictional record with ID TEST-001. Update both its status and Last Updated, then read them back. Do not alter any real assignment or the publicly shared master template. Report if the connector lacks write permission."
+
+IMPORTANT
+- These prompts don't grant access to Google Drive. Your AI account must have authorized connector actions available.
+- The public Hub's academic catalog may be provisional. Canvas and current professor instructions are authoritative.
+- Your private Sheet contains only progress statuses, not grades.
+- An AI Project is not a scheduled alert or continuous Canvas monitor.

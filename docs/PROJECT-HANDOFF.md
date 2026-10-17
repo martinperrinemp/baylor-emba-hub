@@ -1,5 +1,14 @@
 # Project handoff and build checklist
 
+## OCTOBER 17: STUDENT STARTER KIT SOURCE BUILT (latest)
+
+Owner made the separate class Google Sheet master publicly viewable. Google returned ANYONE / READER permissions. The blank master has a START HERE tab and 55 prefilled stable assignment IDs with no private statuses. The classmate Make a copy URL is https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy . NEVER publish the owner's separate personal progress Sheet.
+
+The website's new Get Started section (three simple steps) and downloadable /downloads/EMBA-Agent-Instructions.txt and /downloads/EMBA-Common-Prompts.txt have been coded. docs/SETUP-CHATGPT.md and docs/SETUP-CLAUDE.md are now available in the repo. docs/START-HERE.md supplies a one-page quickstart. Model-specific Free-plan Sheet write access remains UNVERIFIED and is clearly caveated.
+
+NEXT: merge the changes, verify the Cloudflare live downloads/links and mobile layout, then test a student making an independent private copy and the real ChatGPT Free / Claude Free connector read/write flows. Human verification of provisional academic data continues in parallel; knowledge_revision stays 0.
+
+
 ## CURRENT NEXT BUILD PRIORITY (Oct 17, 2026): classmate starter kit
 
 **Owner decision:** the shared calendar, Fall assignments and ENT/MGT/QBA readings are substantially uploaded, and connected ChatGPT ↔ private Google Sheets persistent status writes have worked. **Stop repeatedly re-designing personal storage and prioritize a student onboarding package**: (1) new safe Google **Sheet** template the class can view and **Make a copy** into their own private Drive, with 55 stable assignment IDs and no personal statuses/grades, (2) downloadable cross-platform AI-agent personality/instructions and everyday prompt pack, (3) tested ChatGPT Free/Claude Free walkthroughs, and (4) a visible **Get Started** path on the existing Cloudflare website. A Google **Doc** is optional for a human-readable one-page guide, not the writable tracker. Full details and build acceptance tests: [current roadmap](ROADMAP.md).

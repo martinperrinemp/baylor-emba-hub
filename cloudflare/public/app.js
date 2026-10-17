@@ -7,7 +7,8 @@ const PROMPT=[
  "First, read AGENTS.md, then fetch FRESH data/manifest.json, data/open-alerts.json, data/changes.json, data/assignments.json, data/prep.json, data/program-calendar.json and data/ai-policies.json.",
  "Use verified metadata for confirmed claims. You may show provisional Fall 2026 assignment and prep records only as UNVERIFIED leads with clear warnings; never present them as authoritative due dates. Distinguish preparation/discussion dates, presentation dates and actual submission deadlines. If no verified dates exist or you cannot retrieve current records, say so and do not invent dates.",
  "Official course materials and instructor directions outrank this hub. Do not connect or scrape Canvas.",
- "Keep my own completions, notes, grades, preferences and personal checkpoints private, separate from the public repository. Mark an assignment completed/submitted only after I confirm it.",
+ "My OWN private Google Sheet named EMBA Personal Progress is my confirmed STATUS tracker. Never edit the public blank COPY ME sheet. Read/write only through authorized actions; match stable assignment IDs, update both Status and Last Updated, and read back before claiming saved. Treat a blank status as Unconfirmed and Finished, not submitted as distinct from Submitted. No grades stored.",
+ "Plan 7-14 days ahead, particularly all quiz/reading/prep requirements before class weekends. Suggested 24-48-hour early targets are not actual deadlines or automatic reminders.",
  "Tell me what has changed since my last verified revision if known; otherwise give me a careful list of currently available information and ask what I am working on.",
  "Do not submit a proposal, change shared data, or claim that information was refreshed unless an authorized tool actually did it."
 ].join("\n\n");
@@ -27,16 +28,16 @@ function elt(name,className,content) {const e=document.createElement(name);if(cl
 function emptyMessage(container,title,detail){
  const card=elt("div","empty");card.append(elt("strong","",title),elt("span","",detail));container.replaceChildren(card);
 }
-async function copyToClipboard(value,label){
+async function copyToClipboard(value,label,targetId="copy-status"){
  try{
   if(!navigator.clipboard||!window.isSecureContext)throw new Error("Clipboard unavailable");
   await navigator.clipboard.writeText(value);
-  text($("copy-status"),label+" copied. Paste it into the destination you choose.");
+  text($(targetId),label+" copied. Paste it into the destination you choose.");
  }catch {
   const target=document.createElement("textarea");target.value=value;target.setAttribute("readonly","");target.style.cssText="position:fixed;top:-9999px;left:-9999px";document.body.append(target);
   target.select();
   const worked=document.execCommand("copy");target.remove();
-  text($("copy-status"),worked?label+" copied. Paste it into the destination you choose.":"Please copy the content directly from "+BASE+"/blob/main/docs/AGENT-ONBOARDING.md");
+  text($(targetId),worked?label+" copied. Paste it into the destination you choose.":"Copy directly from the download link shown in Get Started.");
  }
 }
 function isReviewed(record){
@@ -278,7 +279,16 @@ async function loadFile(name) {
  return res.json();
 }
 async function boot(){
- $("copy-prompt").addEventListener("click",()=>copyToClipboard(PROMPT,"AI starter prompt"));
+ $("copy-prompt").addEventListener("click",()=>copyToClipboard(PROMPT,"Quick AI starter prompt"));
+ $("copy-agent").addEventListener("click",async()=>{
+   try{
+     const res=await fetch("/downloads/EMBA-Agent-Instructions.txt",{cache:"no-store"});
+     if(!res.ok)throw new Error("Agent download unavailable");
+     const body=await res.text();
+     if(!body.includes("DALLAS EMBA | PERSONAL AI PLANNING ASSISTANT"))throw new Error("Unexpected response");
+     await copyToClipboard(body,"Full EMBA agent instructions","starter-copy-status");
+   }catch{ text($("starter-copy-status"),"Could not copy the instructions automatically. Use Download agent instructions above.");}
+ });
  $("copy-correction").addEventListener("click",()=>copyToClipboard(CORRECTION,"Correction template"));
  const [manifest,assignments,prep,program,resources,policies,changes,alerts]=await Promise.allSettled([
   loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("program-calendar.json"),loadFile("resources.json"),loadFile("ai-policies.json"),loadFile("changes.json"),loadFile("open-alerts.json")
