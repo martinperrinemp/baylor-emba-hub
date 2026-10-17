@@ -1,5 +1,18 @@
 # Project handoff and build checklist
 
+## NEWEST PRODUCT TEST / NEXT ACTION (October 16, 2026 CDT)
+
+**A direct private Google Sheets workflow was successfully tested using the owner's connected ChatGPT account.** The assistant located the owner's private Google Sheet, wrote a fictional progress row, verified a status change by read-back, and later independently confirmed that a **new EMBA Project conversation** had updated the same row again. This is an actual cross-chat persistent write verification, **not** just model memory or a Project-saved snapshot. Do not publish the Sheet URL/ID or any personal record in the public repo.
+
+**Caveats:** ChatGPT Free and Claude Free have NOT been verified to support this same write-from-Project-chat workflow. The test also revealed that the `Last Updated` cell was not refreshed during the new-chat status change. Fix and test a write protocol that changes status **and** timestamp, then checks both cells; run ambiguous-ID and duplicate-write negative cases.
+
+**Current preferred direction:** one public GitHub/Cloudflare academic catalog + **each student's private Google Sheet for status only** + own ChatGPT/Claude Project for weekly planning. Manual Project checkpoint is only a fallback for students whose accounts lack working Google Sheets write access. No private Cloudflare student database or grade tracking. View [Roadmap](ROADMAP.md), [Sheet pilot](AI-PROJECT-PILOT.md), [Onboarding](AGENT-ONBOARDING.md), and [Continuity](AGENT-CONTINUITY.md).
+
+**Immediate actions:** complete timestamp/negative-case verification on test rows; test on actual ChatGPT Free and Claude Free accounts; verify next 2–4 weeks' required Canvas quizzes/readings/class dates before inviting 2–3 classmates. Existing public intake is still **`INTAKE_ENABLED=false`** and backup/watchdog safety gates are still outstanding. The documentation update does not modify website code or deployment.
+
+**The prior Project-checkpoint-first product section below is retained as historical decision context and is superseded by this direct Sheets test.**
+
+
 ## CURRENT PRODUCT DECISION AND IMMEDIATE TEST (October 16, 2026 CDT)
 
 **Scope has changed, intentionally.** The owner chose the smallest cohort-friendly workflow: **personal ChatGPT or Claude Project, one dedicated Progress & Weekly Planning chat, occasional explicitly saved CURRENT EMBA PROGRESS checkpoint**, and a private paste-it-back fallback if the free product cannot reliably save/retrieve checkpoint sources. The Hub supplies public, reviewed course deadlines, quizzes, prep/readings, class weekends, AI policies and change history. Students personally confirm **in progress / finished not submitted / submitted**; the assistant never invents completion or a successful save. Suggested 24–48-hour buffers are planning targets, **not actual alarms**. **Grade/score storage and grade calculators are removed from the Hub scope**. Students can privately paste/upload Canvas grades for one-off AI analysis. No personal D1, 20 accounts, mandatory GitHub/Obsidian, Excel synchronization, OAuth, or MCP write connector is required.

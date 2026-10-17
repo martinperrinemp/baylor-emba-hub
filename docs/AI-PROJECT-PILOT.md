@@ -1,56 +1,55 @@
-# AI Project pilot: progress and weekly planning
+# AI Project pilot: shared Hub + private Google Sheets status
 
-**Status:** Test plan only; no automatic personal persistence or background reminders deployed. Use the [Roadmap](ROADMAP.md). Run on personal, private ChatGPT/Claude Projects. Never make filled checkpoints public.
+**Observed October 16, 2026 CDT:** On the owner's connected ChatGPT account, Google Drive/Sheets read/write **and cross-conversation update retrieval** worked on a fictional test record. This is not yet verified for ChatGPT Free or Claude Free. The prior Project-saved-checkpoint pilot also succeeded as a manual fallback. See [Roadmap](ROADMAP.md).
 
-## Observed pilot result: owner ChatGPT Project (October 16, 2026 CDT)
+## Verified observations (sanitized)
 
-- **Observed:** The owner clicked **Save to project** on an assistant response containing a progress checkpoint. The menu then offered **Remove from project sources**.
-- **Observed:** A brand-new conversation in the same Project recovered all three example statuses accurately, differentiating two submitted from one outstanding.
-- **Source identified:** The fresh-chat assistant cited an automatically saved Project source named `EMBA Practice Planning.txt`, containing the prior response and its embedded `CURRENT EMBA PROGRESS` checkpoint. This **does confirm recovery from a saved Project source**, though it is not a separately authored checkpoint file.
-- **Still untested:** Superseding/removing old source versions, recovery after a second status change, actual Free-plan behavior on ChatGPT and Claude, source limits, fresh Hub retrieval, and pre-classweekend quiz coverage.
-- **Privacy:** Only this sanitized capability observation belongs in public GitHub. Do **not** publish the student’s actual progress, personal checkpoint or grades.
+1. Google Drive returned a student-owned private Google Sheet and its column headers (Assignment, ID, Status, Last Updated).
+2. ChatGPT wrote a fictional assignment status and independently read it back.
+3. A new Project conversation successfully changed the same test assignment status.
+4. The original conversation then read the private Sheet again and verified the new status.
+5. **Defect discovered:** during the cross-chat update, the `Last Updated` cell did **not** change. This must be fixed by the assistant's standard write instructions and tested. Do not assume a timestamp is maintained automatically.
+6. Only capability results are published here; **no private spreadsheet URL, assignment progress, grades or account details**.
 
-**Pilot result:** Initial Project-source persistence / new-chat retrieval **passed for the owner's tested account**; full cross-platform and checkpoint-update workflow remains open.
+## Next experiments (no production coding required)
 
-## One-time setup (each platform separately)
+**1. Accuracy and write integrity on a fictional record**
 
-1. Create a **private Project** called "EMBA" (or use an existing one). Put a dedicated chat inside it named **Progress & Weekly Planning**.
-2. Give the Project the [Hub onboarding instructions](AGENT-ONBOARDING.md) and the public [Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/). Project capabilities and methods to save sources vary by product and plan; **visually verify** what actually works on that user's free account.
-3. Keep only a brief personal progress checkpoint in Project sources/knowledge if the UI permits. Never put grades, personal notes, emails, restricted course materials, or Canvas screenshots in public GitHub or issue submissions.
-4. Verify current official deadlines in Canvas. The Hub currently carries **provisional records** and has incomplete source coverage.
+- [ ] Ask the AI to update one specific `TEST-...` ID, writing **Status AND Last Updated** from actual time and confirming both by reading back.
+- [ ] Ask for the same update twice. Check that it does not create two duplicate rows.
+- [ ] Try a deliberately ambiguous assignment name. The assistant must ask for the ID rather than write to an arbitrary row.
+- [ ] Simulate inability to edit. The assistant must say **not saved**, and offer a manual fallback.
+- [ ] Ensure updates to the private Sheet cannot modify the public cohort catalog, and no grades are introduced.
 
-## Copy/paste pilot prompts
+**2. ChatGPT Free account**
 
-**Test 1 — distinguish progress from submission**
+- [ ] Create a private personal EMBA Project, connect Google Drive/Sheets if the particular Free plan permits it, and identify actual tools available.
+- [ ] Have the assistant find the student's private test Sheet, read a row, update it, and verify the write/read-back.
+- [ ] Start a new Project conversation and have it retrieve the latest data, not previous chat memory.
+- [ ] If the plan does not support direct write actions from Project chat, record the precise friction and use the saved Project-source checkpoint fallback. Do not substitute a Sheets sidebar-only workflow while claiming chat write success.
 
-> For this test, I confirm that [exact assignment A] is FINISHED but NOT SUBMITTED, and [exact assignment B] is SUBMITTED. Record those as student-confirmed status only. Use stable IDs if found in the public EMBA Hub; otherwise mark the ID unresolved. Show my two statuses without inventing grades or due dates.
+**3. Claude Free account**
 
-**Test 2 — generate a private checkpoint**
+- [ ] Test Google Workspace integration on the real Free account; verify whether its regular Project/chat can write a Sheet, not merely reference a snapshot.
+- [ ] Repeat update/read-back/new-chat recovery. Record OAuth setup, rate limits, confirmation steps and errors.
+- [ ] If direct write isn't supported, document the Project-source or private pasted-checkpoint fallback.
 
-> Prepare an updated, compact CURRENT EMBA PROGRESS checkpoint I can explicitly save in this Project. Include only confirmed task ID/title, status (not started / in progress / finished but not submitted / submitted), confirmation date if known, next action, and last hub revision you actually checked. Tell me how to save this on my current platform; do not say you saved it unless I confirm. This replaces the previous checkpoint.
+**4. Weekly planning**
 
-**Test 3 — new conversation recovery**
+- [ ] Use public `manifest.json`, verified `assignments.json`, `prep.json`, `open-alerts.json`, class sessions and changes where actually available.
+- [ ] Merge known requirements with private Sheet statuses keyed by stable assignment IDs and show the next 7/14 days, including **quizzes before a class weekend**.
+- [ ] Offer 24–48-hour advance *planning targets*, not fabricated instructor deadlines or background reminders.
+- [ ] Correctly label incomplete/provisional Hub records. Current 40 dated items, 46 ENT/MGT prep entries and QBA prep gap need official review.
+- [ ] Run two simultaneous-student privacy checks with separate test accounts, without sharing personal progress.
 
-> In this brand-new chat in my EMBA Project, read the latest saved CURRENT EMBA PROGRESS checkpoint and attempt a fresh read of the EMBA Hub. Tell me which assignments are confirmed submitted, which are finished but not submitted, and what is due or needed in the next 14 days before the next class weekend. Give 24–48-hour early targets only where exact official due dates are known. If you cannot retrieve a source, say which one is missing and do not guess.
+## Preferred student instructions
 
-**Test 4 — revise and recover again**
+> Use the public Baylor EMBA Hub only for shared course schedule, assignments, readings, changes and AI-use information; it is unofficial and sometimes provisional. Use **my private Google Sheet** for my personal assignment status, never for grades. Before weekly planning, read both sources when possible and report any source you could not verify. When I explicitly confirm finishing or submitting a task, find its exact stable assignment ID, update only my Sheet's status and real Last Updated timestamp, and read back the updated row. Say SAVED only after read-back matches. Ask if the assignment ID is ambiguous. In a new chat, re-read my Sheet rather than relying on memory. Never equate finished with submitted. Plan 7–14 days ahead and aim for 24–48 hours before confirmed deadlines. Do not claim automatic reminders or Canvas access.
 
-> Correction: I have now SUBMITTED [assignment A]. Prepare a replacement checkpoint. Tell me how to supersede/delete the prior version so future chats do not receive conflicting snapshots.
+## Fallback if the user's AI cannot write Google Sheets
 
-Start another new conversation and re-run Test 3.
+Use one ongoing Progress & Weekly Planning Project chat and an explicitly saved **CURRENT EMBA PROGRESS** snapshot, or private copy/paste into future chats. On the owner's connected ChatGPT account, a new chat successfully read an earlier saved Project checkpoint. However, ordinary uploaded Project files do not automatically rewrite on each status update, so the fallback remains **manual**, not equivalent to live Sheets editing.
 
-## Expected student workflow
+## Go/no-go before inviting classmates
 
-- During the week, tell the **Progress & Weekly Planning** chat when work is started, finished, and finally submitted.
-- Before the next week or when changing chats, ask it for an updated **CURRENT EMBA PROGRESS** and **explicitly save/replace the checkpoint** if Project knowledge supports it. If that is not available, copy the short checkpoint to a private note and paste it into the next chat.
-- Ask "What do I need to get done before class this weekend?" The assistant should fetch the current public hub where possible, use only confirmed personal progress, and propose an early study schedule. It does not continuously monitor deadlines or send proactive reminders.
-
-## Record pilot observations without private data
-
-For ChatGPT Free and Claude Free separately, capture: setup minutes; whether the Project could retain a saved checkpoint; whether a fresh chat read the *latest* version; whether old versions conflicted; whether fresh public Hub access succeeded; whether a missing quiz, source gap, or wrong deadline was surfaced; and the number of student manual steps.
-
-**Pass:** reliable new-chat recovery of both statuses, a truthful Hub freshness warning on access failure, no private sharing, no claim of autosave, and accurate distinction between prep and graded due dates.
-
-**Fallback:** paste latest checkpoint into new chat; continue task with clear freshness warnings. No mandatory GitHub repo, spreadsheet, extra app, or student database.
-
-**Data-quality precondition for inviting classmates:** verify the next 2–4 weeks of required quizzes, discussion parts, readings, cases, exact due times and class sessions with the official course materials. Missing Canvas-only tasks are the principal high-impact failure mode.
+Pass full write/read-back/new-chat tests on the **actual free account types in use**, correctly update timestamps, safely reject wrong assignment IDs, verify class-weekend quizzes against Canvas and ensure no cross-student access or public data leakage. Pilot with 2–3 classmates after that. Never make real grades or class progress public.

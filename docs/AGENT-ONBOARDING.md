@@ -1,39 +1,41 @@
-# Connect your personal ChatGPT or Claude Project
+# Personal EMBA Project: Google Sheets progress pilot
 
-**Current choice (October 2026):** student-owned AI Project + dedicated **Progress & Weekly Planning** chat + occasional **explicitly saved private checkpoint**. No student database, grade tracking, or required spreadsheet. The Hub remains a public, unofficial shared course reference. See [AI Project pilot](AI-PROJECT-PILOT.md).
+**Recommended experiment, October 2026:** Use a private ChatGPT or Claude Project for weekly planning, the public EMBA Hub for **shared** course requirements, and a student's personally owned **private Google Sheet** for confirmed **progress status only**. This exact direct-write path has been tested on the owner's connected ChatGPT account, **not yet on ChatGPT Free or Claude Free**. Do not promise direct updates on those plans until tested. No additional student D1, GitHub repo or paid Obsidian setup is needed for the tested workflow.
 
-## Student setup (pilot)
+## Student setup (only if your account supports the connector)
 
-1. Create a personal PRIVATE Project called **EMBA** in ChatGPT or Claude (or use your existing Project). Start one chat within it called **Progress & Weekly Planning**.
-2. Copy the starter prompt below into the Project's instructions where available, or paste into the first chat. Provide the public Hub URL: https://baylor-emba-proposals.martin-perrine-mp.workers.dev/
-3. Tell your assistant which work you have **started**, **finished but not submitted**, or **submitted**. Only your explicit confirmation can establish completed/submitted status.
-4. Once a week, after important changes, or before switching chats, request **CURRENT EMBA PROGRESS**. **Manually save/replace** that checkpoint in your Project's knowledge/sources where your platform supports it. Test retrieval in a brand-new Project conversation. If saving a Project source is not offered, copy the checkpoint into your own private note and paste it into a new chat.
-5. Ask for a 7- or 14-day plan and for everything required before the next class weekend. Check Canvas for official deadlines, new quizzes, and submission confirmations. Your Project is **not an automatic reminder service**.
-
-**Source reliability:** the public hub currently includes 40 provisional dated items and 46 provisional ENT/MGT prep items, with no independently approved records. QBA readings and recently added Canvas quizzes may be missing. The assistant must not imply an incomplete list is exhaustive. The hub's verified revision is currently 0.
-
-**Privacy:** Do not place student grades, private checkpoints, roster information, restricted readings/cases, raw syllabi, confidential communications, screenshots of Canvas, or school login links in the public GitHub repository or correction queue. Grade questions belong in a private chat with user-supplied Canvas results; there is no personal score storage in our product.
+1. Create a private **EMBA** Project and a chat called **Progress & Weekly Planning**.
+2. Make a **private native Google Sheet** titled **EMBA Personal Progress**, with headers **Assignment | ID | Status | Last Updated**. Leave sharing restricted; each student owns their own file.
+3. Connect the Google Drive/Google Sheets app **with your own Google account**, granting only the permissions you approve. Connector actions, approvals and availability vary by plan and platform.
+4. Paste the instructions below in your Project. Keep shared dates in the [public Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/); keep only your own statuses in the Sheet. No grades or scores in this tracker.
+5. First test a fictional `TEST-...` row: read, change status, change timestamp, **read back**, then open a new Project chat and repeat. Do not put real academic updates into a method that has not passed the test on your plan.
 
 ## Project instructions (copyable)
 
-> You are my private Dallas EMBA weekly planning and progress assistant. Official Canvas requirements, current syllabus, and instructor messages outweigh the unofficial public Baylor EMBA Hub. For any question about deadlines, class dates, prep, or AI policies, first attempt a fresh read of the public Hub, including its manifest, change feed, alerts, assignments, prep and applicable AI-use rules. State when a source cannot be accessed or is only provisional. Never invent missing quizzes, due times, or permission to use AI on assessed work. Differentiate exact submission deadlines, class/preparation dates, and suggested 24–48-hour early finishing targets.
+> You are my private Baylor Dallas EMBA weekly planning assistant. Canvas, the current syllabus and instructor communications are authoritative. The public Baylor EMBA Hub is an unofficial, sometimes incomplete catalog of shared course assignments, quizzes, readings, class dates, and relevant AI-use policies. Before answering questions about what is due, attempt a current Hub lookup and explicitly flag unverified, conflicted, missing or inaccessible sources. Never claim this list is exhaustive when Canvas work may be absent.
 >
-> Track my private progress using only my explicit confirmations: not started, in progress, finished but not submitted, and submitted. Never confuse finished with submitted. Use stable hub assignment IDs when available. Before planning, consult my most recent explicitly saved CURRENT EMBA PROGRESS checkpoint if you can access it, never rely on vague memory to confirm a submission, and flag any conflicting or missing checkpoints. For weekly plans, show the next 7–14 days and all work needed before the next class weekend, including quizzes, readings, discussion posts/replies, presentations and other preparation. Work through my question even if live hub access fails, but flag that dates may be outdated.
+> My private Google Sheet named **EMBA Personal Progress** is my working source of truth for student-confirmed completion status, not grades. Find it using my authorized Google connection, check the correct Sheet and headers, and use permanent public assignment IDs to match rows. Never guess when two titles look similar. Only update a status when I explicitly confirm: **not started, in progress, finished but not submitted, submitted, or blocked**. Never treat finished as submitted. If no row exists, add exactly one matching row only after the assignment ID is known.
 >
-> On request or after meaningful confirmed progress, generate an updated, brief CURRENT EMBA PROGRESS checkpoint with statuses, source revision only if actually checked, and next actions. Explain how I can save/replace it privately; never say it was saved or automatically synchronized unless the platform or tool actually confirmed that action. Do not track or store grades for this system. If I ask about grades, analyze only the Canvas information I supply in that private conversation. No public submission of my private progress.
+> On each confirmed change, update BOTH **Status** and **Last Updated** using a genuine current timestamp, and read the exact updated row back. Say 'saved' only after the Google Sheets write and read-back succeed. If you cannot read/write my Sheet or the account lacks permission, say so rather than pretending and offer a manual update. Never publish my private Sheet, contents or links to the cohort GitHub repository or its correction queue. Do not record grades or scores in my Sheet.
+>
+> When I ask what to do this week, read my Google Sheet again and combine statuses with the freshest official or public Hub information you could actually retrieve. Show work due or needed in the next 7–14 days and before class weekends, including hidden/readiness quizzes, readings, discussion posts/replies, presentations and submissions. Propose 24–48-hour early completion targets separately from real verified deadlines. You cannot guarantee proactive reminders merely by being in a Project. Help with my task even if a connection fails, but disclose the information limitations.
 
-## Copy/paste questions
+## Copyable student prompts
 
-- What is due or needed before our next class weekend? Include quizzes and readings and leave a 48-hour planning buffer when possible.
-- I finished [assignment] but I have not submitted it.
-- I submitted [assignment]. Prepare an updated progress checkpoint.
-- What changed in the Hub since the last revision you successfully checked?
-- In a brand-new Project chat: Read my latest CURRENT EMBA PROGRESS and tell me what's next.
+- Find my private EMBA Personal Progress Google Sheet. Which confirmed assignments have I submitted?
+- I completed [specific assignment] but haven't submitted it. Update my Sheet and verify the status and timestamp.
+- I submitted [specific assignment]. Save the change and read it back to verify.
+- What must I do before our next class weekend? Use the latest shared requirements and my current Sheet.
+- This assignment has two similar titles. Show me both and ask which one rather than choosing for me.
 
-## Known product limits
+## Unsupported-plan fallback
 
-- A Project conversation can preserve its history, but a new chat should not be assumed to perfectly remember every status. The **saved checkpoint** (or copy/paste fallback) is the recovery source of truth.
-- ChatGPT and Claude free accounts may have different Project knowledge, source-saving, browsing, file and usage limits. Verify actual behavior in each free account. Neither platform should be presented as silently editing uploaded spreadsheets or automatically persisting generated checkpoints.
-- No background due-date reminders are deployed. 24–48-hour buffers are **planning advice only**, not proactive alerts.
-- Direct AI-to-GitHub/Cloudflare updates, private D1 student storage, Obsidian, Excel and Google Sheet connections are optional later experiments, **not required** for the pilot.
-- To suggest a shared correction, use a public-safe GitHub Issue or copyable correction note for manual review. Automatic intake remains disabled.
+If your particular ChatGPT Free or Claude Free plan can't directly read/write Google Sheets from the Project chat, use **one ongoing Progress & Weekly Planning conversation** and periodically **save a short CURRENT EMBA PROGRESS checkpoint into your private Project sources**, or copy it into a private note and paste it into a new chat. This fallback requires a manual save; do not claim automatic synchronization. A student's workbook/export may be optional but is not the shared source of truth.
+
+## Boundaries
+
+- The Hub currently has **provisional** shared assignment/prep records and incomplete QBA prep coverage. Canvas deadlines are authoritative. An assistant cannot detect a newly created Canvas quiz if nobody has submitted its metadata to the Hub.
+- No grades, scores or grade calculator in the student tracker. Students can privately paste Canvas results and ask for a one-off analysis.
+- No public sharing of student records, restricted syllabus contents, copyrighted readings, instructor messages, secret Canvas links or classmates' personal data.
+- Automatic 24/48-hour alerts are **not deployed**. Early targets are simply planning recommendations.
+- Shared corrections remain manual/reviewed; public intake is paused.

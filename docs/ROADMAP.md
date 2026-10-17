@@ -1,58 +1,61 @@
-# EMBA Hub roadmap: weekly planning first
+# EMBA Hub roadmap: weekly planning with private Google Sheets
 
-**Decision recorded October 16, 2026 (CDT):** Prefer a small, student-owned AI Project workflow over building new personal data infrastructure. This is the current product direction. Refer to [Pilot test plan](AI-PROJECT-PILOT.md) and [Fast pilot](FAST-PILOT.md) for deployment gates.
+**Updated October 16, 2026 CDT after a real integration test.** The simplest promising end-to-end architecture is **public GitHub/Cloudflare course catalog + each student's private Google Sheet for confirmed status + the student's own ChatGPT/Claude Project for conversation and weekly planning**. There is no requirement to build student D1 accounts, a personal GitHub repo, or an Excel-based tracking workflow.
 
-## Product outcome
+**Important qualification:** Direct Google Sheets read/write was verified through the Google Drive connector on **the owner's connected ChatGPT account**. It has NOT yet been verified on ChatGPT Free or Claude Free, and some students may need the previous explicit Project-checkpoint fallback. Do not advertise universal Free-plan write access until tested.
 
-A Dallas EMBA student opens their personal ChatGPT or Claude Project, asks what is due or needed before the next class weekend, reports work as finished or submitted, and receives a useful 7- to 14-day plan with a 24- to 48-hour target buffer. The assistant must distinguish **actual official due date**, **pre-class preparation date**, and **suggested early finish target**. A new chat should recover student-confirmed progress from an explicit private checkpoint where supported, rather than confidently guessing from memory.
+## What counts as success
 
-**Canvas, the current syllabi, and instructor communications remain authoritative.** The public EMBA Hub is an unofficial, student-maintained coordination resource, not a complete Canvas mirror or guaranteed reminder service. No background monitoring occurs simply because a Project exists.
+A student says "I submitted Quiz M3." Their AI identifies the stable assignment ID in the shared Hub, finds the matching row in the student's **private** Google Sheet, changes only the status and update time after explicit confirmation, receives a successful write response, **reads back the cell**, and reports the exact confirmed saved status. In a new Project chat, the AI reads the same Sheet and plans the upcoming 7–14 days from current shared course records and confirmed private statuses. No score or grade storage.
 
-## Release 0: test the workflow before building software (NOW)
+The assistant must distinguish **not started / in progress / finished but not submitted / submitted** and never equate a plan with an actual Canvas submission. Canvas, current syllabi and instructor communications remain authoritative over Hub summaries.
 
-- [ ] Have one volunteer create or reuse a PRIVATE personal ChatGPT Project with a dedicated **Progress & Weekly Planning** chat. Repeat with Claude Free; verify the exact save-to-project/source mechanism on each account instead of assuming it is identical across platforms.
-- [ ] Use the current Hub starter instructions. Student tells the assistant two explicitly confirmed statuses: one **finished but not submitted**, one **submitted**. The assistant must not collapse these statuses.
-- [ ] Request a short **Current EMBA Progress** checkpoint: stable public assignment IDs (when available), confirmed status, brief next action, checkpoint timestamp, and last successfully checked public knowledge revision. No grades, scores, personal identifiers, copied Canvas materials or restricted content.
-- [ ] Student explicitly saves the checkpoint to their own Project knowledge/source using the UI available on their plan. Remove or clearly supersede the older version. Never say it was saved without confirmation.
-- [ ] Start a **brand-new conversation within the same Project**. Ask for a weekly plan. Verify the assistant reads the latest saved checkpoint, does not incorrectly mark unfinished work submitted, and attempts a fresh Hub check; it must warn when either source cannot be read.
-- [ ] Test a change of status followed by another checkpoint and new chat. Verify old checkpoint conflicts are not silently preferred.
-- [ ] Repeat on genuine ChatGPT Free and Claude Free accounts. Record friction and failed cases, including source/file limits and inability to save a chat response directly.
-- [ ] Test with 2–3 trusted classmates **only after important upcoming coursework is checked against official sources**; obtain feedback without collecting their private checkpoints.
+## Observed results
 
-**Go/no-go:** If a new chat cannot reliably retrieve the student-saved checkpoint on a platform, require a private copy/paste checkpoint as the supported fallback. Do not market autonomous persistence. Do not build a database merely to avoid one manual save until tested student feedback warrants it.
+- [x] Existing Google Drive/Sheets connection searched for a private native Google Sheet and read its actual 4-column header.
+- [x] ChatGPT created a **fictional** test row, read it back, updated its status and independently read the updated status.
+- [x] Owner used a **new Project conversation** to update that fictional row again. A separate retrieval subsequently confirmed the new status persisted.
+- [ ] **Timestamp integrity:** the last-updated text on the test row was unchanged during the new-chat status update. The proposed procedure must always write **Status AND Last Updated**, then read both back.
+- [ ] Test a real confirmed progress update, ambiguous assignment title, unknown ID, duplicate update and a failed write. No accidental changes to real records.
+- [ ] Independently test read, authorized update and new-chat retrieval on **ChatGPT Free**, including any required app availability and permissions.
+- [ ] Independently test the same on **Claude Free** with its supported Google Workspace capabilities. A product claiming spreadsheet integration isn't proof of the exact write workflow.
+- [ ] Confirm a student's private Sheet remains inaccessible to another student and doesn't accidentally become public through sharing links.
 
-## Release 1: trustworthy shared academic data (highest-value build)
+No Google Sheet ID, private checkpoint, grades, or student progress belongs in this public repository.
 
-- [ ] Check next class weekend and following 14 days against current Canvas/syllabus/instructor materials, **including quizzes hidden within modules**, readiness requirements, discussion posts and replies, readings, case prep, submissions and presentation dates.
-- [ ] Verify and publish the relevant subset of 40 provisional assignment/date candidates and 46 provisional ENT/MGT prep items. Fill QBA prep gaps only from authorized official source material; do not infer no assignment exists.
-- [ ] Add or verify structured **class weekends and meeting times** as public metadata, including class timezone and scheduled pre-class preparation dependencies. Date-only values must not receive invented 11:59 PM times.
-- [ ] Put a 7/14-day pre-class **checklist** first in the public hub, showing actual due dates, whether verified, and a separately labeled suggested 24–48-hour early target.
-- [ ] Move **active, verified, assignment-specific AI-use rules** and useful student prompts near the top of the page, with a clear unknown-policy warning. Archive prior course guidance rather than deleting it; time alone is not proof that a course has ended.
-- [ ] Keep read-only JSON, stable IDs, approved revision/change alerts, manual correction process, and existing paused intake safety controls. No Canvas scraping or API integration.
-- [ ] Add curated class tips, study workflows (including NotebookLM ideas), and resources through human-approved, public-safe submissions.
-- [ ] Optional clean Excel/export of shared academic metadata; not required to use Projects, and never used as a grade tracker or canonical personal progress database.
+## Student-owned progress format
 
-## Release 2: make Project onboarding easy
+Minimal private Sheet headers: **Assignment | ID | Status | Last Updated**. Store only confirmed progress and optional short next action when needed. Stable IDs come from public `data/assignments.json`; don't guess unknown IDs or duplicate changing due dates into the private Sheet. A score, quiz result or point value belongs in Canvas, not our personal-status tracker.
 
-- [ ] Publish a tested 3-minute ChatGPT Free setup guide and a tested Claude Free setup guide, with one copyable prompt each.
-- [ ] Provide examples: **What's due this week?**, **What is required before class Friday?**, **I finished X but have not submitted it**, **I submitted Y**, **Save a progress checkpoint**, **What changed since my last hub check?**
-- [ ] Document a clear fallback when the model cannot browse the Hub, add Project knowledge, or update saved source. It should still help with the data provided and state the freshness limitation.
-- [ ] Keep progress chats/checkpoints inside each student's private AI account. No class-wide shared AI Project or public progress logs.
+Authorized write procedure:
+1. Locate student's own Sheet using their connection; verify ownership/access and columns. Never choose by ambiguous title alone.
+2. Find exact stable assignment ID. If absent, and public Hub confirms it, insert a new unique row; if identity is ambiguous, ask.
+3. Apply only explicitly user-confirmed status and a real update timestamp; don't alter unrelated rows or publish student data.
+4. Re-read the row and state **saved** only if the returned values match. On failure, report unsaved and offer a manual Sheet update.
+5. In a fresh chat, read private Sheet **again**, and merge it with current Hub records. Do not substitute Project memory for the saved progress record.
 
-## Deferred / conditional (not on critical path)
+**Fallback for unsupported/free clients:** personal Project + ongoing Progress chat + occasionally saved `CURRENT EMBA PROGRESS` source (or private copy/paste). This recovery test already passed on the owner's account, but the source requires a manual save; it is no longer the **preferred** workflow when live Sheet writes are available.
 
-- Student logins, Zero Trust enrollment, student D1 databases, private Cloudflare progress API, mandatory GitHub or Obsidian, Google Sheet sync, MCP write integrations, automated 24/48-hour alerts, automatic Canvas import.
-- Persisted grades, point scores, grade predictions, grade calculators: **removed from Hub product scope**. Students can paste or upload Canvas results privately and ask their AI for ad hoc analysis; no shared storage or score tracking.
-- Automatic direct sync may be reconsidered only if manual Project checkpoint testing demonstrably fails and classmates want the additional complexity. Any future private data infrastructure would need an explicit privacy and security design first.
-- Existing proposal-intake D1/Worker, backup/watchdog and admin workflow are separate public-catalog correction infrastructure, **not** student tracking. Keep **INTAKE_ENABLED=false** until documented live safety gates pass.
+## Highest-priority academic data work
 
-## Pilot success metrics
+- [ ] Verify all known deliverables before the next class weekend and within the next 14 days against authorized Canvas/syllabus/instructor sources, including **readiness quizzes**, module-specific tasks, discussion initial posts/replies, and required readings.
+- [ ] Preserve stable IDs and provenance; identify unverified/unknown dates. The published 40 assignment and 46 prep entries remain provisional until official source review; missing QBA prep is a known coverage gap.
+- [ ] Add explicit structured class weekends, actual class times, and timezone where confirmed; avoid inventing times for date-only values.
+- [ ] Improve the public 7/14-day view and pre-class checklist, with optional **24–48-hour suggested completion targets**, clearly separate from official deadlines. No background alert guarantee.
+- [ ] Surface active verified assignment-specific AI rules near the top; archive prior rules rather than deleting them. Continue curated tips, prompts, study tools and human-reviewed lessons learned.
 
-1. Given a verified schedule, the AI lists **every known pre-class quiz, reading, and submission** in the next 7/14 days and clearly flags incomplete or provisional source coverage.
-2. Reports **finished, not submitted** separately from **submitted** and never invents a completion.
-3. Correctly handles a student's explicit progress update and an explicitly saved checkpoint in a new Project conversation, or honestly falls back to user-supplied checkpoint.
-4. Sets planning targets 24–48 hours early **only when an actual exact deadline is known**; otherwise uses a labeled suggested preparation date.
-5. Clearly communicates Hub lookup failures and changed/unknown dates without claiming a successful sync.
-6. Nothing private is published in GitHub, the public Hub, public issues, screenshots, or logs.
+## Cohort onboarding after pilots
 
-**Next concrete action:** Run [AI Project pilot](AI-PROJECT-PILOT.md) with the owner's private MGT progress (no grades), then validate two additional free-account flows. In parallel, audit the next class weekend's quizzes and coursework for reliable shared data.
+- [ ] Offer separate, **tested** ChatGPT Free and Claude Free Project guides. Each student owns and grants access to only their own private Google Sheet.
+- [ ] Provide copyable assistant instructions and ask: "What must I finish before class this weekend?", "I finished but haven't submitted X", "I submitted Y", "What changed?".
+- [ ] Test with 2–3 classmates only once their next academic obligations are reviewed and platform read/write works on their respective accounts, or clearly label the manual fallback.
+- [ ] Keep optional Excel export strictly as a **shared public metadata snapshot**; not an automatically writable or required personal tracker.
+
+## Out of scope / deferred
+
+- **Grade tracking, score history, predictions and course-grade calculator in the Hub:** explicitly removed. Students privately paste/attach Canvas information for one-off questions.
+- No student D1 database, Student Zero Trust enrollment, custom private API, MCP server, mandatory personal GitHub, Obsidian or multi-tenant cloud service unless real pilot evidence justifies them.
+- No promise of automatic deadline notifications, Canvas integration/scraping, automatic spreadsheet updates on unsupported models, or automatic propagation of changed official dates.
+- Existing proposal-intake Worker/D1 and owner backup/watchdog work belong to **shared catalog corrections** and are independent; **`INTAKE_ENABLED=false` remains unchanged** pending separate security tests.
+
+**Next action:** Complete timestamp and negative-case tests on a fictional row, then run independent ChatGPT Free / Claude Free tests. In parallel verify class-weekend quizzes and deadlines; the system cannot prevent a missed assignment absent from the shared data.
