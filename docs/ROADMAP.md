@@ -1,70 +1,80 @@
-# EMBA Hub roadmap: weekly planning with private Google Sheets
+# EMBA Hub Roadmap — Cohort Starter Kit First
 
-**Updated October 16, 2026 CDT after a real integration test.** The simplest promising end-to-end architecture is **public GitHub/Cloudflare course catalog + each student's private Google Sheet for confirmed status + the student's own ChatGPT/Claude Project for conversation and weekly planning**. There is no requirement to build student D1 accounts, a personal GitHub repo, or an Excel-based tracking workflow.
+**Current decision: October 17, 2026.** Prioritize getting the existing shared course data into students' hands with an easy **copy-your-own Google Sheet + downloadable AI assistant instructions + platform setup guide**. Additional dashboard sophistication and infrastructure are secondary. The owner requested this ordering after confirming the program calendar and all six QBA module-to-session mappings.
 
-**Important qualification:** Direct Google Sheets read/write was verified through the Google Drive connector on **the owner's connected ChatGPT account**. It has NOT yet been verified on ChatGPT Free or Claude Free, and some students may need the previous explicit Project-checkpoint fallback. Do not advertise universal Free-plan write access until tested.
+## Student journey we are building
 
-## Recent completed academic content milestones (October 17, 2026)
+1. Open the public, unofficial [Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) from any device. It contains the shared course assignments, readings/prep, class schedule, key dates and public-safe resources. Canvas/current instructor instructions remain authoritative.
+2. Click **Make your copy** of an official-looking **blank master Google Sheet for student progress**. The master is public READ-ONLY; each student's copy is PRIVATE to that student. Never make a copy of an individual's filled progress workbook. The copy contains stable published assignment IDs/titles and blank progress statuses, not grades. Shared due dates are checked from the latest Hub, not treated as permanent copied truths.
+3. Download or copy **EMBA AI Assistant Instructions**: neutral professional personality, academic accuracy/privacy rules, Hub source references, progress Sheet read/write protocol, and example questions. Supply plain `.txt` and `.md` as portable versions, not a proprietary executable/custom app. Provide a simple human-readable Google Doc getting-started manual as well if useful.
+4. Follow a 3-minute **ChatGPT** or **Claude** setup guide (with Gemini/other AI or no-AI alternatives where feasible). Connect the student's own Google account only with explicit permission. Verify available actions per platform and plan; don't assert ChatGPT Free or Claude Free write parity without test evidence.
+5. Ask **What must I finish this week / before the next class weekend?** The assistant reads fresh accessible Hub data and the student's private Sheet, distinguishes not started/in progress/finished-not-submitted/submitted/blocked/unknown, and proposes an achievable 7- or 14-day plan, including pre-class quizzes, readings, discussions and preparation.
+6. Say **I submitted [specific assignment]**. With permitted write access, assistant updates ONLY the student's Sheet by stable ID, updates genuine Last Updated timestamp, and re-reads the row. Say **saved** only if verified. If the connector is unavailable, explain and use a private Project checkpoint/manual Sheet edit fallback. **No grade or score tracking.**
 
-- [x] Owner confirmed new public Class weekends, trips & key dates layout is visible on the Cloudflare hub.
-- [x] Import 58 QBA module reading/tutorial references and 11 separate week 1–11 readiness quiz entries into the shared Fall academic catalog (metadata only).
-- [x] Confirm and link all six QBA module-to-class time blocks: Sep 5, Oct 16, Oct 17, Nov 13, Dec 4 and Dec 5. Class-session dates on prep are not submission deadlines.
-- [x] Record Fall 2026 Friday/Saturday courses and published Class of 2028 program calendar.
-- [ ] Confirm new module labels display on Cloudflare after deployment; validate that upcoming prep filter shows the right QBA modules.
-- [ ] Still outstanding: human review of course requirements, free-plan ChatGPT/Claude access testing, private tracker negative-case tests, better weekly checklist layout.
+## Current foundation (already present, not a new build requirement)
 
-## What counts as success
+- [x] Public GitHub/Cloudflare read-only site and stable assignment IDs.
+- [x] Fall 2026 student-supplied catalog: **55 active assignments** (3 old grouped QBA quiz records superseded), **104 reading/prep records** (ENT 23, MGT 23, QBA 58). QBA readiness quizzes split individually.
+- [x] Fall 2026 exact Friday/Saturday class timetable, Class of 2028 program milestones and 20 class-date blocks through March 2028 on the Hub.
+- [x] Student confirmed all 6 QBA modules and associated class session times; 58 QBA prep entries have module/session association. Class-session date **does not equal assignment deadline**.
+- [x] Owner visually confirmed Class weekends, trips & key dates renders on live Cloudflare Hub; new QBA labels still need specific refreshed display check.
+- [x] Google Drive/Sheets native **read, write, read-back and new-conversation recovery** tested on the owner's connected ChatGPT account.
+- [x] Project-saved manual checkpoint recovery tested as fallback.
+- [ ] Independent reviewer approval of academic deadlines/AI-use rules remains incomplete; the public Hub must continue conspicuous **provisional** warnings and Canvas-first guidance. Do not re-gather files or claim these aren't uploaded; verify specific changes and edge cases.
 
-A student says "I submitted Quiz M3." Their AI identifies the stable assignment ID in the shared Hub, finds the matching row in the student's **private** Google Sheet, changes only the status and update time after explicit confirmation, receives a successful write response, **reads back the cell**, and reports the exact confirmed saved status. In a new Project chat, the AI reads the same Sheet and plans the upcoming 7–14 days from current shared course records and confirmed private statuses. No score or grade storage.
+## Release A: publish the class-owned Google Sheets template (FIRST BUILD)
 
-The assistant must distinguish **not started / in progress / finished but not submitted / submitted** and never equate a plan with an actual Canvas submission. Canvas, current syllabi and instructor communications remain authoritative over Hub summaries.
+- [ ] Create a separate, sanitized **EMBA Personal Progress — TEMPLATE** Google Sheet, never a copied personal completed tracker. Do not expose any connected student's filled Sheet URL, progress, grades or status.
+- [ ] Minimal tabs: **START HERE** for instructions and **PROGRESS** with `Assignment | ID | Status | Last Updated`. Include current stable public assignment IDs/titles (optionally seed blank statuses only); blank means **unknown/unconfirmed**, not automatically "not started." Include valid status dropdowns if low-friction.
+- [ ] Publish template as view-only or verified copy-link. Test that a classmate can **Make a copy** into their own Google Drive without getting editing privileges to the shared master or anyone else's workbook.
+- [ ] Test changes and read-back using a fictional `TEST-...` row in a private copy. Ensure duplicate assignments, wrong IDs, stale timestamps, and accidental public visibility are prevented.
+- [ ] Add a prominent **Make your Google Sheet** link to the public Hub only when the copy workflow is tested.
 
-## Observed results
+**Done when:** one classmate copies a clean template, sees no other student's information, and can reliably find their own copy.
 
-- [x] Existing Google Drive/Sheets connection searched for a private native Google Sheet and read its actual 4-column header.
-- [x] ChatGPT created a **fictional** test row, read it back, updated its status and independently read the updated status.
-- [x] Owner used a **new Project conversation** to update that fictional row again. A separate retrieval subsequently confirmed the new status persisted.
-- [ ] **Timestamp integrity:** the last-updated text on the test row was unchanged during the new-chat status update. The proposed procedure must always write **Status AND Last Updated**, then read both back.
-- [ ] Test a real confirmed progress update, ambiguous assignment title, unknown ID, duplicate update and a failed write. No accidental changes to real records.
-- [ ] Independently test read, authorized update and new-chat retrieval on **ChatGPT Free**, including any required app availability and permissions.
-- [ ] Independently test the same on **Claude Free** with its supported Google Workspace capabilities. A product claiming spreadsheet integration isn't proof of the exact write workflow.
-- [ ] Confirm a student's private Sheet remains inaccessible to another student and doesn't accidentally become public through sharing links.
+## Release B: downloadable AI Agent personality, instructions and prompts (SECOND BUILD)
 
-No Google Sheet ID, private checkpoint, grades, or student progress belongs in this public repository.
+- [ ] Create one canonical **platform-neutral EMBA Assistant profile** with tone, responsibilities, non-assumptions, source hierarchy (Canvas > updated official syllabus/instructor > public Hub), privacy/academic-integrity boundaries, and 7-/14-day planning logic.
+- [ ] Include shared Hub file references (`manifest.json`, `assignments.json`, `prep.json`, `program-calendar.json`, `ai-policies.json`, `changes.json`, `open-alerts.json`) and explicit staleness/verification checks.
+- [ ] Include private Sheet matching/write/read-back steps. Preserve stable assignment IDs; status is student-confirmed only. No Canvas scraping, no guarantee of background reminders or platform-independent direct writes.
+- [ ] Provide downloadable **plain text + Markdown** instructions, and a small copyable **Prompt Library**: weekly plan, before-class checklist, submitted vs finished, catch up, readings by module, changed deadline, and time-budget planning.
+- [ ] Put **Download assistant setup** and **Copy starter prompt** on the Hub. Student can use another AI tool or no AI; sharing a central student ChatGPT Project is **not required**.
 
-## Student-owned progress format
+**Done when:** a classmate can copy instructions into their own assistant without needing a custom integration or individual assistance.
 
-Minimal private Sheet headers: **Assignment | ID | Status | Last Updated**. Store only confirmed progress and optional short next action when needed. Stable IDs come from public `data/assignments.json`; don't guess unknown IDs or duplicate changing due dates into the private Sheet. A score, quiz result or point value belongs in Canvas, not our personal-status tracker.
+## Release C: setup guides for actual student platforms (THIRD BUILD)
 
-Authorized write procedure:
-1. Locate student's own Sheet using their connection; verify ownership/access and columns. Never choose by ambiguous title alone.
-2. Find exact stable assignment ID. If absent, and public Hub confirms it, insert a new unique row; if identity is ambiguous, ask.
-3. Apply only explicitly user-confirmed status and a real update timestamp; don't alter unrelated rows or publish student data.
-4. Re-read the row and state **saved** only if the returned values match. On failure, report unsaved and offer a manual Sheet update.
-5. In a fresh chat, read private Sheet **again**, and merge it with current Hub records. Do not substitute Project memory for the saved progress record.
+- [ ] One concise **Google Doc / web page** class setup manual with screenshots *from real UI only if obtained*, common troubleshooting, permissions/privacy and three links: template, prompts, Hub.
+- [ ] Separate short walkthroughs for **ChatGPT Free/paid**, **Claude Free/paid**; include how to use Projects if available, where to put instructions, connect Google Drive/Sheets if supported, and how to test write/read-back.
+- [ ] Document **Gemini/Perplexity/other AI** variations and a simple **no-AI** use of the public website. Label unverified or unsupported connectors and give manual status alternatives without forcing payment.
+- [ ] On actual Free accounts, independently check Project creation, connection availability, read/write permissions, cross-chat retrieval, timestamp update, and error handling. Do not extrapolate the owner's connected Plus test.
+- [ ] Make start-to-finish workflow understandable to a less technical classmate in a single sitting.
 
-**Fallback for unsupported/free clients:** personal Project + ongoing Progress chat + occasionally saved `CURRENT EMBA PROGRESS` source (or private copy/paste). This recovery test already passed on the owner's account, but the source requires a manual save; it is no longer the **preferred** workflow when live Sheet writes are available.
+**Done when:** an ordinary student can complete setup without needing GitHub, Cloudflare, command line, or technical jargon.
 
-## Highest-priority academic data work
+## Release D: test a complete weekly planning loop, then invite the cohort
 
-- [ ] Verify all known deliverables before the next class weekend and within the next 14 days against authorized Canvas/syllabus/instructor sources, including **readiness quizzes**, module-specific tasks, discussion initial posts/replies, and required readings.
-- [ ] Preserve stable IDs and provenance; identify unverified/unknown dates. The published 40 assignment and 46 prep entries remain provisional until official source review; missing QBA prep is a known coverage gap.
-- [ ] Add explicit structured class weekends, actual class times, and timezone where confirmed; avoid inventing times for date-only values.
-- [ ] Improve the public 7/14-day view and pre-class checklist, with optional **24–48-hour suggested completion targets**, clearly separate from official deadlines. No background alert guarantee.
-- [ ] Surface active verified assignment-specific AI rules near the top; archive prior rules rather than deleting them. Continue curated tips, prompts, study tools and human-reviewed lessons learned.
+- [ ] User asks “What is due this week?” with a time budget; AI uses the public Hub + a private copied Sheet; includes pre-class **quizzes, readings, cases, discussion posts/replies**, real due times and separate 24–48h *suggested* early targets.
+- [ ] Test confirmed finished-not-submitted, submitted, unknown, ambiguous title, date conflicts and a new chat retrieving the same updated sheet.
+- [ ] Verify upcoming 14 days and especially all Canvas-only/new module quizzes against instructor updates before declaring a checklist exhaustive. This is quality control **in parallel** with A–C, not a reason to postpone building the starter kit.
+- [ ] Use 2–3 volunteer classmates across their actual chosen platforms/plans, including at least one Free plan. Record setup time, failed steps, omissions and user confusion **without copying private progress**.
+- [ ] Adjust website's 7/14-day and pre-class checklist UI after testing; do not overbuild dashboard features before seeing usage.
+- [ ] Offer a **single low-friction Get Started path** prominently on the Hub.
 
-## Cohort onboarding after pilots
+**Done when:** a classmate can get from the public site to a useful private weekly plan, say "I submitted the quiz," have a supported tool save it, and recover it from another conversation (or understand the manual fallback).
 
-- [ ] Offer separate, **tested** ChatGPT Free and Claude Free Project guides. Each student owns and grants access to only their own private Google Sheet.
-- [ ] Provide copyable assistant instructions and ask: "What must I finish before class this weekend?", "I finished but haven't submitted X", "I submitted Y", "What changed?".
-- [ ] Test with 2–3 classmates only once their next academic obligations are reviewed and platform read/write works on their respective accounts, or clearly label the manual fallback.
-- [ ] Keep optional Excel export strictly as a **shared public metadata snapshot**; not an automatically writable or required personal tracker.
+## Release E: maintain through graduation (ITERATIVE)
 
-## Out of scope / deferred
+- [ ] Termly onboarding: safely import and approve new public course metadata, meeting dates, readings and AI-use policies as course materials arrive; update revision/change feed; archive older courses without losing useful context.
+- [ ] Maintain easy public-safe corrections and verified changes; never accept grade/submission/private progress from classmates into the public repository.
+- [ ] Consider additional study aids/NotebookLM tips and a class lessons-learned area based on actual demand.
+- [ ] Existing proposal write-intake infrastructure stays **`INTAKE_ENABLED=false`** until separate reviewer/backup/emergency-stop checks are complete.
+- [ ] Continue to improve the optional no-AI calendar/website experience.
 
-- **Grade tracking, score history, predictions and course-grade calculator in the Hub:** explicitly removed. Students privately paste/attach Canvas information for one-off questions.
-- No student D1 database, Student Zero Trust enrollment, custom private API, MCP server, mandatory personal GitHub, Obsidian or multi-tenant cloud service unless real pilot evidence justifies them.
-- No promise of automatic deadline notifications, Canvas integration/scraping, automatic spreadsheet updates on unsupported models, or automatic propagation of changed official dates.
-- Existing proposal-intake Worker/D1 and owner backup/watchdog work belong to **shared catalog corrections** and are independent; **`INTAKE_ENABLED=false` remains unchanged** pending separate security tests.
+## Explicitly not in MVP
 
-**Next action:** Complete timestamp and negative-case tests on a fictional row, then run independent ChatGPT Free / Claude Free tests. In parallel verify class-weekend quizzes and deadlines; the system cannot prevent a missed assignment absent from the shared data.
+No student account database, required Excel workbook, personal GitHub repository, Cloudflare Zero Trust student login, mandatory MCP server, automatic grade tracking, grade calculation, unapproved AI permissions, Canvas scraping/import, unsolicited background reminders, or promise of identical Free-plan capabilities.
+
+**Single next implementation task:** Build and safely publish **EMBA Personal Progress — TEMPLATE** as a *view-only, copyable Google Sheet*, add a link to the public Hub after testing. Then create the downloadable Assistant Instructions/Prompt Pack and setup manual, followed by a complete end-to-end classmate test.
+
+**References:** [Live Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) · [Starter instructions currently available](AGENT-ONBOARDING.md) · [Pilot evidence](AI-PROJECT-PILOT.md) · [Change/verification procedure](SEMESTER-IMPORT.md).
