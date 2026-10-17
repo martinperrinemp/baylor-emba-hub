@@ -1,5 +1,9 @@
 # EMBA Hub roadmap: classmate-ready starter kit first
 
+## Current pilot status (October 17, 2026)
+
+**IN PROGRESS:** The owner has already shared the EMBA Hub with a few classmates for testing. Wait for actual observations before claiming the setup succeeds across ChatGPT, Claude or Gemini. Request only three short pieces of feedback: platform used, first step that was confusing/stuck, and whether the assistant successfully read/wrote their private progress Sheet. Do not collect private Sheet links, grades, or credentials. Professor deadline-change management is the next shared-data reliability workstream, not a reason to hold up pilot feedback.
+
 ## Beginner onboarding walkthrough: three platforms (October 17, 2026)
 
 - [x] Rewrite ChatGPT, Claude and Gemini setup guides as short, numbered click-by-click instructions written for classmates who have never used AI Projects, Gems or GitHub.
@@ -91,11 +95,11 @@ A classmate visits the [public EMBA Hub](https://baylor-emba-proposals.martin-pe
 
 **Accept:** a classmate can complete the three steps from a phone within a few minutes, with no help from the builder.
 
-## Milestone 5 — small classmate pilot and academic QA
+## Milestone 5 — small classmate pilot IN PROGRESS and academic QA
 
 - [ ] Validate the actual upcoming 2–4 weeks of assignments, readiness quizzes and readings with the owner/another enrolled student before asserting any week is complete. Assign reviewer-approved metadata status and increment approved knowledge revision **only after review**, preserving a clear change log.
 - [ ] Test ChatGPT Free and Claude Free on real accounts for actual Google Sheet **reads and edits from the standard chat**, plus new-chat recovery. If a connector fails on Free, explicitly document manual fallback; don't silently claim it works.
-- [ ] Pilot with 2–3 trusted classmates; observe whether they can copy the Sheet, set up agent, update a submission, and get an accurate week plan. Collect only usability feedback, **not student progress/grades or account secrets**.
+- [~] **Pilot underway (owner confirmed October 17, 2026):** setup invitation sent to a few classmates. Observe whether they can make a private copy, follow one platform guide, install the instructions, verify a fictional status update, and obtain a useful next-week plan. **Invitation sent is not proof of successful setup.** Collect only usability feedback, **not student progress/grades or account secrets**.
 - [ ] Fix any missed quiz, wrong/duplicate assignment ID, stale progress, accidental master edits, ambiguous assignment updates or shared-data staleness.
 - [ ] Confirm proposed 24–48-hour early targets are labeled as study planning, **not** official deadlines or scheduled push notifications.
 
@@ -113,4 +117,4 @@ No cohort-shared progress database, per-student Hub accounts, private student D1
 
 ## Right now
 
-**Template built and publicly readable as Viewer; agent instructions, prompts, setup guides and Get Started website code now built.** Next: merge, check live assets/layout, then test real classmate copy and Free-plan account integrations. Academic source review remains parallel.
+**The student pilot is underway:** owner sent the website/setup materials to a few classmates on October 17. Don't mark any individual platform as working until a classmate reports a successful Sheet copy, agent setup, verified fictional write/read-back and useful study plan. Collect only the first sticking point and which platform was used. In parallel, make professor-change reporting/verification and the shared change log operational; keep academic-data review, free-plan testing and semester rollover on the roadmap.
