@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "knowledge_revision": 0,
-  "updated_at": "2026-10-14",
+  "updated_at": "2026-10-17",
   "last_approved_change_id": null,
   "open_urgent_alert_count": 0,
-  "status": "provisional_master_prep_and_ai_guidance",
-  "notes": "Fall 2026 provisional catalogs contain 40 assignments, 46 ENT/MGT Reading & Prep items, and 3 assignment-scoped ENT AI-use summaries (Paper #1, Paper #2, case presentation) from the student-prepared cohort starter pack. All await independent review against current instructor/Canvas guidance, and AI-use summaries do NOT grant permission. MGT/QBA AI permissions remain unknown. Owner has confirmed both dates and reading catalog are visible on mobile; AI policy page rendering pending owner confirmation. Shared approved knowledge revision stays 0. Two earlier changed-deadline conflicts remain flagged, QBA reading references are absent from the supplied workbook, and no personal completion data is stored here."
+  "status": "expanded_student_supplied_canvas_calendar_and_module_prep_pending_reviewer_approval",
+  "notes": "Fall 2026 catalog expanded using the student's Oct 17 Canvas assignment-list transcription (metadata only; no grades, submissions or personal data): 58 assignment records, including 3 superseded grouped QBA quiz placeholders hidden by the web UI and 55 active dated/course records. New individually listed QBA readiness quizzes, updated ENT/MGT deadline times. Prep: 104 records (23 ENT, 23 MGT, 58 QBA) from tracker and student-supplied QBA module instructions; course-restricted Canvas links deliberately omitted. New program-calendar.json: 20 highlighted class dates/weekends through Mar 2028, 2026 Friday/Saturday course blocks, travel and milestones, payment dates. Six QBA module-to-date relationships not proven by timetable. Shared approved knowledge_revision remains 0; independent human review against official sources is pending. Existing AI policy records remain provisional; public proposal write intake stays paused."
 }
