@@ -32,3 +32,21 @@
 .prep-source p{line-height:1.55;overflow-wrap:anywhere}
 
 @media(max-width:850px){.policy-list{grid-template-columns:1fr}.prep-list{grid-template-columns:1fr}.hero-grid{grid-template-columns:1fr;gap:30px}.hero-panel{max-width:540px}.cards,.ai-grid,.changes-grid{grid-template-columns:1fr}.nav nav{gap:14px}.nav nav a{font-size:12px}.ai-section{padding:28px 24px}.hero{padding:54px 0 55px}}@media(max-width:570px){.container{padding:0 18px}.nav{min-height:82px}.nav nav{gap:11px;flex-wrap:wrap;justify-content:end}.nav nav a{font-size:11px}.nav nav a:nth-child(4),.nav nav a:nth-child(5){display:none}.brand-mark{width:39px;height:39px;font-size:25px}.brand strong{font-size:13px}.brand small{font-size:8px}.hero h1{font-size:41px}.hero-panel{padding:23px}.section{padding-top:55px}.section-heading{align-items:stretch;flex-direction:column}.filter-wrap select{width:100%}.assignment{grid-template-columns:1fr}.assignment .date-group{text-align:left}.footer{flex-direction:column;gap:8px;margin-top:65px}.buttons,.button-group{flex-direction:column}.buttons .btn,.button-group .btn{width:100%}.ai-section{margin-left:-18px;margin-right:-18px;border-radius:0}.privacy-panel{padding:20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* Cohort-wide class calendar, Fall course sections, and key events. */
+.program-subhead{font-size:17px;color:#25384d;margin:30px 0 13px}
+.program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.program-card{background:#fff;border:1px solid #e0e8eb;border-radius:12px;padding:18px;min-width:0}
+.program-card>strong{display:block;font-size:15px;color:#263e53}
+.program-date{font-weight:750;color:#85621b;font-size:13px;margin-top:5px}
+.program-card>p{font-size:11px;line-height:1.5;color:#718191;margin:9px 0 0}
+.program-sessions{margin-top:12px;border-top:1px solid #e8edf1;padding-top:9px}
+.program-sessions summary{font-size:12px;color:#846321;cursor:pointer;font-weight:700}
+.program-session{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:9px 0;font-size:12px;color:#596e80}
+.program-session strong{color:#213d51;font-size:12px}
+.program-events{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.program-event{border:1px solid #e0e8ed;background:white;border-radius:10px;padding:13px;min-width:0}
+.program-event strong{display:block;font-size:13px;color:#2a3f52}
+.program-event span{display:block;font-size:12px;margin-top:6px;color:#7a6535}
+@media(max-width:800px){.program-events{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:570px){.program-grid,.program-events{grid-template-columns:1fr}}
