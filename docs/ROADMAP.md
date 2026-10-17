@@ -1,5 +1,15 @@
 # EMBA Hub roadmap: classmate-ready starter kit first
 
+## Baylor-themed public Hub refresh (October 17, 2026)
+
+- [x] Source implementation: official **Baylor Green #154734** and **University Gold #FFB81C**, Georgia and Helvetica, recognizable **Hankamer / MBA in Dallas** program naming.
+- [x] Refined header, hero, get-started cards, assignment and calendar surfaces, darker AI section, and responsive mobile navigation.
+- [x] Maintain explicit unofficial student-run identity and link to Baylor's official MBA in Dallas page. **Do not** recreate the university mark or school signature; approved official assets would require separate permission.
+- [x] Source-level checks: no remaining navy/blue accents, accessibility contrast spot checks, intact JS syntax and all DOM IDs.
+- [ ] Verify live Cloudflare build/deployment, mobile and desktop rendering and any classmate feedback before declaring visual sign-off.
+- [ ] Continue onboarding pilot with real classmates after site verification. Academic records remain provisional until independently checked.
+
+
 ## October 17 polish: clearer onboarding and Gemini support
 
 - [x] **Step 1:** explicitly rename the private Google Sheet copy to **EMBA Personal Progress** in Google's Make a copy dialog, then save; the view-only master START HERE tab carries the same instruction.
