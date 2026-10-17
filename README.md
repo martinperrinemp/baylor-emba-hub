@@ -1,5 +1,10 @@
 # Baylor EMBA Cohort Knowledge Hub
 
+## Baylor / Hankamer-inspired website theme — October 17, 2026
+
+The student-led Hub has been refreshed with the **official Baylor Green (#154734)** and **University Gold (#FFB81C)**, accessible green-and-white surfaces, Georgia/Helvetica typography, a stronger **Hankamer School of Business / MBA in Dallas** identity, responsive student-onboarding cards, and clearer mobile navigation. The website remains explicitly **unofficial and not Baylor-operated**. No University/School logo has been recreated or added; the official brand marks require approved assets and appropriate permissions. See [brand implementation and rationale](docs/BRAND-THEME.md). Live visual confirmation still required after the merge.
+
+
 ## Three-platform student setup — October 17, 2026
 
 The three-step [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) now instructs students to **rename their private Google Sheet copy** to `EMBA Personal Progress` before saving; download the plain-text [Agent Instructions](cloudflare/public/downloads/EMBA-Agent-Instructions.txt) for use **inside their AI's instructions settings** during setup; then choose the prominent [ChatGPT](docs/SETUP-CHATGPT.md), [Claude](docs/SETUP-CLAUDE.md), or new [Gemini](docs/SETUP-GEMINI.md) guide. [Example prompts](cloudflare/public/downloads/EMBA-Common-Prompts.txt) are optional extras.
