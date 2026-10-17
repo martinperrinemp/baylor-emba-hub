@@ -1,27 +1,49 @@
-# EMBA Assistant setup: ChatGPT
+# Set up your EMBA assistant in ChatGPT
 
-**Recommended: a paid ChatGPT plan for the best chance of smooth Google Drive/Sheets integration, with higher usage capacity.** Free accounts can still use the Hub and may have limited spreadsheet features. **Neither paid nor free subscriptions guarantee direct Google Sheet edits from an ordinary Project chat**; test the enabled actions. Use the [public Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/) and [downloadable agent instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt).
+**Start here:** [Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started). Follow these steps in a browser. No GitHub experience required. ChatGPT Projects keep your assistant's instructions and conversations together.
 
-## What you need
-- Your own ChatGPT account and Google account.
-- A **private copy** of the class [blank EMBA Progress Tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). Do NOT type into the shared master.
-- Approximately a few minutes for setup and a test; availability varies by account.
+**You need:** a Google account and a ChatGPT account. Use your own Google Sheet, not the class's blank master. You do **not** need a GitHub account.
 
-## Setup
-1. Select **Make a copy** on the Google Sheets link. In Google's copy dialog, **rename YOUR new file to `EMBA Personal Progress` before clicking Make a copy**. If already copied, rename the new Sheet now. Check **Share**: your copy should be private/restricted. Its Progress tab starts with public assignment titles and IDs but **all status and timestamp cells blank**.
-2. **Download the plain-text [.txt EMBA Agent Instructions](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt), open the text file and copy everything in it.** In ChatGPT, create a private **EMBA** Project (if your account has Projects). Open **Project settings → Instructions** and **paste the full downloaded text into the Project instructions field**, then save those instructions. This file does not need to be installed as software. You can also paste them at the beginning of a normal private conversation if Project instructions are unavailable.
-3. Use Settings → Plugins/Apps, or the chat tools menu if offered, to find and connect **Google Drive** to YOUR Google account. Grant only the permissions you want to authorize. Capabilities depend on plan and account settings.
-4. If helpful, paste the public Hub URL and the link to **your own private Sheet** into a private Project chat. Do NOT publish your copy in the cohort Hub or post it in GitHub.
-5. Ask: **"Find MY private EMBA Personal Progress Sheet and read its Progress column headers. Do not edit."** Verify the assistant references YOUR copy, not the public template.
-6. Test a **fictional** row only (e.g., `TEST-001`): ask the assistant to update status and timestamp, then **read it back**. Open a **new Project conversation** and repeat the read. Only rely on automated progress updates if both write and fresh-chat retrieval work.
-7. Ask: **"What is due or needed before the next class weekend? Use current Hub records and my confirmed private status. Note any provisional dates."**
+## 1. Make your private progress Sheet
 
-## If Google Sheets editing isn't offered on your plan
-You can still use the public academic Hub and the agent for planning. Update your private Sheet manually, OR keep an ongoing Progress chat and occasionally save a short **CURRENT EMBA PROGRESS** response to Project sources when your interface allows it. Reopen/verify the source in a new conversation or paste a private copy. **Never accept a claimed "saved" status without a verified Google write and read-back.**
+Open [Make a copy of the class tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). In Google's copy window, change the name to **EMBA Personal Progress**, then click **Make a copy**. Open your new file and check **Share**: access should be **Restricted**. You will see 55 assignment rows with blank Status cells.
 
-## Important
-- ChatGPT's connected-app availability and write actions vary by plan/region/workspace and Google permissions; the class owner verified working Google Sheets writes on their connected account, **not ChatGPT Free**.
-- Uploaded files or saved Project sources are NOT automatically rewritten when you speak. Google Sheet actions are separate from Project memory.
-- The Hub is an unofficial, potentially provisional student-maintained catalog. Canvas, syllabi, and latest instructor messages are authoritative.
-- AI-use permissions differ by assignment. Do not assume permission when unknown.
-- No grades or scores are recorded in this tracker.
+## 2. Copy the assistant instructions
+
+On the [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started), under Step 2, click **Or copy full text**. That copies the assistant's personality and rules. Prefer a file instead? Download the [instruction .txt file](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/downloads/EMBA-Agent-Instructions.txt), open it, and copy all the text. It is **not** software to install.
+
+## 3. Create your ChatGPT Project
+
+Open [ChatGPT](https://chatgpt.com/), sign in, and select **New project** in the left sidebar. Name it **EMBA Planner**. Open the project, choose the **•••** menu → **Project settings**, and find **Instructions**. **Paste the text from Step 2** and save. Start a **new chat inside this project**, not on ChatGPT's home screen.
+
+## 4. Connect your own Google Drive
+
+In ChatGPT, open **Settings → Plugins** (sometimes called **Apps**). Find **Google Drive**, choose **Connect**, and sign in to the Google account that owns your copied Sheet. Review the permissions. If prompted in your Project chat, select Google Drive from the **+** tools menu.
+
+## 5. Make sure it found the right Sheet
+
+In your **EMBA Planner Project chat**, ask: *“Find my Google Sheet named EMBA Personal Progress. Read the Progress tab headings. Do not edit anything.”* It should report **Assignment, ID, Status, Last Updated**. If it finds the class template instead, paste the URL of **your own private copy** in that private chat.
+
+## 6. Test one pretend update
+
+Ask your assistant to run the test below. Then open your private Sheet in Google to check the new row yourself. Start **another chat inside the Project** and ask it to read TEST-001 again. If it cannot write or read back, it is **not connected for automatic updates**. You can still use the planner and update your own Sheet manually.
+
+## 7. Start your weekly planning
+
+Ask the weekly planning question below. Use this same Project for school questions and tell it when you actually submit assignments. Always check Canvas for official deadlines.
+
+## Copy/paste test question
+
+> In MY private Google Sheet named EMBA Personal Progress, add one fictional row named "Test only" with ID TEST-001, then set Status to "In progress" and Last Updated to the current date and time. Read those two cells back and tell me if the edit really saved. Do not change any real assignments or the publicly shared class template.
+
+## First weekly planning question
+
+> What do I need to complete before our next class weekend? Check the latest EMBA Hub deadlines and readings. Use my private Sheet for confirmed progress, and flag any unverified dates.
+
+## If you get stuck
+
+Google Drive availability and write permissions depend on your account and plan; paying does not automatically enable spreadsheet edits. Do not share your ChatGPT Project or your completed Sheet with the cohort. If connecting or updating fails, you can still ask for a plan and change your own Google Sheet manually. The assistant must not say “saved” unless it can read the new value back. **Canvas and instructors have the official deadlines.**
+
+[ChatGPT's official Project instructions](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) · [Return to EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started)
+
+*Independent student-run tool, not a Baylor-operated service.*
