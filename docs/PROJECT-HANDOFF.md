@@ -1,5 +1,13 @@
 # Project handoff and build checklist
 
+## LATEST CATALOG IMPORT (October 17, 2026): program + Fall course blocks + QBA modules
+
+The owner supplied two one-page MBA-in-Dallas PDFs and Canvas gradebook listings for ENT/MGT/QBA. Metadata-only program schedule with 20 highlighted class-date blocks (2026–2028), five major milestones/trips, five payment dates, 16 Fall 2026 course time blocks, ENT residency morning/afternoon blocks and the Oct 7 presentation schedule's historical/superseded note now lives in `data/program-calendar.json`; the read-only public endpoint and responsive schedule section have been implemented in source. **User-supplied timetable:** Oct 17 Saturday QBA 9 AM–12:30 PM, NO Saturday afternoon class. Future-year classes don't yet have course details.
+
+QBA Read/Watch module lists imported as **58 student-supplied records**: Module 1=8, 2=21, 3=12, 4=12 (four source-listed ANOVA video repetitions retained), 5=3, 6=2. Original ENT+MGT 46 preserved: **104 total**. Restricted Canvas-specific links omitted; public joshdp34.github.io/QBA readings retained. 11 QBA week 1–11 readiness quizzes now individually named; 3 old aggregate quiz items retained as `superseded_aggregate` and hidden from display. ENT/MGT/QBA Canvas due-date fields corrected or added using current student-provided snapshots. **58 assignments total, 55 active**. No scores, personal submissions, grade data or Canvas restricted material is in the public repository. All these records still await **independent reviewer approval; knowledge_revision stays 0**.
+
+New source code has not yet been user-tested on Cloudflare; after merge, **confirm deployed UI loads program calendar, filters QBA by module, and each of the 11 separate QBA readiness quizzes has one correct due date**. Then check private Sheet statuses only in the owner's private Google file. The earlier Google Sheets test remains valid.
+
 ## NEWEST PRODUCT TEST / NEXT ACTION (October 16, 2026 CDT)
 
 **A direct private Google Sheets workflow was successfully tested using the owner's connected ChatGPT account.** The assistant located the owner's private Google Sheet, wrote a fictional progress row, verified a status change by read-back, and later independently confirmed that a **new EMBA Project conversation** had updated the same row again. This is an actual cross-chat persistent write verification, **not** just model memory or a Project-saved snapshot. Do not publish the Sheet URL/ID or any personal record in the public repo.
