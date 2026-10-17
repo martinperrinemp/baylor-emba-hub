@@ -22,10 +22,10 @@ A classmate visits the [public EMBA Hub](https://baylor-emba-proposals.martin-pe
 
 ## Milestone 1 — the classmate's copyable Google Sheet: NEXT TO BUILD
 
-- [ ] Create **one brand-new, shareable, view-only blank Google Sheet** called `Dallas EMBA Progress Tracker – Copy Me`, separate from the owner's personal Google Sheet.
-- [ ] Include a `START HERE` tab with concise how-to and the Hub link, and a `Progress` tab with columns `Assignment | ID | Status | Last Updated`. Prefer **preloading the 55 active public assignment titles and stable IDs**, leaving **every personal status/timestamp blank or explicitly unconfirmed**; no grades, names, teammates or private Canvas URLs. New assignments may be added later by the student's agent.
-- [ ] Apply a small, consistent status vocabulary: `Not started` only on explicit confirmation; `In progress`, `Finished, not submitted`, `Submitted`, `Blocked`, and blank/`Unconfirmed` by default.
-- [ ] Keep master **view-only** and **anyone-with-link** only after confirming it contains absolutely no personal data. Share a documented **/copy** URL with classmates; each individual's copy remains private unless they explicitly choose to share it.
+- [x] Created a **separate master Google Sheet** named `Dallas EMBA Progress Tracker – COPY ME (Blank Template)`, with a clean START HERE tab, 55 preloaded public assignment IDs/titles, empty personal statuses/timestamps, and status dropdowns. **Verified actual rows and privacy-safe content Oct 17.** It is currently PRIVATE; no class access has yet been granted.
+- [x] Includes START HERE guide, 55 prefilled public stable IDs/titles, and Progress columns `Assignment | ID | Status | Last Updated`, with personal columns completely blank; no grades or private Canvas URLs.
+- [x] Applied status-validation dropdown: `Not started`, `In progress`, `Finished, not submitted`, `Submitted`, `Blocked`; blank means unconfirmed by default.
+- [ ] **Owner's one-time sharing step still required:** Google Sheet → Share → General access → **Anyone with the link → Viewer** (only after verifying no personal data). The available Drive connector cannot set this specific public-link permission. Then test the **/copy** link with a student who isn't the owner. Individual copies remain private by default, subject to each student's Drive permissions.
 - [ ] Test two independent copies and connector access. Confirm the AI can read, write **status and timestamp**, avoid duplicates and read back the changed row. Do not overwrite master.
 
 **Accept:** a nontechnical classmate has a private tracker with no manual row entry, and nobody can see another student's progress.
