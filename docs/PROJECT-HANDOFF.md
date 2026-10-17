@@ -2,7 +2,7 @@
 
 ## OCTOBER 17 UPDATE: QBA MODULE MAPPING AND LIVE SITE CONFIRMATION
 
-**Confirmed by owner:** the public Cloudflare site visibly renders **Class weekends, trips & key dates**. Owner also confirmed the entire QBA mapping: Module 1 Sep 5 Saturday PM; Module 2 Oct 16 Friday PM; Module 3 Oct 17 Saturday AM; Module 4 Nov 13 Friday PM; Module 5 Dec 4 Friday PM? **Correction from timetable:** Module 5 is Dec 4 **Friday 1:00–4:30 PM** (not Friday evening); Module 6 Dec 5 Saturday AM. Module 4 Nov 13 Friday **5:00–8:30 PM**. Current source-of-truth mapping is in `data/program-calendar.json`.
+**Confirmed by owner:** the public Cloudflare site visibly renders **Class weekends, trips & key dates**. All six QBA module assignments were confirmed against the Fall course timetable: Module 1 Sep 5 Sat 1:30–5 PM; Module 2 Oct 16 Fri 1–4:30 PM; Module 3 Oct 17 Sat 9 AM–12:30 PM; Module 4 Nov 13 Fri 5–8:30 PM; Module 5 Dec 4 Fri 1–4:30 PM; Module 6 Dec 5 Sat 9 AM–12:30 PM. Current structured source is `data/program-calendar.json`.
 
 All six corresponding Fall 2026 QBA blocks are marked `student_confirmed` for module mapping, and each of the 58 QBA read/watch records now has `class_session_id` and `due_or_discuss_date` (class session only; **NOT** a submission deadline). The shared calendar and preparation records are student-supplied with independent reviewer signoff still pending; `knowledge_revision=0`. **Next:** visually verify new *QBA 5330 · Module N* labels and QBA module date filters on the live page after this merge. Do not revisit the already-confirmed mapping or invent additional deadlines.
 
