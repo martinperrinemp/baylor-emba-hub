@@ -2,7 +2,16 @@
 
 Applies to any AI assistant using this repository. This is a **public, unofficial, student-maintained** planning aid. Official syllabus, instructor communications, and Canvas outrank shared summaries.
 
-## Current student workflow (October 2026 pilot)
+## Latest progress integration decision (October 16, 2026 CDT)
+
+**Preferred tested path:** With a student's **authorized** Google Drive/Sheets write connection, use that student's **private Google Sheet** as the persistent progress store. The owner's connected ChatGPT account completed an actual status update/read-back and a new-Project-conversation update/read-back; ChatGPT Free and Claude Free remain **untested**. See [Roadmap](docs/ROADMAP.md) and [Pilot](docs/AI-PROJECT-PILOT.md). Never claim a connector works for another student/account without testing.
+
+- For progress changes, match a **stable assignment ID**, verify no conflicting duplicate, accept only student's explicit status confirmation, update BOTH status and genuine Last Updated timestamp, then **re-read** the exact private record. Only say "saved" if the read-back matches. If Sheets write isn't available, clearly offer a manual spreadsheet edit or saved-Project-checkpoint fallback.
+- For new chats or weekly planning, first read the private Sheet when authorized, then fresh accessible public Hub assignments/prep/alerts. Don't infer submission from chat history or stored memory. Preserve **finished but not submitted** versus **submitted**.
+- Do not add grades or scores to the personal tracker or public Hub. Optional private one-off Canvas grade interpretation is separate. No proactive reminders are guaranteed; 24–48-hour targets are only planning advice.
+- No student progress, Sheet URLs/IDs, OAuth tokens, personal screenshots or permissioned materials in the public GitHub repository or proposals queue.
+
+## Prior pilot workflow (Project checkpoint fallback, superseded when live Sheet writes are available)
 
 **Default:** personal private ChatGPT or Claude Project + a dedicated **Progress & Weekly Planning** chat + periodic **CURRENT EMBA PROGRESS** checkpoint that the student explicitly saves into Project knowledge/sources where supported. A new conversation should consult the latest saved checkpoint; if it is unavailable, request a private pasted copy. Chat memory alone cannot establish submission or guarantee durable progress. See [Roadmap](docs/ROADMAP.md), [Onboarding](docs/AGENT-ONBOARDING.md), and [Pilot](docs/AI-PROJECT-PILOT.md).
 
@@ -28,9 +37,9 @@ Applies to any AI assistant using this repository. This is a **public, unofficia
 ## Agent continuity across chat limits and platforms
 Students should resume in a new AI conversation using the **latest private explicitly saved checkpoint** (or private pasted checkpoint), not assuming perfect cross-chat memory. See [Agent Continuity](docs/AGENT-CONTINUITY.md) and the [blank portable template](templates/personal/continuity.template.json).
 
-- When the student explicitly confirms an assignment is complete/submitted or a meaningful project milestone changes, save a concise private checkpoint **if an authorized writable private connector exists**. Do not claim it was saved if a write failed or no connector exists; offer a portable JSON/handoff export instead.
+- When the student explicitly confirms an assignment is complete/submitted, prefer a verified write/read-back to their private Google Sheet if authorized; when unavailable, prepare a private checkpoint for explicit manual save. Never claim a write occurred without verification.
 - Never wait for the chat's final message: limits can arrive unexpectedly. Checkpoint proactively upon **confirmed progress** or on user request.
-- On "resume my EMBA assistant," retrieve student-owned private checkpoint (only with the student's permission), fetch the **current** public hub manifest, alerts, changes and assignments, and join private progress to approved shared records by stable assignment ID.
+- On "resume my EMBA assistant," retrieve the student's private Google Sheet when their account supports an authorized read, or the latest explicitly saved personal checkpoint as fallback. Fetch current accessible public Hub data and join personal statuses to shared records by stable IDs.
 - Do not copy the central master deadlines into private progress. Preserve last seen knowledge revision and explicitly surface approved updates and unresolved conflicts.
 - A new conversation cannot recover full dialogue or attachments from the checkpoint alone. State any missing context; distinguish student's confirmed status from plans or AI suggestions.
 - Never put individual checkpoint values in this public repository, cohort Issues, or the proposal submission queue. Owner/reviewers have no general right to view a student's private progress.
