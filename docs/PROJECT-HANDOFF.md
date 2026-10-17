@@ -1,5 +1,15 @@
 # Project handoff and build checklist
 
+## OCTOBER 17 — THREE-PLATFORM STARTER-KIT POLISH
+
+Per owner feedback: Step 1 now explicitly says to rename the newly copied Google Sheet to **EMBA Personal Progress** in the copy dialog before saving. Step 2 describes **EMBA-Agent-Instructions.txt** as plain text to paste into a ChatGPT/Claude **Project instructions** field or Gemini **Gem instructions** during Step 3, not software. Step 3 has three prominent dedicated setup guide buttons; example prompts are extra, not a mandatory step.
+
+New `docs/SETUP-GEMINI.md` explains Gemini Gems (Google may transition them to skills from Nov 2026), how eligible Google AI Pro and Gemini in Sheets editing work, and limitations of autonomous **regular Gem-chat** Sheet writes. Google 2026 student promotion provides **12 months of Google AI Pro** for eligible U.S. college students (verify via SheerID, personal Google account and payment method required, redeem by Dec 31, automatically paid after if not cancelled). Advertise only as eligible offer, not an automatic Baylor benefit. Paid ChatGPT/Claude/Gemini recommended for best available integrations; no payment guarantees direct chat writes.
+
+The **public blank master Google Sheet START HERE tab** was also updated and read-back verified. Next validate deployment and platform tests; no private student statuses/grades in public repo.
+
+
+
 ## OCTOBER 17: STUDENT STARTER KIT SOURCE BUILT (latest)
 
 Owner made the separate class Google Sheet master publicly viewable. Google returned ANYONE / READER permissions. The blank master has a START HERE tab and 55 prefilled stable assignment IDs with no private statuses. The classmate Make a copy URL is https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy . NEVER publish the owner's separate personal progress Sheet.
