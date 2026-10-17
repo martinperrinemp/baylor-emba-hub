@@ -16,16 +16,16 @@ The assistant is set up to:
 - read and (where your plan enables it) write your own private progress Google Sheet, verifying status plus timestamp;
 - plan 7/14 days out and propose finishing 24–48 hours ahead of real due dates.
 
-Follow your own platform's steps:
-- [ChatGPT setup](SETUP-CHATGPT.md)
-- [Claude setup](SETUP-CLAUDE.md)
-- [Gemini setup (Gem + Gemini in Sheets)](SETUP-GEMINI.md)
+**Choose a simple setup guide on the EMBA website (no GitHub login):**
+- [Set up ChatGPT](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt.html)
+- [Set up Claude](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude.html)
+- [Set up Gemini](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/gemini.html)
 
 **Paid AI plans are recommended for the most capable Google Sheets experience**, but they do not guarantee a direct write in a standard chat. [Eligible U.S. college students can claim Google's 12-month AI Pro student offer](https://gemini.google/us/students/) (verify eligibility, payment method required, redeem by Dec 31, 2026, renews paid unless cancelled). Gemini's custom assistant equivalent is a Gem; Google Sheets editing may occur in a separate panel.
 
 ## 3. Set up your AI, then ask what you need to do this week
 
-After following your [ChatGPT](SETUP-CHATGPT.md), [Claude](SETUP-CLAUDE.md), or [Gemini](SETUP-GEMINI.md) guide and pasting the agent text in the appropriate **instructions field**, try the prompt below. The [10 common EMBA prompts](../cloudflare/public/downloads/EMBA-Common-Prompts.txt) are optional extras:
+After following your [ChatGPT](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt.html), [Claude](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude.html), or [Gemini](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/gemini.html) guide and pasting the agent text in the appropriate **instructions field**, try the prompt below. The [10 common EMBA prompts](../cloudflare/public/downloads/EMBA-Common-Prompts.txt) are optional extras:
 
 > "What is due or required before our next class weekend? Check the current shared EMBA Hub and my private progress Sheet. Include all known quizzes, readings and submissions and flag any provisional dates."
 
