@@ -50,3 +50,6 @@
 .program-event span{display:block;font-size:12px;margin-top:6px;color:#7a6535}
 @media(max-width:800px){.program-events{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:570px){.program-grid,.program-events{grid-template-columns:1fr}}
+
+/* Keep Your AI link discoverable on narrow screens after adding Schedule tab. */
+@media(max-width:570px){.nav nav a:nth-child(5){display:inline}.nav nav a:nth-child(6){display:none}}
