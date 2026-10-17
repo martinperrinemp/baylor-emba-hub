@@ -1,5 +1,5 @@
 DALLAS EMBA | EVERYDAY PROMPTS
-Copy or adapt any prompt in your personal ChatGPT or Claude EMBA Project.
+Optional examples: copy or adapt in your private ChatGPT or Claude EMBA Project, or Google Gemini Gem. On Gemini, direct editing may require Gemini in Sheets rather than the regular Gem chat.
 
 1. MY WEEK
 "What is due or required in the next 7 days across MGT, QBA and ENT? Check the newest public EMBA Hub records and my private Google Sheet. Separate confirmed deadlines from provisional items."

@@ -1,5 +1,17 @@
 # EMBA Hub roadmap: classmate-ready starter kit first
 
+## October 17 polish: clearer onboarding and Gemini support
+
+- [x] **Step 1:** explicitly rename the private Google Sheet copy to **EMBA Personal Progress** in Google's Make a copy dialog, then save; the view-only master START HERE tab carries the same instruction.
+- [x] **Plans:** recommend paid ChatGPT/Claude/Google AI accounts for more capable integrations *without promising autonomous chat-to-Sheet writes*. Current Google AI Pro student promotion: eligible U.S. college students can claim 12 months at no cost through Dec 31, 2026 (verification and payment method required, automatically paid after promotional year unless cancelled). This is not a guaranteed Baylor-specific entitlement.
+- [x] **Step 2:** clearly label the download as a plain-text instruction file **to paste into Project instructions (ChatGPT/Claude) or Gem instructions (Gemini) during setup**, not installed software.
+- [x] **Step 3:** prominent separate ChatGPT, Claude and Gemini setup buttons; optional example-prompts download visually separated.
+- [x] Create [Gemini setup guide](SETUP-GEMINI.md) for Gemini Gems, Workspace connection and Gemini in Sheets actions, including how edits may require Apply.
+- [ ] After merge, verify the three setup buttons, latest text download, and prompt-extra placement on the deployed Cloudflare site, especially on mobile.
+- [ ] Run real free/paid workflow tests. Gemini editing in Google Sheets is documented, but an ordinary Gem chat's ability to edit the saved tracker without opening Sheets is **not yet verified**.
+
+
+
 **Product decision refreshed October 17, 2026.** The academic catalog and the owner's personal Google Sheets read/write proof-of-concept are in place. **NEXT: ship a simple classmate onboarding package**, rather than adding databases, connectors or extra academic import tools before the first user pilot.
 
 ## The one-minute description

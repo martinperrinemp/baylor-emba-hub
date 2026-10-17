@@ -68,3 +68,13 @@
 .starter-status{font-size:12px;color:#20583c;min-height:17px}
 @media(max-width:960px){.starter-grid{grid-template-columns:1fr 1fr}.starter-card:last-child{grid-column:span 2}}
 @media(max-width:570px){.starter-grid{grid-template-columns:1fr}.starter-card:last-child{grid-column:auto}.nav nav a:nth-child(4){display:none}.nav nav a:nth-child(5){display:inline}.nav nav a:nth-child(6){display:none}}
+
+/* Clear 3-platform setup affordances and responsible student-offer notice */
+.starter-plan-note{margin:0 0 19px;background:#f0f5f2;border-left:3px solid #337657;border-radius:8px;padding:16px 19px;color:#294e42;font-size:13px;line-height:1.65}
+.starter-plan-note a{font-weight:780;color:#225c46}
+.starter-plan-note .offer-caveat{color:#50645d;font-size:12px}
+.starter-card p strong{color:#263e50}
+.setup-guide-actions{display:flex;flex-direction:column;gap:8px;width:100%}
+.setup-guide-actions .btn{width:100%;margin:0}
+.starter-card .extra-download{display:inline-block;font-size:12px;color:#225e4b;font-weight:750;text-align:center;align-self:center;margin-top:5px}
+@media(max-width:570px){.starter-plan-note{margin-bottom:15px;padding:14px}.setup-guide-actions{gap:10px}}
