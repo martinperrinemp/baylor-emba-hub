@@ -1,5 +1,12 @@
 # Baylor EMBA Cohort Knowledge Hub
 
+## Current priorities and coding handoff (October 17, 2026)
+
+Our active [cohort Hub roadmap](docs/ROADMAP.md) prioritizes finishing the live classmate pilot, owner-approved professor deadline changes with **opt-in cohort Discord alerts**, a reviewed **Tips & Resources** knowledge base, a sourced **Student Deals & Benefits** area, a resource-first homepage, and semester rollover. Historic milestone notes remain in [roadmap history](docs/ROADMAP-HISTORY-2026-10-17.md).
+
+We are moving implementation work to Codex Cloud using this **same GitHub repo**. Follow [Codex GitHub setup](docs/CODEX-SETUP.md) and the root [AGENTS.md](AGENTS.md); no new repository or migration of personal ChatGPT chats required. Codex will propose scoped PRs that the owner reviews before merge. Cloudflare intake remains paused; no cohort Discord webhook has yet been configured.
+
+
 ## Baylor / Hankamer-inspired website theme — October 17, 2026
 
 The student-led Hub has been refreshed with the **official Baylor Green (#154734)** and **University Gold (#FFB81C)**, accessible green-and-white surfaces, Georgia/Helvetica typography, a stronger **Hankamer School of Business / MBA in Dallas** identity, responsive student-onboarding cards, and clearer mobile navigation. The website remains explicitly **unofficial and not Baylor-operated**. No University/School logo has been recreated or added; the official brand marks require approved assets and appropriate permissions. See [brand implementation and rationale](docs/BRAND-THEME.md). Live visual confirmation still required after the merge.

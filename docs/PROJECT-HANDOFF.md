@@ -1,5 +1,14 @@
 # Project handoff and build checklist
 
+## October 17: AI-first cohort resource center and Codex adoption
+
+Owner approved the revised [active roadmap](ROADMAP.md): (1) finish classmate onboarding pilot, (2) owner-reviewed deadline updates with opt-in separate cohort Discord alerts, (3) crowd-sourced, reviewer-approved Tips & Resources knowledge base, (4) sourced time-sensitive Student Deals & Benefits directory, (5) promote those modules above the detailed academic reference on the homepage, and (6) repeatable semester rollover. The previous long roadmap is preserved in [history](ROADMAP-HISTORY-2026-10-17.md).
+
+**Codex workflow approved for future coding:** The existing public repo is still `martinperrinemp/baylor-emba-hub`. Root [AGENTS.md](../AGENTS.md) now describes current priorities and coding/approval guardrails. [CODEX-SETUP.md](CODEX-SETUP.md) includes web/mobile Codex Cloud authorization, creating the environment and the **first read-only code audit**. Owner must still personally authorize GitHub in Codex Cloud; no connection or Codex task has yet been verified as active. No production secrets, private schoolwork, or Google Sheet credentials should migrate.
+
+**Development gates:** Existing GitHub Issues are the initial submission channel; `INTAKE_ENABLED=false` remains. Only approved published date/requirement changes enter canonical GitHub files, with old/new values, manifest revision and alerts. A distinct opt-in cohort Discord webhook is proposed, **not installed**; never reuse operations webhook. No tips/deals publishing yet. Website rearrangement is a future task after initial structured data is published.
+
+
 ## October 17: novice UX rewrite and website-native setup guides
 
 The three canonical guides `docs/SETUP-CHATGPT.md`, `docs/SETUP-CLAUDE.md`, `docs/SETUP-GEMINI.md` have been rewritten for someone who has only used AI as a search box. Matching, accessible single-purpose HTML pages were created in `cloudflare/public/guides/`, with responsive `guide.css`. Hub Step 3 links point to `/guides/{chatgpt,claude,gemini}.html`, **not GitHub**. Each shows the exact Project/Gem instructions field, where to connect Google, how to test a fake TEST-001 row and verify actual Sheets persistence, and a weekly planning question. Manual fallback provided.

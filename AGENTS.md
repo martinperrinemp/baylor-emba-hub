@@ -2,6 +2,19 @@
 
 Applies to any AI assistant using this repository. This is a **public, unofficial, student-maintained** planning aid. Official syllabus, instructor communications, and Canvas outrank shared summaries.
 
+## Codex development handoff (October 17, 2026)
+
+**Current product direction:** The [active roadmap](docs/ROADMAP.md) leads with pilot feedback, owner-approved deadline changes plus optional cohort Discord alerts, a submitted/reviewed tips knowledge base, reviewed student deals, a resource-first homepage, and semester rollover. Historic details live in [roadmap archive](docs/ROADMAP-HISTORY-2026-10-17.md). Use [Codex setup](docs/CODEX-SETUP.md) for environment onboarding.
+
+**When coding this repo:**
+- Prefer the **smallest scoped PR** for an explicitly selected roadmap slice. Read only docs relevant to that slice, inspect the existing implementation and tests, run checks, and report actual results or blockers.
+- Protect the distinction between **proposals**, **human-approved public catalog** and **student-private progress**. Never auto-publish a GitHub Issue, student-submitted resource or proposed deadline. Preserve stable assignment IDs, field-specific due dates, revisions and old/new change history.
+- Public, structured, AI-readable data is the source for the Hub. Student Tips and Student Deals need metadata/provenance and owner approval; privacy and copyrighted-material restrictions apply.
+- Discord alerts are **opt-in cohort notifications about approved changes only**. Use a new cohort webhook secret; never reuse the owner-only operations/backup webhook or expose webhook URLs. Avoid duplicate alerts on retries and report delivery failures.
+- Keep `INTAKE_ENABLED=false` and do not configure or enable unauthenticated writes without the separate security/backup review. Don't merge to `main`, deploy Cloudflare, modify credentials, or publish real dates/resources without explicit owner approval. Merging may trigger a deployment.
+- `cloudflare/package.json` contains `npm test` and `npm run check`; run them for relevant changes along with static/data checks. Do not claim a test passed unless executed. Draft the PR and let the owner review it.
+- Continue to present the site as **unofficial and student-maintained**, with Baylor Green `#154734` and University Gold `#FFB81C`; no recreated official logo. See [brand guidance](docs/BRAND-THEME.md).
+
 ## Latest progress integration decision (October 16, 2026 CDT)
 
 **Preferred tested path:** With a student's **authorized** Google Drive/Sheets write connection, use that student's **private Google Sheet** as the persistent progress store. The owner's connected ChatGPT account completed an actual status update/read-back and a new-Project-conversation update/read-back; ChatGPT Free and Claude Free remain **untested**. See [Roadmap](docs/ROADMAP.md) and [Pilot](docs/AI-PROJECT-PILOT.md). Never claim a connector works for another student/account without testing.
