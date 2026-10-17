@@ -18,10 +18,10 @@
         <span><strong>Dallas EMBA</strong><small>COHORT HUB · CLASS OF 2028</small></span>
       </a>
       <nav aria-label="Main navigation">
+        <a href="#get-started">Get Started</a>
         <a href="#schedule">Class calendar</a>
         <a href="#deadlines">Deadlines</a>
         <a href="#prep">Prep</a>
-        <a href="#resources">Resources</a>
         <a href="#your-ai">Your AI</a>
         <a href="#changes">Updates</a>
       </nav>
@@ -36,7 +36,7 @@
           <h1>One shared source.<br><span class="accent">Your own progress.</span></h1>
           <p class="lead">Course deadlines, useful resources, and changes, organized so you and your AI assistant can stay on the same page.</p>
           <div class="buttons">
-            <a class="btn btn-gold" href="#your-ai">Get your AI started <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-gold" href="#get-started">Set up your EMBA assistant <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="#deadlines">See assignments <span aria-hidden="true">↓</span></a>
           </div>
           <p class="notice-small">No Canvas connection. No individual grades or submissions collected here.</p>
@@ -57,6 +57,41 @@
     </section>
     <div class="container">
       <div class="official-warning" role="note"><span aria-hidden="true">ⓘ</span><div><strong>Official instructions always come first.</strong> This is a peer-maintained planning aid, not a Baylor-operated service. Verify consequential deadlines and AI-use permissions using current course instructions or Canvas.</div></div>
+
+      <section id="get-started" class="section start-section">
+        <div class="section-heading">
+          <div><p class="kicker">START HERE / YOUR OWN EMBA ASSISTANT</p>
+            <h2>Get ready in three steps</h2>
+            <p class="section-desc">The class shares one academic calendar. Your progress stays in your own Google account and private AI conversations. No new Hub account required.</p></div>
+        </div>
+        <div class="starter-grid">
+          <article class="starter-card">
+            <span class="step-number">01</span>
+            <h3>Make your progress Sheet</h3>
+            <p>Open a private copy with 55 assignment IDs, blank status fields and a setup tab. The class template is view-only.</p>
+            <a class="btn btn-gold" href="https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy" target="_blank" rel="noopener noreferrer">Make my own copy ↗</a>
+          </article>
+          <article class="starter-card">
+            <span class="step-number">02</span>
+            <h3>Install your AI assistant</h3>
+            <p>Download the EMBA agent's personality and study-planning rules. Add them to your private ChatGPT or Claude Project.</p>
+            <a class="btn btn-gold" href="/downloads/EMBA-Agent-Instructions.txt" download>Download agent instructions ↓</a>
+            <button id="copy-agent" class="text-button" type="button">Copy full instructions ⧉</button>
+          </article>
+          <article class="starter-card">
+            <span class="step-number">03</span>
+            <h3>Set up and plan your week</h3>
+            <p>Follow your AI platform's guide, test Google Sheets editing, and ask what's due before class.</p>
+            <div class="starter-links">
+              <a href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/SETUP-CHATGPT.md" target="_blank" rel="noopener noreferrer">ChatGPT setup ↗</a>
+              <a href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/SETUP-CLAUDE.md" target="_blank" rel="noopener noreferrer">Claude setup ↗</a>
+            </div>
+            <a class="btn btn-gold" href="/downloads/EMBA-Common-Prompts.txt" download>Download useful prompts ↓</a>
+          </article>
+        </div>
+        <p id="starter-copy-status" class="starter-status" role="status" aria-live="polite"></p>
+        <p class="footnote">AI read/write access to Google Sheets depends on your plan, enabled actions and Google permissions. Test a fictional progress update first. If editing isn't available, update your Sheet manually. Never add personal progress to the class master.</p>
+      </section>
 
       <section id="schedule" class="section">
         <div class="section-heading">
@@ -107,7 +142,7 @@
         </div>
         <div class="notice" id="prep-status" role="status" aria-live="polite">Checking the original reading list…</div>
         <div id="prep-list" class="prep-list" aria-live="polite"></div>
-        <p class="footnote">These are provisional, student-organized references, not a confirmation that the title, requirement, availability, or date remains current. Private Canvas file links and any individual completion information are excluded. QBA module readings and tutorials are now listed; exact preparation dates still require confirmation.</p>
+        <p class="footnote">These are provisional, student-organized references, not a confirmation that the title, requirement, availability, or date remains current. Private Canvas file links and any individual completion information are excluded. QBA module readings and tutorials are linked to class sessions. These dates are for preparation/discussion, not graded submissions.</p>
       </section>
 
       <section id="resources" class="section">
@@ -119,16 +154,16 @@
         <div class="section-heading"><div><p class="kicker">05 / YOUR PERSONAL ASSISTANT</p><h2>Bring the hub into your AI</h2><p class="section-desc">Keep using ChatGPT, Claude, Gemini, or another assistant that can access public GitHub files. No new account for the hub.</p></div></div>
         <div class="ai-grid">
           <div class="ai-instructions">
-            <h3>Start in two steps</h3>
+            <h3>Choose your AI, keep your progress private</h3>
             <ol>
-              <li><strong>Copy the prompt.</strong> Paste it into your own AI conversation, along with the link to this hub.</li>
-              <li><strong>Tell your assistant what's completed.</strong> That information stays in your private conversation, not the shared hub.</li>
+              <li><strong>Install the full instructions.</strong> Use the downloadable personality above, or copy our shorter starter prompt below.</li>
+              <li><strong>Use your own Sheet.</strong> Connect Google Drive if available, test one verified read/write, then ask for a weekly plan.</li>
             </ol>
             <div class="button-group">
-              <button id="copy-prompt" type="button" class="btn btn-gold">Copy AI starter prompt <span aria-hidden="true">⧉</span></button>
-              <a class="btn btn-outline light-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/AGENTS.md">Read AI instructions ↗</a>
+              <button id="copy-prompt" type="button" class="btn btn-gold">Copy quick AI prompt <span aria-hidden="true">⧉</span></button>
+              <a class="btn btn-outline light-outline" target="_blank" rel="noopener noreferrer" href="/downloads/EMBA-Agent-Instructions.txt" download>Full agent personality ↓</a>
             </div>
-            <p id="copy-status" class="helper-text" role="status" aria-live="polite">A capable assistant should check current GitHub files before giving deadline advice.</p>
+            <p id="copy-status" class="helper-text" role="status" aria-live="polite">Set up from the Get Started section and verify connector capabilities on your own plan.</p>
           </div>
           <div class="privacy-panel"><span class="lock" aria-hidden="true">◎</span><h3>Your information remains yours.</h3><p>The public hub contains shared course information, never your individual grades, submissions or study notes. Your private Google Sheet can track personal statuses.</p><p>With an authorized Google Drive connector, capable assistants can update your private Sheet. Verify support on your plan; use a saved private checkpoint only as a fallback.</p><a target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/AGENT-CONTINUITY.md">Read the private continuity guide ↗</a></div>
         </div>
