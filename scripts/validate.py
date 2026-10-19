@@ -4,6 +4,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FILES = ["manifest", "assignments", "prep", "resources", "ai-policies", "lessons-learned", "changes", "open-alerts"]
+PREP_DATE_MEANINGS = {
+    "preparation_or_discussion_date_from_original_tracker_not_necessarily_a_submission_deadline",
+    "class_session_discussion_date_only_NOT_a_canvas_submission_deadline",
+}
 
 
 def validate():
@@ -30,7 +34,7 @@ def validate():
         assert not forbidden.intersection(x), "Private or student-specific prep fields cannot be public"
         assert x.get("verification_status") in {"verified", "needs_verification", "conflicted"}
         assert x.get("course_id") and x.get("module") and x.get("title"), "Prep item missing key metadata"
-        assert x.get("date_meaning") == "preparation_or_discussion_date_from_original_tracker_not_necessarily_a_submission_deadline"
+        assert x.get("date_meaning") in PREP_DATE_MEANINGS, "Prep date must describe preparation or discussion, not a submission deadline"
         assert x.get("due_or_discuss_date") is None or (
             isinstance(x["due_or_discuss_date"], str) and
             len(x["due_or_discuss_date"]) == 10 and x["due_or_discuss_date"][4] == "-"
@@ -41,7 +45,8 @@ def validate():
         if url is not None:
             assert isinstance(url, str) and (
                 url.startswith("https://www.youtube.com/watch?v=") or
-                url.startswith("https://www.mckinsey.com/")
+                url.startswith("https://www.mckinsey.com/") or
+                url.startswith("https://joshdp34.github.io/QBA/")
             ), "Only explicitly public third-party prep links may be published"
     rid = [x["id"] for x in data["resources"]["resources"]]
     assert len(rid) == len(set(rid)), "Duplicate resource ids"
