@@ -16,7 +16,7 @@ test("guided ChatGPT page is concise, accessible without JavaScript, and has a m
   assert.match(page, /Guided setup of your private EMBA study assistant/);
   assert.equal((page.match(/class="guide-step"/g) ?? []).length, 3);
   assert.match(page, /Baylor EMBA · 2028 Cohort/);
-  assert.doesNotMatch(page, /\b(?:ChatGPT|Gemini|Dallas)\b/i);
+  assert.doesNotMatch(page, /\b(?:Claude|Gemini|Dallas)\b/i);
   assert.match(page, /href="\/guides\/chatgpt-manual"/);
   assert.match(manual, /Full written ChatGPT setup guide/);
   assert.match(manual, /Where ChatGPT finds deadlines/);
@@ -36,16 +36,15 @@ test("copy button copies identical bytes from the downloadable prompt", async ()
   assert.ok(page.includes('fetch("' + url + '"'));
   assert.match(prompt, /Reply 'done'/);
   assert.match(prompt, /I handle my own clicks/);
-  assert.match(prompt, /explicitly authorize/);
+  assert.match(prompt, /Wait for an explicit "yes"/);
   assert.match(prompt, /TEST-001/);
   assert.match(prompt, /5\. CONNECT GOOGLE DRIVE TO CHATGPT/);
   assert.match(prompt, /8\. TEST A NEW CHAT AND THE HUB DATES/);
-  assert.match(prompt, /read the TEST-001 Status and Last Updated cells back immediately/);
+  assert.match(prompt, /Read the TEST-001 Status and Last Updated cells back immediately/i);
   assert.doesNotMatch(prompt, /connect Google Drive AND Google Sheets/);
-  assert.match(prompt, /What is due next according to the Hub\?/);
-  assert.match(prompt, /4a\. Get the text to copy\./);
-  assert.match(prompt, /4b\. Save it in the Project\./);
-  assert.match(prompt, /If I say "back"/);
+  assert.match(prompt, /4a\. COPY THE EXACT INSTRUCTIONS/);
+  assert.match(prompt, /4b\. SAVE PROJECT INSTRUCTIONS/);
+  assert.match(prompt, /"back": confirm/);
   assert.match(prompt, /Google Drive app/);
   assert.match(projectInstructions, /raw\.githubusercontent\.com\/martinperrinemp\/baylor-emba-hub\/main\/data\/assignments\.json/);
   let click, written;
@@ -70,7 +69,7 @@ test("copy button copies identical bytes from the downloadable prompt", async ()
 });
 
 test("ChatGPT notes use direct no-JavaScript data, never a placeholder", () => {
-  assert.match(projectInstructions, /CLAUDE-SPECIFIC NOTES/);
+  assert.match(projectInstructions, /THE TWO SOURCES/);
   for (const dataFile of ["assignments.json", "prep.json", "program-calendar.json", "manifest.json", "changes.json"]) {
     assert.ok(projectInstructions.includes("/main/data/" + dataFile), dataFile);
   }
