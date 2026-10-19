@@ -10,7 +10,7 @@ The [guided Claude setup page](https://baylor-emba-proposals.martin-perrine-mp.w
 2. On the [guided page](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude), choose **Copy setup prompt** or download the same [prompt .txt file](../cloudflare/public/downloads/EMBA-Claude-Setup-Prompt.txt). The button fetches that precise file; the prompt is never independently hard-coded into JavaScript.
 3. Open a new chat at [claude.ai](https://claude.ai), paste the setup prompt, and let Claude guide the remaining steps one action at a time.
 4. Within the guided chat, create a Claude Project named **EMBA Planner**, paste the full [project instructions .txt](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt) from the Hub into its **Project instructions** field, and connect Google Drive and Google Sheets to your private Sheet.
-5. Test the fictional `TEST-001` row and read back **Status** and **Last Updated**. Then test retrieval of its status in a new EMBA Planner chat and test a real upcoming date from the current public `assignments.json`. Delete only the fictional row when done.
+5. Explicitly authorize the fictional `TEST-001` save test, checking for an existing ID before writing, and read back **Status** and **Last Updated**. Then supply your private Sheet link and enable the available connectors in a new EMBA Planner chat to test retrieval of its status and test a real upcoming date from the current public `assignments.json`. Delete only the fictional row when done.
 
 On the private Sheet, the **Progress** tab has headings **Assignment, ID, Status, Last Updated** and initially **55 assignment rows**. Blank status is **unconfirmed**. Allowed statuses are: Not started (only when confirmed), In progress, Finished not submitted, Submitted, Blocked. The tracker stores no grades, points, personal names, private Canvas links, or due dates.
 
@@ -21,6 +21,7 @@ On the private Sheet, the **Progress** tab has headings **Assignment, ID, Status
 - [Assignments and deadlines](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/assignments.json)
 - [Readings and preparation](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json)
 - [Class calendar and trips](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/program-calendar.json)
+- [Unresolved alerts](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/open-alerts.json)
 - [Publication state](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/manifest.json)
 - [Changes](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/changes.json)
 
