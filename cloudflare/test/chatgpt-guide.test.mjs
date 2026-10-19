@@ -36,7 +36,7 @@ test("copy button copies identical bytes from the downloadable prompt", async ()
   assert.ok(page.includes('fetch("' + url + '"'));
   assert.match(prompt, /Reply 'done'/);
   assert.match(prompt, /I handle my own clicks/);
-  assert.match(prompt, /Wait for an explicit "yes"/);
+  assert.match(prompt, /May I add one fictional TEST-001 row/);
   assert.match(prompt, /TEST-001/);
   assert.match(prompt, /5\. CONNECT GOOGLE DRIVE TO CHATGPT/);
   assert.match(prompt, /8\. TEST A NEW CHAT AND THE HUB DATES/);
