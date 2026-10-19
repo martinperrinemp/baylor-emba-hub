@@ -1,49 +1,47 @@
 # Set up your EMBA assistant in Claude
 
-**Start here:** [Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started). Follow these steps in a browser. Claude Projects keep your study assistant's rules together; Google Sheets editing uses an additional connection.
+**Baylor EMBA · 2028 Cohort**
 
-**You need:** a Google account and a Claude account. Use your own Google Sheet, not the class's blank master. You do **not** need a GitHub account.
+The [guided Claude setup page](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude) is the recommended beginner pathway. The [full written manual](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude-manual) is the alternative for students who prefer to follow all steps at once.
 
-## 1. Make your private progress Sheet
+## Student flow (about 15 minutes, Chrome on desktop)
 
-Open [Make a copy of the class tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). In Google's copy window, change the name to **EMBA Personal Progress**, then click **Make a copy**. Open your new file and check **Share**: access should be **Restricted**. You will see 55 assignment rows with blank Status cells.
+1. Make a private [copy of the approved 55-assignment tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy), name it **EMBA Personal Progress**, and verify **Share → Restricted**. Do not edit the class template.
+2. On the [guided page](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude), choose **Copy setup prompt** or download the same [prompt .txt file](../cloudflare/public/downloads/EMBA-Claude-Setup-Prompt.txt). The button fetches that precise file; the prompt is never independently hard-coded into JavaScript.
+3. Open a new chat at [claude.ai](https://claude.ai), paste the setup prompt, and let Claude guide the remaining steps one action at a time.
+4. Within the guided chat, create a Claude Project named **EMBA Planner**, paste the full [project instructions .txt](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt) from the Hub into its **Project instructions** field, and connect Google Drive and Google Sheets to your private Sheet.
+5. Explicitly authorize the fictional `TEST-001` save test, checking for an existing ID before writing, and read back **Status** and **Last Updated**. Then supply your private Sheet link and enable the available connectors in a new EMBA Planner chat to test retrieval of its status and test a real upcoming date from the current public `assignments.json`. Delete only the fictional row when done.
 
-## 2. Copy the assistant instructions
+On the private Sheet, the **Progress** tab has headings **Assignment, ID, Status, Last Updated** and initially **55 assignment rows**. Blank status is **unconfirmed**. Allowed statuses are: Not started (only when confirmed), In progress, Finished not submitted, Submitted, Blocked. The tracker stores no grades, points, personal names, private Canvas links, or due dates.
 
-On the [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started), under Step 2, click **Or copy full text**. That copies the assistant's personality and rules. Prefer a file instead? Download the [instruction .txt file](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/downloads/EMBA-Agent-Instructions.txt), open it, and copy all the text. It is **not** software to install.
+## Source of truth and date fetching
 
-## 3. Create a Claude Project and install the instructions
+**Public course data** is in the versioned GitHub JSON files, not the JavaScript-rendered Hub landing page:
 
-Open [Claude Projects](https://claude.ai/projects), sign in, and click **+ New Project**. Name it **EMBA Planner**. Inside the project, find **Set project instructions** (in the project's knowledge area). **Paste the copied text from Step 2** and choose **Save instructions**. Start a chat **inside this project**. Putting the text only in the Project description will not work.
+- [Assignments and deadlines](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/assignments.json)
+- [Readings and preparation](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json)
+- [Class calendar and trips](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/program-calendar.json)
+- [Unresolved alerts](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/open-alerts.json)
+- [Publication state](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/manifest.json)
+- [Changes](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/changes.json)
 
-## 4. Connect Google Drive AND Google Sheets
+The public Worker also exposes read-only `/api/public/*.json` endpoints. The private Sheet stores statuses only; match public and private rows by exact stable assignment ID. Ignore records marked `record_status: superseded_aggregate`. Use `official_due_at` when present and otherwise `submission_due_at`, noting `presentation_at` separately. These fields are currently provisional and must never be presented as Canvas-verified without evidence. Preparation/discussion dates are not automatically submission deadlines. `student_action_required: false` records are not student submissions.
 
-In the Claude chat, click **+** → **Connectors**. Turn on **Google Drive** to find your file and **Google Sheets** for live editing, if available. Sign in with the Google account that owns your copy and approve permissions. These are **separate connectors**, so Drive access by itself may only let Claude read.
+The Sheet has no date columns, so it cannot reveal changed deadlines. Detect those only from an earlier Hub snapshot or an actual recorded change. If current Hub data cannot be fetched, disclose that plainly and rely on Canvas and instructors as authoritative sources.
 
-## 5. Find your own copy
+## Safety and usability
 
-In your Project chat, ask: *“Find my Google Sheet EMBA Personal Progress and read the headings on its Progress tab. Do not edit.”* If needed, paste the link to **your private copied Sheet** into the chat; Claude can open supported Google Sheets in a side pane. Make sure you see the four headings, not somebody else's file.
+- Claude’s automated Sheet edits and readbacks depend on a working authorized connector. Its ability to perform the edit is **not guaranteed** by the Free or paid plan. Students can update statuses manually while Claude helps plan.
+- The guided chat must require a reply before moving on. The user handles screen clicks/sign-ins, while Claude can use an authorized Google Sheet connector for exactly the private Sheet the user supplies and for edits they approve.
+- “Saved” is allowed only after reading back the exact edited cells. Past-due blank statuses are **unconfirmed**, not automatically late or completed. Never infer a submission.
+- The Hub and GitHub are public; never send a filled-in private Sheet there.
+- Current Canvas/syllabi/instructor instructions outrank shared metadata and determine permitted AI use.
+- All global Hub naming changes and live master Sheet template edits remain deferred until approved separately.
 
-## 6. Test the update
+## Release acceptance checks
 
-Use the fictional test prompt below. Claude may ask you to approve an edit. Verify TEST-001 in the actual Sheet, then start a **new Project chat** and ask for its saved status. For live editing, Claude currently supports its web file pane in **Chrome** (and supported Claude Desktop setups). If Google Sheets editing is missing, use your Sheet manually instead.
+The draft PR must include all three static pages/files: `cloudflare/public/guides/claude.html` (guided), `claude-manual.html` (manual), and `cloudflare/public/downloads/EMBA-Claude-Setup-Prompt.txt` (sole prompt source). Both the **Copy setup prompt** button and the download link must use that same file. The page must be readable without JavaScript; the only JavaScript-dependent action is copying to clipboard.
 
-## 7. Start the weekly plan
+Before declaring onboarding working, manually test a fresh Claude Free and Pro session in Chrome: guided chat pauses after each action, 55 rows/four headings verified, TEST-001 written/read back, new Project chat returns its saved status, `assignments.json` returns real upcoming (unverified) dates with no superseded aggregates, fictional row removed, manual fallback works, and mobile troubleshooting table is readable. Correct UI labels based on what live Claude actually displays.
 
-Ask the weekly planning question below. Later, tell Claude when you've really submitted something; trust “saved” only after checking your private Sheet.
-
-## Copy/paste test question
-
-> In MY private Google Sheet named EMBA Personal Progress, add one fictional row named "Test only" with ID TEST-001, then set Status to "In progress" and Last Updated to the current date and time. Read those two cells back and tell me if the edit really saved. Do not change any real assignments or the publicly shared class template.
-
-## First weekly planning question
-
-> What do I need to complete before our next class weekend? Check the latest EMBA Hub deadlines and readings. Use my private Sheet for confirmed progress, and flag any unverified dates.
-
-## If you get stuck
-
-Claude Projects are available on Free, but live Sheet editing features can vary by account and beta rollout. The optional Claude sidebar inside Google Sheets is a different, paid-plan extension. You do not need to install that extension to try Claude's chat connectors. If connecting or updating fails, you can still ask for a plan and change your own Google Sheet manually. The assistant must not say “saved” unless it can read the new value back. **Canvas and instructors have the official deadlines.**
-
-[Claude's official Google Workspace connection guide](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors) · [Return to EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started)
-
-*Independent student-run tool, not a Baylor-operated service.*
+**Independent student-run resource, not operated by Baylor University.**
