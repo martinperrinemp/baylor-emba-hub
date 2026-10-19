@@ -1,49 +1,31 @@
 # Set up your EMBA assistant in ChatGPT
 
-**Start here:** [Dallas EMBA Cohort Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started). Follow these steps in a browser. No GitHub experience required. ChatGPT Projects keep your assistant's instructions and conversations together.
+**Baylor EMBA · 2028 Cohort**
 
-**You need:** a Google account and a ChatGPT account. Use your own Google Sheet, not the class's blank master. You do **not** need a GitHub account.
+Use the [guided ChatGPT setup page](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt) for beginner-friendly, one-action-at-a-time onboarding. If you prefer to follow written directions without a chat assistant, use the [full written ChatGPT setup guide](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt-manual).
 
-## 1. Make your private progress Sheet
+## The guided path
 
-Open [Make a copy of the class tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy). In Google's copy window, change the name to **EMBA Personal Progress**, then click **Make a copy**. Open your new file and check **Share**: access should be **Restricted**. You will see 55 assignment rows with blank Status cells.
+1. Make your own [private copy of the approved class tracker](https://docs.google.com/spreadsheets/d/1PmvyTZAUdKsK27lK45FF8lXPSCMwpctZ-Cuy4_17bwc/copy), rename it **EMBA Personal Progress**, and check **Share → Restricted**. Never edit the public class template or share your filled tracker with classmates.
+2. On the [ChatGPT setup page](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt), select **Copy setup prompt**. If copying isn't supported, download the same [EMBA-ChatGPT-Setup-Prompt.txt](../cloudflare/public/downloads/EMBA-ChatGPT-Setup-Prompt.txt). The button, download and prompt preview all use that single plain-text file.
+3. Paste the prompt into a **new ordinary ChatGPT chat**, not into Project instructions. ChatGPT will walk through setup and wait for your replies (`done`, `stuck`, `back`).
+4. ChatGPT will help you create a **private Project named EMBA Planner** and put the separate permanent [EMBA-Agent-Instructions.txt](../cloudflare/public/downloads/EMBA-Agent-Instructions.txt) into the Project's **Project settings → Instructions** field. These are different from the temporary setup prompt.
+5. If available to your plan and account, connect **Google Drive** through Settings → Plugins (or Apps in some versions). Supported Google Docs/Sheets/Slides actions are available through Google Drive. Review OAuth permissions. **A connected account does not guarantee live Sheet edits**.
+6. Provide only your private Sheet's URL in the private chat. Read its `START HERE` and `Progress` tabs. The starter has **55 assignment rows** under **Assignment | ID | Status | Last Updated**; later rows may exist. Blank progress means unconfirmed.
+7. Only after explicit permission, test a fictional **TEST-001** row, reading back both `Status` and a real `Last Updated` timestamp. Verify it in a fresh EMBA Planner chat using the live Sheet, and test date retrieval against the public Hub. Ask permission before deleting the test row and verify the exact ID was removed.
 
-## 2. Copy the assistant instructions
+## Academic and personal data boundaries
 
-On the [EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started), under Step 2, click **Or copy full text**. That copies the assistant's personality and rules. Prefer a file instead? Download the [instruction .txt file](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/downloads/EMBA-Agent-Instructions.txt), open it, and copy all the text. It is **not** software to install.
+The **public GitHub catalog** supplies coursework details, while the **private Sheet** supplies personal progress, matched by exact assignment ID. The Sheet does **not** contain deadlines and cannot tell you whether a deadline changed. Canvas and instructors have final authority, and unverified Hub records must be flagged.
 
-## 3. Create your ChatGPT Project
+For dates without JavaScript, assistants should open [assignments.json](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/assignments.json), [prep.json](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json), [manifest.json](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/manifest.json), and [open-alerts.json](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/open-alerts.json). Ignore records marked `record_status=superseded_aggregate`; dates associated with class preparation are not automatically graded submission deadlines.
 
-Open [ChatGPT](https://chatgpt.com/), sign in, and select **New project** in the left sidebar. Name it **EMBA Planner**. Open the project, choose the **•••** menu → **Project settings**, and find **Instructions**. **Paste the text from Step 2** and save. Start a **new chat inside this project**, not on ChatGPT's home screen.
+Allowed personal statuses: **Not started** (when confirmed), **In progress**, **Finished not submitted**, **Submitted**, **Blocked**. No grades, points, personal names or Canvas private links belong in the Sheet or public Hub. Never infer submissions. Never claim "saved" without rereading the live changed cells. If Google Drive access/write permissions aren't available, you can update your own Sheet manually and still use your Project for planning.
 
-## 4. Connect your own Google Drive
+Resources: [OpenAI Projects](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) · [Google Drive app setup](https://help.openai.com/en/articles/10929079-google-drive-app-and-setup-in-chatgpt) · [Connected apps](https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt).
 
-In ChatGPT, open **Settings → Plugins** (sometimes called **Apps**). Find **Google Drive**, choose **Connect**, and sign in to the Google account that owns your copied Sheet. Review the permissions. If prompted in your Project chat, select Google Drive from the **+** tools menu.
+## QA prior to public rollout
 
-## 5. Make sure it found the right Sheet
+Confirm the guided page shows 3 steps and is usable without JavaScript (except clipboard). On Free and at least one paid ChatGPT account, verify the actual Project UI, Google Drive availability, private read and optional write/read-back, a fresh Project chat's TEST-001 retrieval, its cleanup, and real Hub date retrieval. Do not treat a file preview, tool connection, or written prompt as evidence that live writing works. Note and use the manual fallback where necessary.
 
-In your **EMBA Planner Project chat**, ask: *“Find my Google Sheet named EMBA Personal Progress. Read the Progress tab headings. Do not edit anything.”* It should report **Assignment, ID, Status, Last Updated**. If it finds the class template instead, paste the URL of **your own private copy** in that private chat.
-
-## 6. Test one pretend update
-
-Ask your assistant to run the test below. Then open your private Sheet in Google to check the new row yourself. Start **another chat inside the Project** and ask it to read TEST-001 again. If it cannot write or read back, it is **not connected for automatic updates**. You can still use the planner and update your own Sheet manually.
-
-## 7. Start your weekly planning
-
-Ask the weekly planning question below. Use this same Project for school questions and tell it when you actually submit assignments. Always check Canvas for official deadlines.
-
-## Copy/paste test question
-
-> In MY private Google Sheet named EMBA Personal Progress, add one fictional row named "Test only" with ID TEST-001, then set Status to "In progress" and Last Updated to the current date and time. Read those two cells back and tell me if the edit really saved. Do not change any real assignments or the publicly shared class template.
-
-## First weekly planning question
-
-> What do I need to complete before our next class weekend? Check the latest EMBA Hub deadlines and readings. Use my private Sheet for confirmed progress, and flag any unverified dates.
-
-## If you get stuck
-
-Google Drive availability and write permissions depend on your account and plan; paying does not automatically enable spreadsheet edits. Do not share your ChatGPT Project or your completed Sheet with the cohort. If connecting or updating fails, you can still ask for a plan and change your own Google Sheet manually. The assistant must not say “saved” unless it can read the new value back. **Canvas and instructors have the official deadlines.**
-
-[ChatGPT's official Project instructions](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) · [Return to EMBA Hub](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/#get-started)
-
-*Independent student-run tool, not a Baylor-operated service.*
+*Independent, student-run Baylor EMBA, 2028 Cohort resource. Not operated by Baylor University.*
