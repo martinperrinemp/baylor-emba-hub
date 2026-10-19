@@ -35,7 +35,12 @@ test("copy button copies identical bytes from the downloadable prompt", async ()
   assert.ok(page.includes('src="' + url + '"'));
   assert.ok(page.includes('fetch("' + url + '"'));
   assert.match(prompt, /Reply 'done'/);
-  assert.match(prompt, /raw\.githubusercontent\.com\/martinperrinemp\/baylor-emba-hub\/main\/data\/assignments\.json/);
+  assert.match(prompt, /What is due next according to the Hub\?/);
+  assert.match(prompt, /4a\. Get the text to copy\./);
+  assert.match(prompt, /4b\. Save it in the Project\./);
+  assert.match(prompt, /If I say "back"/);
+  assert.match(prompt, /Google Drive and Google Sheets both show as on/);
+  assert.match(projectInstructions, /raw\.githubusercontent\.com\/martinperrinemp\/baylor-emba-hub\/main\/data\/assignments\.json/);
   let click, written;
   const button = {disabled:false, addEventListener(event, listener) {
     assert.equal(event, "click"); click = listener;
