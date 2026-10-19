@@ -58,6 +58,26 @@ Delete the TEST-001 row, or ask Claude to. Then ask:
 
 **Check:** TEST-001 is gone. For real submissions tell Claude “I submitted the MGT 5311 Engagement Reflection,” and check the resulting Sheet edit. Your copied Sheet is a snapshot; it does **not** auto-sync. When new assignments appear on the Hub, ask Claude to add them.
 
+## How Claude finds the current dates
+
+The Hub home page loads its deadline cards with JavaScript. Claude might receive “Checking…” placeholders rather than actual records. It should read public source data directly, without executing JavaScript:
+
+- [Assignment submission deadlines](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/assignments.json): submission_due_at; presentation_at where present.
+- [Readings and preparation](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json): due_or_discuss_date is not necessarily a submission deadline.
+- [Class schedule](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/program-calendar.json): session dates.
+- [Publication state](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/manifest.json): current knowledge_revision.
+- [Approved changes](https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/changes.json): published changes where available.
+
+There is also a [Hub-hosted assignments JSON endpoint](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/api/public/assignments.json) as a fallback if Claude cannot access the raw GitHub file. These URLs expose public course data only; your personal Google Sheet remains private.
+
+**Important:** The personal Sheet has assignment IDs and statuses, not dates. Match IDs to identify new or unmatched assignments. To determine whether a deadline changed, Claude needs a previously saved Hub snapshot or an actual change record; comparing against the status-only Sheet cannot reveal date changes. Most current assignment and prep records are provisional, so confirm with Canvas/instructors.
+
+**Optional Claude project instruction addendum:**
+
+> When planning my EMBA work, read current public source files directly: https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/assignments.json for due dates and https://raw.githubusercontent.com/martinperrinemp/baylor-emba-hub/main/data/prep.json for readings. Use program-calendar.json for class sessions, and manifest.json plus changes.json for publication and changes. Do not use "Checking..." placeholders on the Hub webpage as evidence. My private EMBA Personal Progress Sheet owns Status and Last Updated, not deadlines. Match IDs exactly, ask before adding or modifying rows, and never invent an update. A changed due date needs an earlier Hub version or an actual change record; do not claim to detect changes by comparing dates with my status-only Sheet. Mark provisional dates as unverified, and defer to Canvas and instructors.
+
+**Check:** In a new chat inside EMBA Planner, ask: “From the current public assignments.json file, what is the next upcoming submission deadline? Give its title, Central time, and verification status. Do not use the Hub homepage’s loading text.” Claude should cite a real record rather than a placeholder.
+
 ## If something goes wrong
 
 | Problem | Fix |
