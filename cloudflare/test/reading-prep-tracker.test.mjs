@@ -48,6 +48,8 @@ test("existing ChatGPT and Claude setups gain reading checks without losing assi
     assert.match(prompt, /Last Updated/);
     assert.match(prompt, /approval|permission/);
   }
+  assert.match(chatgpt, /If the Instructions field rejects the full file/);
+  assert.match(claude, /does not fit in the Claude Project Instructions field/);
   assert.match(chatgpt, /Three tabs: START HERE, Progress, and Reading & Prep/);
   assert.match(claude, /three tabs: START HERE, Progress, and Reading & Prep/);
 });
