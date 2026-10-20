@@ -1,4 +1,12 @@
-# Set up your EMBA assistant in Google Gemini
+# Gemini integration (currently unsupported)
+
+**October 20, 2026:** The cohort owner tested Gemini and found it could not reliably access live Hub assignment JSON/CSV URLs or maintain personal progress in Google Sheets. Uploading a CSV manually worked, but does not prove a reliable live feed. **Do not recommend Gemini as a working EMBA Planner setup.** Use the [tested ChatGPT guide](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/chatgpt) or the [tested Claude guide](https://baylor-emba-proposals.martin-perrine-mp.workers.dev/guides/claude) instead (the owner tested Claude Free).
+
+The earlier Gemini setup notes below are **archived for reference, not supported onboarding instructions**. The original files are retained to avoid breaking historical GitHub links. Do not claim Gemini can reliably update the student's private Sheet.
+
+---
+
+# Set up your EMBA assistant in Google Gemini (archived)
 
 **Baylor EMBA · 2028 Cohort**
 
