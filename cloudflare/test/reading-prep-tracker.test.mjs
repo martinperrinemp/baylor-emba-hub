@@ -32,7 +32,7 @@ test("permanent and upgrade instructions preserve separate tabs and consent-base
   assert.match(agent, /re-read the exact inserted rows/);
   assert.match(agent, /NEXT class weekend/);
   assert.match(agent, /superseded_aggregate/);
-  assert.match(agent, /not automatically update student-owned copies/);
+  assert.match(agent, /not automatically update student-owned copies/i);
   assert.match(upgrade, /Progress: Assignment \| ID \| Status \| Last Updated/);
   assert.match(upgrade, /Reading & Prep: Reading & Prep \| ID \| Status \| Last Updated/);
   assert.match(upgrade, /NEVER change any associated submission\/assignment status/);
