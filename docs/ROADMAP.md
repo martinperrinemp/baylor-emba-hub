@@ -4,6 +4,8 @@
 
 **Platform update (October 20, 2026):** The owner tested both ChatGPT and Claude end-to-end in the specified onboarding setups; Claude Free also worked. Gemini is **unsupported** after failed live academic data retrieval and unreliable private Google Sheet updates. The public Hub promotes ChatGPT and Claude only; the old Gemini page displays an unsupported notice. Gemini documentation is kept for historical reference, not recommended to students. Independently verify coursework dates against Canvas; the published Fall records remain provisional and `knowledge_revision` remains 0. The GitHub correction form remains available, and Cloudflare proposal intake is paused.
 
+**Reading & Prep extension (October 20, 2026):** The shared blank Sheet and owner private tracker now have START HERE, Progress and Reading & Prep tabs. The new tab contains 104 distinct prep IDs from `data/prep.json`, all with blank personal statuses. Existing classmate copies do not update automatically. New ChatGPT/Claude planning instructions require fresh per-session public-ID comparisons, approval before appending blank rows, and an explicit manual fallback. See [Reading & Semester Rollover](READING-AND-SEMESTER-ROLLOVER.md). This extension requires real-platform acceptance tests before being labeled cohort-tested.
+
 ## Priority roadmap
 
 | Priority | Initiative | What success looks like |
@@ -13,7 +15,7 @@
 | **3** | **Cohort Tips & Resources knowledge base** | Students propose practical study tips, tools and links; owner reviews and publishes source-attributed, topic/course-tagged records for the website and AI. |
 | **4** | **Student Deals & Benefits** | A separate AI-readable listing includes offer link, eligibility, discount/benefit, checked-on and expiry dates, renewal caveats, and clear active/expired/unverified status. Members can propose deals for owner review. |
 | **5** | **Reorganize the homepage** | Order: **Get Started → Announcements & Discord → Tips & Resources → Student Deals → Academic Reference → Submit a Contribution**. Move dense class/reading/assignment lists lower, but keep public files and source-aware AI access. |
-| **6 (before Spring 2027)** | **Semester rollover** | Reuse this Hub/repository. Import new syllabi and course dates, publish a new blank progress Sheet, preserve old terms, and give each student a new semester-specific AI Project/Gem. |
+| **6 (before Spring 2027)** | **Semester rollover** | Reuse this Hub/repository AND each student's existing private Project and Google Sheet. Import new syllabi, assignments, prep and course dates into existing canonical catalogs with stable IDs, refresh the blank starter for NEW students, preserve old terms, and let existing students approve missing-ID additions after a fresh per-session reconciliation (no background sync). |
 
 ## Submission and safety principles
 
