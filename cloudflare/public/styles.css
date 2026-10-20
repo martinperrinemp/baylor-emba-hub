@@ -76,6 +76,7 @@
 .starter-card p strong{color:#25513a}
 .setup-guide-actions{display:flex;flex-direction:column;gap:8px;width:100%}
 .setup-guide-actions .btn{width:100%;margin:0}
+.setup-guide-actions .platform-note{flex-grow:0;margin:3px 0 0;padding:12px 14px;background:#f2f4f2;border:1px solid #dce5dc;border-radius:6px;color:#42574a;font-size:12px;line-height:1.55;text-align:left}
 .starter-card .extra-download{display:inline-block;font-size:12px;color:#225e4b;font-weight:750;text-align:center;align-self:center;margin-top:5px}
 @media(max-width:570px){.starter-plan-note{margin-bottom:15px;padding:14px}.setup-guide-actions{gap:10px}}
 
