@@ -2,7 +2,7 @@
 
 **Updated: October 17, 2026.** The Hub is an unofficial, student-led resource for the Baylor MBA in Dallas Class of 2028. It will become an **AI-first cohort resource center**: assistants plan each student's week from shared public sources and the student's own private progress Sheet; the website emphasizes announcements, useful contributions, and student benefits.
 
-**Status today:** Baylor-themed public site, Fall assignments/readings/calendar, copyable blank progress Sheet, and ChatGPT/Claude/Gemini beginner guides are built. Pilot invitations sent to a few classmates; independent results pending. Course records are student-supplied and not independently approved; `knowledge_revision` remains 0. The public GitHub correction form exists; Cloudflare no-login intake is paused.
+**Platform update (October 20, 2026):** The owner tested both ChatGPT and Claude end-to-end in the specified onboarding setups; Claude Free also worked. Gemini is **unsupported** after failed live academic data retrieval and unreliable private Google Sheet updates. The public Hub promotes ChatGPT and Claude only; the old Gemini page displays an unsupported notice. Gemini documentation is kept for historical reference, not recommended to students. Independently verify coursework dates against Canvas; the published Fall records remain provisional and `knowledge_revision` remains 0. The GitHub correction form remains available, and Cloudflare proposal intake is paused.
 
 ## Priority roadmap
 
