@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "knowledge_revision": 1,
+  "knowledge_revision": 2,
   "updated_at": "2026-10-21",
-  "last_approved_change_id": "2026-10-21-historical-bulk-verification",
+  "last_approved_change_id": "2026-10-21-future-checklist-confirmation",
   "open_urgent_alert_count": 0,
-  "status": "historical_fall_2026_student_attested_future_records_pending_verification",
-  "notes": "Historical records dated before Oct 21, 2026 received retrospective enrolled maintainer sign-off (29 active assignments and 73 prep entries), not independent live Canvas verification. Future 26 assignments and 31 prep entries remain unverified. Three superseded QBA aggregate assignments remain provisional and archived. Prep dates indicate session/discussion targets, not Canvas submission deadlines. Cohort progress, submissions, grades and restricted course materials stay private. Current syllabus, Canvas and instructors supersede this student-maintained catalog. Public proposal intake remains paused."
+  "status": "fall_2026_active_assignment_and_prep_catalog_student_attested",
+  "notes": "Fall 2026 class-wide assignment/reading catalog is student-attested (Oct 21, 2026) from historical and future checklist reviews. 55 active assignments and 104 prep records now verified by an enrolled student; no independent live Canvas integration or ongoing synchronization. Midterm Exam grouped in QBA Module 3; Final Exam in QBA Module 6 (stable IDs preserved). Three superseded aggregated QBA quiz placeholders remain provisional and hidden. Reading/prep date fields describe preparation/discussion targets, NOT submission deadlines. Current Canvas/syllabi/instructor instructions supersede this unofficial shared catalog. No personal grades or progress included. Three provisional AI policies remain unapproved; public proposal intake is paused."
 }

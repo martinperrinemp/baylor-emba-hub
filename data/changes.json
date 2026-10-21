@@ -118,6 +118,93 @@
         "qba-5330-module-3-12-access-the-case-study-articles-using-the-instr"
       ],
       "deadline_policy": "Only actual assignment submission/presentation deadlines for assignments. Prep entries retain distinct class/preparation dates; no personal completion or submission data was published."
+    },
+    {
+      "id": "2026-10-21-future-checklist-confirmation",
+      "knowledge_revision": 2,
+      "date": "2026-10-21",
+      "change_type": "student_attestation_and_module_correction",
+      "status": "approved_by_enrolled_repository_maintainer",
+      "source_type": "student_attestation",
+      "summary": "Enrolled student confirmed all listed dates on future Fall 2026 checklist. Corrected QBA Midterm Exam grouping to Module 3 and QBA Final Exam grouping to Module 6. No deadline values or stable IDs changed. Student-confirmed, not independently re-audited against current Canvas.",
+      "assignment_count": 26,
+      "prep_count": 31,
+      "assignment_ids": [
+        "mgt-5311-module-3-ethics-questionnaire",
+        "mgt-5311-module-3-virtual-discussion-board-initial-post",
+        "qba-5330-module-2-module-2-deliverable",
+        "qba-5330-midterm-midterm-exam",
+        "mgt-5311-module-3-virtual-discussion-board-replies",
+        "mgt-5311-module-4-360-leadership-surveys",
+        "qba-5330-week-10-regression-diagnostics-readiness",
+        "qba-5330-week-11-logistic-regression-readiness",
+        "qba-5330-week-8-simple-regression-readiness",
+        "qba-5330-week-9-multiple-regression-readiness",
+        "mgt-5311-module-4-video-quiz-m4",
+        "mgt-5311-module-4-engagement-reflection",
+        "mgt-5311-module-5-readings-m5-quiz",
+        "mgt-5311-module-5-engagement-reflection",
+        "mgt-5311-module-5-virtual-discussion-board-initial-post",
+        "qba-5330-module-4-module-4-deliverable",
+        "mgt-5311-module-5-virtual-discussion-board-replies",
+        "qba-5330-week-12-forecasting-readiness-quiz",
+        "mgt-5311-module-6-book-chapter-takeaways-for-discussion",
+        "mgt-5311-module-6-ethics-failure-presentation",
+        "qba-5330-week-13-linear-optimization-readiness-quiz",
+        "mgt-5311-module-6-engagement-reflection",
+        "ent-5342-course-close-course-evaluation-completion",
+        "qba-5330-final-final-exam",
+        "qba-5330-module-5-module-5-deliverable",
+        "mgt-5311-culminating-leadership-self-reflection-paper"
+      ],
+      "prep_ids": [
+        "mgt-5311-module-4-32-gill-gilliland-2026-how-the-best-leaders-respond",
+        "mgt-5311-module-4-33-epley-kumar-2019-how-to-design-an-ethical-org",
+        "mgt-5311-module-4-34-neubert-chapter-4",
+        "mgt-5311-module-4-35-neubert-chapter-6",
+        "mgt-5311-module-4-36-neubert-montanez-2020-virtue-as-a-framework",
+        "mgt-5311-module-4-37-watch-steve-angel-video-lecture",
+        "mgt-5311-module-5-38-dixon-2018-reinventing-customer-service",
+        "mgt-5311-module-5-39-clark-t-2026-how-to-avoid-a-false-start",
+        "mgt-5311-module-5-40-neubert-chapter-15",
+        "mgt-5311-module-5-41-neubert-chapter-7-pp-146-156",
+        "mgt-5311-module-5-42-optional-video-canvas-video-15-minutes",
+        "mgt-5311-module-5-43-thakor-quinn-2018-creating-a-purpose-driven-org",
+        "mgt-5311-module-5-44-blocker-cannon-zhang-2025-are-your-company-s",
+        "mgt-5311-module-6-45-galanski-2026-inspire",
+        "qba-5330-module-4-01-week-8-correlation-and-the-least-squares-line",
+        "qba-5330-module-4-02-r-tutorial-anova-f-test-and-tukey-hsd-post-hoc",
+        "qba-5330-module-4-03-week-8-interpreting-simple-regression-output",
+        "qba-5330-module-4-04-week-9-multiple-linear-regression",
+        "qba-5330-module-4-05-r-tutorial-anova-f-test-and-tukey-hsd-post-hoc",
+        "qba-5330-module-4-06-week-9-categorical-predictors-in-regression",
+        "qba-5330-module-4-07-week-10-regression-diagnostics",
+        "qba-5330-module-4-08-r-tutorial-anova-f-test-and-tukey-hsd-post-hoc",
+        "qba-5330-module-4-09-week-10-prediction-intervals-and-model-limitat",
+        "qba-5330-module-4-10-week-11-introduction-to-logistic-regression",
+        "qba-5330-module-4-11-r-tutorial-anova-f-test-and-tukey-hsd-post-hoc",
+        "qba-5330-module-4-12-week-11-interpreting-and-using-logistic-regres",
+        "qba-5330-module-5-01-week-12-time-series-structure-trend-seasonalit",
+        "qba-5330-module-5-02-week-12-moving-averages-and-exponential-smooth",
+        "qba-5330-module-5-03-week-12-regression-based-forecasting-accuracy-",
+        "qba-5330-module-6-01-week-13-introduction-to-linear-optimization",
+        "qba-5330-module-6-02-week-13-binding-constraints-slack-and-sensitiv"
+      ],
+      "field_corrections": [
+        {
+          "assignment_id": "qba-5330-midterm-midterm-exam",
+          "field": "module",
+          "old_value": "Midterm",
+          "new_value": "Module 3"
+        },
+        {
+          "assignment_id": "qba-5330-final-final-exam",
+          "field": "module",
+          "old_value": "Final",
+          "new_value": "Module 6"
+        }
+      ],
+      "limitations": "Shared course metadata only, not private completion or submission status. Prep dates are course preparation/class discussion dates. Three archived superseded QBA placeholders stay provisional."
     }
   ]
 }
