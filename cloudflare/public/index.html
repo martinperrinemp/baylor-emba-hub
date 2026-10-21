@@ -22,7 +22,6 @@
         <a href="#schedule">Class calendar</a>
         <a href="#deadlines">Deadlines</a>
         <a href="#prep">Prep</a>
-        <a href="#your-ai">Your AI</a>
         <a href="#changes">Updates</a>
       </nav>
     </div>
@@ -61,7 +60,7 @@
       <section id="get-started" class="section start-section">
         <div class="section-heading">
           <div><p class="kicker">START HERE / YOUR OWN EMBA ASSISTANT</p>
-            <h2>Get ready in three steps</h2>
+            <h2>Get ready in two steps</h2>
             <p class="section-desc">One shared academic calendar, your own private Google Sheet, and a personal AI assistant in ChatGPT or Claude. No separate Hub account required.</p></div>
         </div>
         <p class="starter-plan-note"><strong>Supported platforms:</strong> ChatGPT and Claude have been tested with our cohort setup. Claude also worked on a tested Free account. A paid plan can offer higher limits, but you can still update your private Sheet manually when connected editing is unavailable.</p>
@@ -74,13 +73,6 @@
           </article>
           <article class="starter-card">
             <span class="step-number">02</span>
-            <h3>Download the agent text</h3>
-            <p><strong>This is a plain .txt instruction file, not an app to install.</strong> Download it now. During Step 3, paste its entire contents into your ChatGPT or Claude <strong>Project instructions</strong> to give your assistant its personality and rules.</p>
-            <a class="btn btn-gold" href="/downloads/EMBA-Agent-Instructions.txt" download>Download instruction .txt ↓</a>
-            <button id="copy-agent" class="text-button" type="button">Copy full text ⧉</button>
-          </article>
-          <article class="starter-card">
-            <span class="step-number">03</span>
             <h3>Set up your AI assistant</h3>
             <p>Pick your platform and follow the <strong>simple, step-by-step guide</strong>. No GitHub account or previous AI setup experience needed. You'll learn where to paste your instructions, connect your Sheet, and check that an update saved.</p>
             <div class="setup-guide-actions">
@@ -88,11 +80,8 @@
               <a class="btn btn-gold" href="/guides/claude.html" target="_blank" rel="noopener noreferrer">Set up Claude (guided) ↗</a>
               <p class="platform-note"><strong>Gemini: Unsupported for now.</strong> Our pilot could not reliably access live coursework sources or maintain private Google Sheet progress. Use ChatGPT or Claude instead.</p>
             </div>
-            <a class="extra-download" href="/downloads/EMBA-Common-Prompts.txt" download>Optional: download example prompts ↓</a>
           </article>
         </div>
-        <p class="footnote"><strong>Already set up?</strong> Keep your existing EMBA Planner Project and private Sheet. The starter now has three tabs: START HERE, Progress, and Reading &amp; Prep. Old personal copies do not update automatically. <a href="/downloads/EMBA-Reading-Upgrade.txt" download>Get the Reading &amp; Prep upgrade instructions ↓</a> to add the tab safely and compare new assignment and reading IDs at each planning session.</p>
-        <p id="starter-copy-status" class="starter-status" role="status" aria-live="polite"></p>
         <p class="footnote">Before trusting automatic status updates, have your AI change a fictional test row in YOUR Sheet, then verify both Status and Last Updated from a fresh conversation. If direct editing isn't available on your tested ChatGPT or Claude account, update your private Sheet manually. Actual course deadlines and AI-use rules always come from Canvas and your instructor.</p>
       </section>
 
@@ -153,33 +142,8 @@
         <div id="resource-list" class="cards"></div>
       </section>
 
-      <section id="your-ai" class="section ai-section">
-        <div class="section-heading"><div><p class="kicker">05 / YOUR PERSONAL ASSISTANT</p><h2>Bring the hub into your AI</h2><p class="section-desc">Use the tested ChatGPT or Claude setup to access the public Hub. Gemini is not currently supported. No separate Hub account is needed.</p></div></div>
-        <div class="ai-grid">
-          <div class="ai-instructions">
-            <h3>Choose your AI, keep your progress private</h3>
-            <ol>
-              <li><strong>Install the full instructions.</strong> Use the downloadable personality above, or copy our shorter starter prompt below.</li>
-              <li><strong>Use your own Sheet.</strong> Connect Google Drive if available, test one verified read/write, then ask for a weekly plan.</li>
-            </ol>
-            <div class="button-group">
-              <button id="copy-prompt" type="button" class="btn btn-gold">Copy quick AI prompt <span aria-hidden="true">⧉</span></button>
-              <a class="btn btn-outline light-outline" target="_blank" rel="noopener noreferrer" href="/downloads/EMBA-Agent-Instructions.txt" download>Full agent personality ↓</a>
-            </div>
-            <p id="copy-status" class="helper-text" role="status" aria-live="polite">Set up from the Get Started section and verify connector capabilities on your own plan.</p>
-          </div>
-          <div class="privacy-panel"><span class="lock" aria-hidden="true">◎</span><h3>Your information remains yours.</h3><p>The public hub contains shared course information, never your individual grades, submissions or study notes. Your private Google Sheet can track personal statuses.</p><p>With an authorized Google Drive connector, capable assistants can update your private Sheet. Verify support on your plan; use a saved private checkpoint only as a fallback.</p><a target="_blank" rel="noopener noreferrer" href="https://github.com/martinperrinemp/baylor-emba-hub/blob/main/docs/AGENT-CONTINUITY.md">Read the private continuity guide ↗</a></div>
-        </div>
-        <div id="ai-rules" class="ai-policy-wrap">
-          <h3>Assignment-specific AI-use guidance</h3>
-          <p class="policy-intro">These are unverified summaries from the original student-prepared cohort starter pack, not permission to use AI. Check your current assignment instructions before using an AI tool on graded work.</p>
-          <div id="ai-policy-list" class="policy-list" aria-live="polite"></div>
-          <p class="policy-note">No MGT 5311 or QBA 5330 AI-use permissions are documented in our imported sources. <strong>Unknown does not mean allowed.</strong></p>
-        </div>
-      </section>
-
       <section id="changes" class="section">
-        <div class="section-heading"><div><p class="kicker">06 / KEEP IT ACCURATE</p><h2>Changes and corrections</h2><p class="section-desc">Reports are suggestions until someone verifies the source and approves the update.</p></div></div>
+        <div class="section-heading"><div><p class="kicker">05 / KEEP IT ACCURATE</p><h2>Changes and corrections</h2><p class="section-desc">Reports are suggestions until someone verifies the source and approves the update.</p></div></div>
         <div class="changes-grid">
           <div>
             <h3>Latest approved updates</h3>

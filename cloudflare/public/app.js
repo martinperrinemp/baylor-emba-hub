@@ -1,17 +1,6 @@
 /* Browser-only display of public shared data. No user accounts or progress storage. */
 "use strict";
 const BASE="https://github.com/martinperrinemp/baylor-emba-hub";
-const PROMPT=[
- "Help me as my personal Dallas Executive MBA assistant using the unofficial cohort hub:",
- BASE,
- "First, read AGENTS.md, then fetch FRESH data/manifest.json, data/open-alerts.json, data/changes.json, data/assignments.json, data/prep.json, data/program-calendar.json and data/ai-policies.json.",
- "Use verified metadata for confirmed claims. You may show provisional Fall 2026 assignment and prep records only as UNVERIFIED leads with clear warnings; never present them as authoritative due dates. Distinguish preparation/discussion dates, presentation dates and actual submission deadlines. If no verified dates exist or you cannot retrieve current records, say so and do not invent dates.",
- "Official course materials and instructor directions outrank this hub. Do not connect or scrape Canvas.",
- "My OWN private Google Sheet named EMBA Personal Progress is my confirmed STATUS tracker. Never edit the public blank COPY ME sheet. Read/write only through authorized actions; match stable assignment IDs, update both Status and Last Updated, and read back before claiming saved. Treat a blank status as Unconfirmed and Finished, not submitted as distinct from Submitted. No grades stored.",
- "Plan 7-14 days ahead, particularly all quiz/reading/prep requirements before class weekends. Suggested 24-48-hour early targets are not actual deadlines or automatic reminders.",
- "Tell me what has changed since my last verified revision if known; otherwise give me a careful list of currently available information and ask what I am working on.",
- "Do not submit a proposal, change shared data, or claim that information was refreshed unless an authorized tool actually did it."
-].join("\n\n");
 const CORRECTION=[
  "Unofficial EMBA Hub correction suggestion (not yet verified)",
  "Course / assignment:",
@@ -227,39 +216,6 @@ function renderResources(data) {
  }
  parent.replaceChildren(...nodes);
 }
-function renderAiPolicies(data){
- const parent=$("ai-policy-list");
- const policies=Array.isArray(data?.policies)?data.policies:[];
- if(!policies.length){
-  const note=elt("p","policy-empty","No assignment-specific AI rules have been captured. Consult your current instructor instructions before using AI for assessed work.");
-  parent.replaceChildren(note);return;
- }
- const result=document.createDocumentFragment();
- for(const item of policies){
-  const box=elt("article","policy-card");
-  const tag=elt("span","policy-state",isReviewed(item)?"Source checked":"Provisional · not permission");
-  box.append(tag,elt("h4","",item.title||"Assignment-specific AI policy"));
-  const line=elt("p","",item.captured_guidance||"No specific AI-use guidance captured.");
-  box.append(line);
-  if(item.restricted_uses_captured?.length){
-   box.append(elt("strong","policy-label","Restrictions in source summary"));
-   const list=elt("ul","policy-points");
-   for(const restriction of item.restricted_uses_captured)list.append(elt("li","",restriction));
-   box.append(list);
-  }
-  if(item.disclosure_requirement_captured){
-   box.append(elt("strong","policy-label","Disclosure noted in source"));
-   box.append(elt("p","",item.disclosure_requirement_captured));
-  }
-  const details=elt("details","policy-provenance");
-  details.append(elt("summary","","Source and verification limits"));
-  details.append(elt("p","",item.source_reference||"Student-maintained class summary, not reverified."));
-  if(item.open_questions)details.append(elt("p","",item.open_questions));
-  box.append(details);
-  result.append(box);
- }
- parent.replaceChildren(result);
-}
 function renderChanges(data,alerts){
  const c=$("change-list"),a=$("alert-list");const changes=Array.isArray(data?.changes)?data.changes:[];
  if(!changes.length)emptyMessage(c,"No approved changes yet.","When a change is verified and published, it will appear here.");
@@ -279,16 +235,6 @@ async function loadFile(name) {
  return res.json();
 }
 async function boot(){
- $("copy-prompt").addEventListener("click",()=>copyToClipboard(PROMPT,"Quick AI starter prompt"));
- $("copy-agent").addEventListener("click",async()=>{
-   try{
-     const res=await fetch("/downloads/EMBA-Agent-Instructions.txt",{cache:"no-store"});
-     if(!res.ok)throw new Error("Agent download unavailable");
-     const body=await res.text();
-     if(!body.includes("DALLAS EMBA | PERSONAL AI PLANNING ASSISTANT"))throw new Error("Unexpected response");
-     await copyToClipboard(body,"Full EMBA agent instructions","starter-copy-status");
-   }catch{ text($("starter-copy-status"),"Could not copy the instructions automatically. Use Download agent instructions above.");}
- });
  $("copy-correction").addEventListener("click",()=>copyToClipboard(CORRECTION,"Correction template"));
  const [manifest,assignments,prep,program,resources,policies,changes,alerts]=await Promise.allSettled([
   loadFile("manifest.json"),loadFile("assignments.json"),loadFile("prep.json"),loadFile("program-calendar.json"),loadFile("resources.json"),loadFile("ai-policies.json"),loadFile("changes.json"),loadFile("open-alerts.json")
@@ -313,7 +259,6 @@ async function boot(){
  }
  if(has(resources))renderResources(resources.value);
  else emptyMessage($("resource-list"),"Resources temporarily unavailable","You can still browse the source repository using the links below.");
- renderAiPolicies(has(policies)?policies.value:{});
  renderChanges(has(changes)?changes.value:{},has(alerts)?alerts.value:{});
  if(!has(manifest)||!has(assignments)||!has(alerts))text($("data-status"),"Some public data could not be verified. Please check official course instructions.");
 }
