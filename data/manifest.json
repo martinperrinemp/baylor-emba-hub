@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "knowledge_revision": 0,
-  "updated_at": "2026-10-17",
-  "last_approved_change_id": null,
+  "knowledge_revision": 1,
+  "updated_at": "2026-10-21",
+  "last_approved_change_id": "2026-10-21-historical-bulk-verification",
   "open_urgent_alert_count": 0,
-  "status": "expanded_student_supplied_canvas_calendar_and_module_prep_pending_reviewer_approval",
-  "notes": "Fall 2026 catalog expanded using the student's Oct 17 Canvas assignment-list transcription (metadata only; no grades, submissions or personal data): 58 assignment records, including 3 superseded grouped QBA quiz placeholders hidden by the web UI and 55 active dated/course records. New individually listed QBA readiness quizzes, updated ENT/MGT deadline times. Prep: 104 records (23 ENT, 23 MGT, 58 QBA) from tracker and student-supplied QBA module instructions; course-restricted Canvas links deliberately omitted. New program-calendar.json: 20 highlighted class dates/weekends through Mar 2028, 2026 Friday/Saturday course blocks, travel and milestones, payment dates. All six QBA module-to-class-block assignments were explicitly confirmed by the enrolled student Oct 17, 2026; class dates now attached to each of 58 QBA prep entries as discussion/required-prep context, NOT submission deadlines. Student confirmed the new public class calendar section is visible on the live site. Shared approved knowledge_revision remains 0; independent human review against official sources is pending. Existing AI policy records remain provisional; public proposal write intake stays paused."
+  "status": "historical_fall_2026_student_attested_future_records_pending_verification",
+  "notes": "Historical records dated before Oct 21, 2026 received retrospective enrolled maintainer sign-off (29 active assignments and 73 prep entries), not independent live Canvas verification. Future 26 assignments and 31 prep entries remain unverified. Three superseded QBA aggregate assignments remain provisional and archived. Prep dates indicate session/discussion targets, not Canvas submission deadlines. Cohort progress, submissions, grades and restricted course materials stay private. Current syllabus, Canvas and instructors supersede this student-maintained catalog. Public proposal intake remains paused."
 }
