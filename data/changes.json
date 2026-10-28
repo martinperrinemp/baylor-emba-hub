@@ -205,6 +205,22 @@
         }
       ],
       "limitations": "Shared course metadata only, not private completion or submission status. Prep dates are course preparation/class discussion dates. Three archived superseded QBA placeholders stay provisional."
+    },
+    {
+      "id": "2026-10-28-qba-midterm-deadline-extension",
+      "knowledge_revision": 3,
+      "date": "2026-10-28",
+      "title": "QBA 5330 Module 3 Midterm deadline extended to November 1",
+      "course_id": "QBA 5330",
+      "assignment_id": "qba-5330-midterm-midterm-exam",
+      "field": "submission_due_at",
+      "old_value": "2026-10-28T23:59:00-05:00",
+      "new_value": "2026-11-01T23:59:00-06:00",
+      "change_type": "deadline_change",
+      "status": "approved_by_enrolled_repository_maintainer",
+      "source_type": "student_confirmed_canvas",
+      "source_reference": "Enrolled repository maintainer directly confirmed the revised due date on Canvas and requested this update October 28, 2026.",
+      "summary": "QBA 5330 Module 3 Midterm Exam submission deadline changed from Wednesday, October 28 at 11:59 PM CDT to Sunday, November 1 at 11:59 PM CST. Course, module, assignment ID, and personal progress were not changed."
     }
   ]
 }

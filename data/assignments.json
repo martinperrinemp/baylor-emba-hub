@@ -465,10 +465,10 @@
       "assignment_type": "Exam",
       "verification_status": "verified",
       "source_type": "student_supplied_canvas_assignments",
-      "source_reference": "Student-supplied Canvas course gradebook assignment list, Oct 17, 2026. Titles and deadline times transcribed; NO personal grades, scores, submissions or status published. Independently confirm with active Canvas before relying on consequential deadlines. Enrolled student reviewed the Fall 2026 checklist on 2026-10-21 and affirmed the listed dates, with QBA exam module corrections. Student-maintained confirmation; no live Canvas integration or independently audited instructor material.",
-      "last_verified_at": "2026-10-21",
+      "source_reference": "Student-supplied Canvas course gradebook assignment list, Oct 17, 2026. Titles and deadline times transcribed; NO personal grades, scores, submissions or status published. Independently confirm with active Canvas before relying on consequential deadlines. Enrolled student reviewed the Fall 2026 checklist on 2026-10-21 and affirmed the listed dates, with QBA exam module corrections. Student-maintained confirmation; no live Canvas integration or independently audited instructor material. Updated deadline confirmed by enrolled student from Canvas on October 28, 2026: Sunday, November 1, 2026 at 11:59 PM America/Chicago. This is a student-confirmed Canvas observation, not direct authenticated Canvas access by the Hub.",
+      "last_verified_at": "2026-10-28",
       "presentation_at": null,
-      "submission_due_at": "2026-10-28T23:59:00-05:00",
+      "submission_due_at": "2026-11-01T23:59:00-06:00",
       "official_due_at": null
     },
     {
